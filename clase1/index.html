@@ -92,18 +92,41 @@ Un desarrollador web full stack es un profesional con habilidades en el desarrol
 
   <!-- Define el título de la página que aparece en la pestaña del navegador. -->
   <title>Clase 1</title>
+
+  <link rel="stylesheet" href="/clase1/estilos/estilos.css">
 </head>
 
 <!-- Contiene el contenido visible de la página web, como texto, imágenes y enlaces. -->
 
 <body>
-  <img src="/clase/assets/images/html&css&js.jpg" alt="">
+  <nav id="arriba">
+    <ul>
+      <li><a href="/clase1/index.html">Inicio</a></li>
+      <li><a href="/clase1/paginas/pagina-clase-css.html">clase de CSS</a></li>
+
+
+      <li><a href="#margenes">Márgenes</a></li>
+      <li><a href="#anclaBloqueInline">Block e Inline</a></li>
+
+      <li><a href="/clase1/assets/images/web-image.jpg" download>download</a></li>
+      <li><a href="https://github.com/pfd-dev/partime-fullstack" target="_blank">Github Neoland</a></li>
+    </ul>
+  </nav>
+
+
+
+
   <main>
     <section>
       <h2>Historia de Internet</h2>
       <p>Internet tiene sus orígenes en la década de 1960 con ARPANET, una red creada por el Departamento de Defensa de
         los Estados Unidos para la comunicación entre universidades y centros de investigación. Con el tiempo,
         evolucionó hasta convertirse en la red global que conocemos hoy.</p>
+
+      <figure>
+        <img src="/clase1/assets/images/logo-neoland.png" alt="NEOLAND fondo negro">
+      </figure>
+      
       <p>El desarrollo del protocolo TCP/IP en la década de 1980 permitió la interconexión de redes, dando lugar al
         Internet moderno. A medida que crecía, surgieron nuevas tecnologías, como la web, que facilitaban el acceso a la
         información.</p>
@@ -575,7 +598,8 @@ Un desarrollador web full stack es un profesional con habilidades en el desarrol
 
       <h3>Uso de <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h3>
       <p>Para agregar una descripción semántica a la imagen, se puede usar <code>&lt;figure&gt;</code> y
-        <code>&lt;figcaption&gt;</code>.</p>
+        <code>&lt;figcaption&gt;</code>.
+      </p>
       <pre>
     &lt;figure&gt;
         &lt;img src="foto.jpg" alt="Persona programando"&gt;

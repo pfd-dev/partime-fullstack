@@ -5,11 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase CSS</title>
+
+    <link rel="stylesheet" href="/clase1/estilos/estilos.css">
+
 </head>
 
 <body>
+    <nav id="arriba">
+        <ul>
+            <li><a href="/clase1/index.html">Inicio</a></li>
+            <li><a href="/clase1/paginas/pagina-clase-css.html">clase de CSS</a></li>
+
+
+            <li><a href="#margenes">Márgenes</a></li>
+            <li><a href="#anclaBloqueInline">Block e Inline</a></li>
+
+            <li><a href="/clase1/assets/images/web-image.jpg" download>download</a></li>
+            <li><a href="https://github.com/pfd-dev/partime-fullstack" target="_blank">Github Neoland</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section>
+        <section id="seccionHistoria">
             <h2>Historia de CSS</h2>
             <p>CSS (Cascading Style Sheets - Hojas de Estilo en Cascada) es el lenguaje utilizado para definir la
                 presentación y el diseño de las páginas web. Su historia está ligada a la evolución del desarrollo web y
@@ -21,7 +38,7 @@
                     cascada mientras trabajaba en el CERN junto a Tim Berners-Lee.</li>
                 <li><strong>1996 - CSS1:</strong> El W3C publicó la primera versión oficial de CSS, que permitía definir
                     colores, fuentes y alineaciones básicas.</li>
-                <li><strong>1998 - CSS2:</strong> Se introdujeron nuevas características, como posicionamiento absoluto,
+                <li><strong>1998 - CSS2:</strong> introdujeron nuevas características, como posicionamiento absoluto,
                     z-index y estilos para medios de impresión.</li>
                 <li><strong>1999-2000 - Falta de soporte en navegadores:</strong> Durante varios años, los navegadores
                     implementaron CSS de manera inconsistente, lo que dificultó su adopción.</li>
@@ -62,7 +79,8 @@
             <p>Existen tres formas principales de aplicar CSS en una página web:</p>
 
             <ul>
-                <li><strong>CSS en línea:</strong> Se usa el atributo <code>style</code> dentro de una etiqueta HTML.
+                <li style="background-color: royalblue;"><strong style="color: yellow;">CSS en línea:</strong> Se usa el
+                    atributo <code>style</code> dentro de una etiqueta HTML.
                 </li>
                 <li><strong>CSS interno:</strong> Se define dentro de la etiqueta <code>&lt;style&gt;</code> en el
                     <code>&lt;head&gt;</code> del documento.
@@ -207,7 +225,7 @@
 
         </section>
 
-        <section>
+        <section id="margenes">
             <h2>Márgenes en CSS</h2>
 
             <p>Los márgenes en CSS definen el espacio exterior alrededor de un elemento, separándolo de otros elementos
@@ -333,7 +351,7 @@
             </pre>
         </section>
 
-        <section>
+        <section id="anclaBloqueInline">
             <h2>Display: Block e Inline en CSS</h2>
 
             <h3>¿Qué es la propiedad <code>display</code>?</h3>
@@ -375,6 +393,8 @@
             </pre>
         </section>
     </main>
+
+    <a href="#arriba" id="btnArriba">boton arriba</a>
 
     <!--<script>
         // Selecciona todos los elementos del documento
