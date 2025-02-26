@@ -72,542 +72,72 @@ Un desarrollador web full stack es un profesional con habilidades en el desarrol
 - **SEO (Search Engine Optimization)**: Conjunto de estrategias y técnicas para mejorar la visibilidad y posicionamiento de un sitio web en motores de búsqueda como Google.
 
 -->
-
-<!-- Declara el tipo de documento como HTML5 para que los navegadores interpreten correctamente el código. -->
 <!DOCTYPE html>
-
-<!-- Etiqueta raíz del documento. El atributo "lang" define el idioma del contenido -->
 <html lang="es">
 
-<!-- Sección de la cabecera donde se incluyen metadatos y enlaces a recursos externos. -->
-
 <head>
-  <!-- Define la codificación de caracteres como UTF-8, permitiendo usar caracteres especiales y símbolos sin problemas. -->
   <meta charset="UTF-8">
-
-  <!-- Configura el diseño responsivo para adaptarse a diferentes tamaños de pantalla.
-  "width=device-width" ajusta el ancho a la pantalla del dispositivo.
-  "initial-scale=1.0" establece el nivel de zoom inicial. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Define el título de la página que aparece en la pestaña del navegador. -->
-  <title>Clase 1</title>
-
+  <title>Página de Inicio</title>
   <link rel="stylesheet" href="/clase1/estilos/estilos.css">
 </head>
 
-<!-- Contiene el contenido visible de la página web, como texto, imágenes y enlaces. -->
+<body id="PaginaInicio">
+  <header class="cabecera">
+    <h1>Titulo Web</h1>
 
-<body>
-  <nav id="arriba">
-    <ul>
-      <li><a href="/clase1/index.html">Inicio</a></li>
-      <li><a href="/clase1/paginas/pagina-clase-css.html">clase de CSS</a></li>
-
-
-      <li><a href="#margenes">Márgenes</a></li>
-      <li><a href="#anclaBloqueInline">Block e Inline</a></li>
-
-      <li><a href="/clase1/assets/images/web-image.jpg" download>download</a></li>
-      <li><a href="https://github.com/pfd-dev/partime-fullstack" target="_blank">Github Neoland</a></li>
-    </ul>
-  </nav>
-
-
-
+    <nav>
+      <a href="/clase1/index.html" target="_blank">Inicio</a>
+      <a href="/clase1/paginas/pagina-clase-html.html" target="_blank">Clase HTML</a>
+      <a href="/clase1/paginas/pagina-clase-css.html" target="_blank">Clase CSS</a>
+    </nav>
+  </header>
 
   <main>
-    <section>
-      <h2>Historia de Internet</h2>
-      <p>Internet tiene sus orígenes en la década de 1960 con ARPANET, una red creada por el Departamento de Defensa de
-        los Estados Unidos para la comunicación entre universidades y centros de investigación. Con el tiempo,
-        evolucionó hasta convertirse en la red global que conocemos hoy.</p>
+    <header>
+      <h2>Bienvenido a mi página de inicio</h2>
+    </header>
 
-      <figure>
-        <img src="/clase1/assets/images/logo-neoland.png" alt="NEOLAND fondo negro">
-      </figure>
-      
-      <p>El desarrollo del protocolo TCP/IP en la década de 1980 permitió la interconexión de redes, dando lugar al
-        Internet moderno. A medida que crecía, surgieron nuevas tecnologías, como la web, que facilitaban el acceso a la
-        información.</p>
+    <section>
+      <article>
+        <h3>Visita mi página en árabe</h3>
+        <p>Encontrarás un ejemplo básico de cómo implementar una web en otro idioma.</p>
+        <a href="/clase1/paginas/arabe.html" target="_blank">Mi página de ejemplo en árabe</a>
+      </article>
+
+      <article>
+        <h3>Visita mi página de una casita en HTML y CSS</h3>
+        <p>Ejemplo básico de cómo usar la semántica en HTML y construir una casa.</p>
+        <a href="/clase1/paginas/casa.html" target="_blank">Mi página de ejemplo de una casa</a>
+      </article>
+
+      <article>
+        <h3>Visita mi página de Gugel</h3>
+        <p>Ejemplo de cómo estructurar una página similar a Google.com.</p>
+        <a href="/clase1/paginas/pagina-gugel.html" target="_blank">Mi página de ejemplo de Gugel</a>
+      </article>
+
+      <article>
+        <h3>Visita mi página de MyTube</h3>
+        <p>Ejemplo de cómo estructurar una página similar a YouTube.</p>
+        <a href="/clase1/paginas/pagina-mytube.html" target="_blank">Mi página de ejemplo de MyTube</a>
+      </article>
+
+      <article>
+        <h3>Visita mi página de MyBook</h3>
+        <p>Ejemplo de cómo estructurar una página similar a Facebook.</p>
+        <a href="/clase1/paginas/pagina-mybook.html" target="_blank">Mi página de ejemplo de MyBook</a>
+      </article>
     </section>
 
-    <section>
-      <h2>Historia de la Web</h2>
-      <p>Aunque a menudo se confunden, Internet y la Web no son lo mismo. <strong>Internet</strong> es la
-        infraestructura física y lógica que conecta dispositivos en todo el mundo (servidores, routers, cables, etc.),
-        mientras que la <strong>Web</strong> es un servicio dentro de Internet que permite acceder a documentos
-        interconectados mediante enlaces.</p>
-
-      <h3>Principales hitos en la evolución de la Web:</h3>
-      <ul>
-        <li><strong>1989 - Inicio del desarrollo de la Web:</strong> Tim Berners-Lee, un científico del CERN, propuso un
-          sistema para compartir información basado en hipertexto.</li>
-        <li><strong>1991 - Lanzamiento de la primera página web:</strong> La Web se basó en tres pilares fundamentales:
-          <ul>
-            <li><strong>HTTP (Hypertext Transfer Protocol):</strong> Protocolo de comunicación que permite la
-              transferencia de información.</li>
-            <li><strong>HTML (Hypertext Markup Language):</strong> Lenguaje de marcado con el que se estructuran las
-              páginas web.</li>
-            <li><strong>URL (Uniform Resource Locator):</strong> Dirección única que identifica cada página web en la
-              red.</li>
-          </ul>
-        </li>
-        <li><strong>1992 - Nacimiento de HTML:</strong> HTML surgió a partir de SGML y fue desarrollado por Tim
-          Berners-Lee para estructurar documentos en la web.</li>
-        <li><strong>1994 - Creación del W3C:</strong> Se fundó el <em>World Wide Web Consortium</em> (W3C) para definir
-          los estándares de la web.</li>
-        <li><strong>1998 - HTML 4:</strong> Una de las versiones más duraderas de HTML, con mejoras en la estructura y
-          formato de los documentos web.</li>
-        <li><strong>1999 - HTML 4.01:</strong> Una actualización menor de HTML 4 que, aunque corregía errores, fue
-          considerada una de las peores versiones por su falta de innovación.</li>
-        <li><strong>2004 - Creación de WHATWG:</strong> Un grupo de desarrolladores y empresas, insatisfechos con la
-          dirección de la W3C, fundaron el <em>Web Hypertext Application Technology Working Group</em> (WHATWG) y
-          comenzaron a trabajar en HTML5.</li>
-        <li><strong>2008 - Lanzamiento de HTML5 por WHATWG:</strong> Se presentó como una alternativa más flexible y
-          moderna para el desarrollo web.</li>
-        <li><strong>2014 - HTML5 se convierte en estándar oficial:</strong> La W3C adopta HTML5 como la nueva base para
-          el desarrollo web.</li>
-        <li><strong>2017 - HTML5.2:</strong> Nueva actualización con mejoras en seguridad y accesibilidad.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Conceptos Fundamentales de HTML</h2>
-
-      <h3>¿Qué es HTML?</h3>
-      <p>HTML (HyperText Markup Language) es un <strong>lenguaje de marcado</strong> utilizado para definir la
-        estructura de las páginas web. A diferencia de los lenguajes de programación, <strong>HTML no ejecuta lógica o
-          cálculos</strong>, sino que organiza y presenta el contenido de manera estructurada.</p>
-
-      <ul>
-        <li>HTML no es un lenguaje de programación, sino un lenguaje de <strong>estructura</strong>.</li>
-        <li>No se encarga del diseño o los estilos (eso lo hace CSS), aunque se pueden aplicar estilos básicos.</li>
-        <li>Es la base sobre la cual están construidas todas las páginas web.</li>
-        <li>Cada etiqueta de HTML indica al navegador y a los motores de búsqueda la estructura y el significado del
-          contenido.</li>
-      </ul>
-
-      <h3>Estructura de un Documento HTML</h3>
-      <p>Un documento HTML está compuesto por etiquetas que estructuran la información. Cada etiqueta tiene una función
-        específica y puede contener texto, imágenes, enlaces y otros elementos.</p>
-
-      <h4>Reglas para Nombres de Archivos y Carpetas</h4>
-      <ul>
-        <li>Se recomienda escribir los nombres en minúsculas.</li>
-        <li>Para separar palabras, se utilizan <strong>guiones medios (-)</strong> en lugar de espacios o guiones bajos
-          (_).</li>
-        <li>Ejemplo de nombre de carpeta: <code>hola-mundo-web</code></li>
-      </ul>
-
-      <h3>Estructura Básica de HTML</h3>
-      <p>Un documento HTML está formado por <strong>etiquetas</strong>, que pueden tener una etiqueta de apertura y su
-        correspondiente etiqueta de cierre.</p>
-
-      <ul>
-        <li><strong>Etiqueta de apertura:</strong> Define el inicio de un elemento, por ejemplo, <code>&lt;p&gt;</code>
-          para un párrafo.</li>
-        <li><strong>Etiqueta de cierre:</strong> Indica el final del elemento, por ejemplo, <code>&lt;/p&gt;</code>.
-        </li>
-        <li><strong>Ejemplo:</strong></li>
-      </ul>
-
-      <pre>
-        &lt;p&gt;Este es un párrafo en HTML&lt;/p&gt;
-      </pre>
-
-      <h4>Comentarios en HTML</h4>
-      <p>Los comentarios en HTML se utilizan para agregar notas dentro del código sin que sean visibles en la página
-        web. Se escriben de la siguiente manera:</p>
-
-      <pre>
-        &lt;!-- Este es un comentario en HTML --&gt;
-      </pre>
-
-      <h3>¿Cómo Crear un Servidor de Desarrollo?</h3>
-      <p>Para visualizar cambios en tiempo real y simular un entorno de servidor, podemos usar herramientas como Live
-        Server <strong>(Extensión de VS Code)</strong> que permite ver los cambios en el navegador sin necesidad
-        de actualizar manualmente.</p>
-
-      <p>Con esto, tu proyecto se ejecutará en un servidor local y podrás acceder a él desde
-        <code>http://localhost:5500</code>.
-      </p>
-    </section>
-
-    <section>
-      <h2>Elementos de Texto</h2>
-
-      <h3>Encabezados</h3>
-      <p>Los encabezados en HTML se utilizan para definir títulos y subtítulos dentro de una página web. Se dividen en
-        seis niveles, desde <code>&lt;h1&gt;</code> (el más importante) hasta <code>&lt;h6&gt;</code> (el menos
-        importante).</p>
-
-      <ul>
-        <li><code>&lt;h1&gt;</code> - Título principal (solo debería haber uno por página).</li>
-        <li><code>&lt;h2&gt;</code> - Subtítulo o sección importante.</li>
-        <li><code>&lt;h3&gt;</code> - Subsección dentro de un <code>&lt;h2&gt;</code>.</li>
-        <li><code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> - Encabezados de menor
-          importancia.</li>
-      </ul>
-
-      <h3>Párrafos</h3>
-      <p>El elemento <code>&lt;p&gt;</code> se utiliza para definir párrafos de texto en HTML. Cada
-        <code>&lt;p&gt;</code> crea un bloque de texto con espacio antes y después.
-      </p>
-
-      <pre>
-        &lt;p&gt;Este es un párrafo de ejemplo en HTML.&lt;/p&gt;
-      </pre>
-    </section>
-
-    <section>
-      <h2>Elementos de Estructura Principal</h2>
-
-      <h3><code>&lt;header&gt;</code> - Encabezado</h3>
-      <p>Se usa para definir el encabezado de una página o de una sección. Generalmente contiene logotipos, títulos o
-        menús de navegación.</p>
-      <pre>
-    &lt;header&gt;
-        &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
-    &lt;/header&gt;
-      </pre>
-
-      <h3><code>&lt;nav&gt;</code> - Navegación</h3>
-      <p>Define una sección de navegación que contiene enlaces a otras partes del sitio o a páginas externas.</p>
-      <pre>
-    &lt;nav&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="blog.html"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-      </pre>
-
-      <h3><code>&lt;main&gt;</code> - Contenido Principal</h3>
-      <p>Contiene el contenido principal de la página. Cada página debe tener solo un <code>&lt;main&gt;</code>.</p>
-      <pre>
-    &lt;main&gt;
-        &lt;h2&gt;Bienvenido a Nuestro Sitio&lt;/h2&gt;
-        &lt;p&gt;Aquí encontrarás información útil sobre diversos temas.&lt;/p&gt;
-    &lt;/main&gt;
-      </pre>
-
-      <h3><code>&lt;footer&gt;</code> - Pie de Página</h3>
-      <p>Define el pie de página de un documento o una sección. Generalmente contiene información de contacto, derechos
-        de autor o enlaces adicionales.</p>
-      <pre>
-    &lt;footer&gt;
-        &lt;p&gt;© 2025 Mi Sitio Web - Todos los derechos reservados&lt;/p&gt;
-        &lt;nav&gt;
-            &lt;a href="politica-privacidad.html"&gt;Política de Privacidad&lt;/a&gt; | 
-            &lt;a href="terminos.html"&gt;Términos y Condiciones&lt;/a&gt;
-        &lt;/nav&gt;
-    &lt;/footer&gt;
-      </pre>
-    </section>
-
-    <section>
-      <h2>Elementos de Sección o Contenedores</h2>
-
-      <h3><code>&lt;section&gt;</code> - Sección</h3>
-      <p>Se utiliza para agrupar contenido relacionado dentro de una página. Es útil cuando queremos dividir una página
-        en secciones lógicas.</p>
-      <pre>
-  &lt;section&gt;
-      &lt;h2&gt;Noticias Recientes&lt;/h2&gt;
-      &lt;p&gt;Este es un artículo sobre las últimas noticias.&lt;/p&gt;
-  &lt;/section&gt;
-      </pre>
-
-      <h3><code>&lt;article&gt;</code> - Artículo</h3>
-      <p>Representa contenido independiente y reutilizable, como un artículo de blog, una noticia o un comentario.</p>
-      <pre>
-  &lt;article&gt;
-      &lt;h2&gt;Título del Artículo&lt;/h2&gt;
-      &lt;p&gt;Este artículo puede leerse de forma independiente.&lt;/p&gt;
-  &lt;/article&gt;
-      </pre>
-
-      <h3><code>&lt;aside&gt;</code> - Contenido Relacionado</h3>
-      <p>Se usa para información complementaria, como barras laterales, enlaces relacionados o anuncios.</p>
-      <pre>
-  &lt;aside&gt;
-      &lt;h3&gt;Artículos Relacionados&lt;/h3&gt;
-      &lt;ul&gt;
-          &lt;li&gt;&lt;a href="#"&gt;Cómo aprender HTML&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#"&gt;Introducción a CSS&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-  &lt;/aside&gt;
-      </pre>
-
-      <h3><code>&lt;div&gt;</code> - División Genérica</h3>
-      <p>Un contenedor sin semántica específica, útil para agrupar elementos y aplicar estilos con CSS.</p>
-      <pre>
-  &lt;div&gt;
-      &lt;p&gt;Este es un contenedor genérico.&lt;/p&gt;
-  &lt;/div&gt;
-      </pre>
-
-      <h3><code>&lt;span&gt;</code> - Contenedor en Línea</h3>
-      <p>Sirve para aplicar estilos o agrupar elementos dentro de un texto sin romper la estructura del contenido.</p>
-      <pre>
-  &lt;p&gt;Esto es un &lt;span&gt;texto resaltado&lt;/span&gt; dentro de un párrafo.&lt;/p&gt;
-      </pre>
-    </section>
-
-    <section>
-      <h2>Elementos de Formato y Estilo de Texto</h2>
-
-      <ul>
-        <li><code>&lt;em&gt;</code> - Énfasis: <em>Texto en énfasis.</em></li>
-        <li><code>&lt;strong&gt;</code> - Énfasis fuerte: <strong>Texto importante.</strong></li>
-        <li><code>&lt;small&gt;</code> - Texto más pequeño: <small>Texto reducido.</small></li>
-        <li><code>&lt;br&gt;</code> - Salto de línea (sin etiqueta de cierre).</li>
-        <li><code>&lt;wbr&gt;</code> - Salto de línea si es necesario.</li>
-        <li><code>&lt;time&gt;</code> - Representación de fechas y horas: <time datetime="2025-02-24">24 de febrero de
-            2025</time></li>
-        <li><code>&lt;i&gt;</code> - Texto en cursiva: <i>Ejemplo de texto en cursiva.</i></li>
-        <li><code>&lt;b&gt;</code> - Texto en negrita: <b>Ejemplo de texto en negrita.</b></li>
-        <li><code>&lt;u&gt;</code> - Texto subrayado: <u>Ejemplo de texto subrayado.</u></li>
-        <li><code>&lt;sup&gt;</code> - Superíndice (elevado): 10<sup>2</sup> = 100</li>
-        <li><code>&lt;sub&gt;</code> - Subíndice (bajo): H<sub>2</sub>O</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Atributos en HTML</h2>
-      <p>Los atributos en HTML son valores adicionales que se agregan a las etiquetas para configurar su comportamiento
-        o apariencia.</p>
-
-      <h3>Atributos comunes:</h3>
-      <ul>
-        <li><code>class</code>: Se usa para aplicar estilos CSS a un grupo de elementos con la misma clase.</li>
-        <li><code>id</code>: Identificador único de un elemento, utilizado para manipulación con JavaScript y navegación
-          entre anclas.</li>
-        <li><code>title</code>: Muestra un mensaje emergente (tooltip) cuando el usuario pasa el cursor sobre el
-          elemento.</li>
-        <li><code>data-*</code>: Permite almacenar datos personalizados dentro de un elemento HTML.</li>
-      </ul>
-
-      <h3>Ejemplo:</h3>
-      <pre>
-&lt;p class="resaltado" id="parrafo1" title="Esto es un párrafo" data-info="ejemplo"&gt;
-    Este es un párrafo con varios atributos.
-&lt;/p&gt;
-    </pre>
-
-      <!-- <p id="parrafo1" title="Esto es un párrafo" data-info="ejemplo de datos guardados">
-        Este es un párrafo con varios atributos.
-      </p>
-
-      <script>
-        console.log(document.getElementById("parrafo1").dataset.info)
-      </script> -->
-    </section>
-
-    <section>
-      <h2>Enlaces en HTML</h2>
-      <p>Los enlaces (<code>&lt;a&gt;</code>) permiten conectar una página web con otra, enlazar recursos internos o
-        externos y crear navegación entre secciones.</p>
-
-      <h3>Atributos de los enlaces:</h3>
-      <ul>
-        <li><code>href</code>: Define la ruta o URL del recurso al que queremos acceder.</li>
-        <li><code>target</code>: Indica dónde se abrirá el enlace. Los valores más usados son:
-          <ul>
-            <li><code>_self</code> (predeterminado) - Abre el enlace en la misma pestaña.</li>
-            <li><code>_blank</code> - Abre el enlace en una nueva pestaña o ventana.</li>
-          </ul>
-        </li>
-        <li><code>download</code>: Permite descargar un archivo en lugar de abrirlo en el navegador. Solo funciona con
-          archivos en el mismo servidor.</li>
-      </ul>
-
-      <h3>Ejemplo:</h3>
-      <pre>
-&lt;a href="https://www.ejemplo.com" target="_blank" title="Ir a Ejemplo"&gt;
-    Visitar Ejemplo
-&lt;/a&gt;
-    </pre>
-
-      <h3>Anclas en HTML</h3>
-      <p>Las anclas permiten la navegación dentro de la misma página. Para ello, usamos el atributo <code>id</code> en
-        un elemento destino y un enlace con <code>#</code> seguido del <code>id</code>.</p>
-
-      <h3>Ejemplo:</h3>
-      <pre>
-&lt;a href="#seccion2"&gt;Ir a la Sección 2&lt;/a&gt;
-
-&lt;h2 id="seccion2"&gt;Sección 2&lt;/h2&gt;
-    </pre>
-
-      <h3>Rutas en HTML</h3>
-      <p>Existen dos tipos de rutas para acceder a recursos:</p>
-
-      <h4>1. Rutas absolutas</h4>
-      <p>Son direcciones completas con protocolo (<code>https://</code>) que apuntan a un recurso en internet. Se usan
-        para enlaces externos.</p>
-      <pre>
-&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;
-    </pre>
-
-      <h4>2. Rutas relativas</h4>
-      <p>Apuntan a archivos dentro del mismo proyecto sin especificar el dominio.</p>
-      <ul>
-        <li><strong>Mismo nivel:</strong> Si el archivo está en la misma carpeta, solo se pone el nombre del archivo.
-          <pre>&lt;a href="pagina.html"&gt;Abrir Página&lt;/a&gt;</pre>
-        </li>
-        <li><strong>Subcarpeta:</strong> Si está dentro de otra carpeta, se indica la ruta.
-          <pre>&lt;a href="carpeta/pagina.html"&gt;Abrir Página en Carpeta&lt;/a&gt;</pre>
-        </li>
-        <li><strong>Salir de la carpeta:</strong> Se usa <code>../</code> para retroceder un nivel en la estructura de
-          carpetas.
-          <pre>&lt;a href="../pagina.html"&gt;Volver a Página Principal&lt;/a&gt;</pre>
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Más Etiquetas en HTML</h2>
-
-      <h3>Elementos de contenido estructural:</h3>
-      <ul>
-        <li><code>&lt;address&gt;</code>: Se utiliza para representar información de contacto, como direcciones físicas
-          o correos electrónicos.</li>
-        <li><code>&lt;blockquote&gt;</code>: Sirve para marcar citas de otros autores, destacando el contenido citado.
-        </li>
-        <li><code>&lt;pre&gt;</code>: Muestra texto preformateado, respetando los espacios y saltos de línea.</li>
-        <li><code>&lt;code&gt;</code>: Se usa para representar fragmentos de código de programación.</li>
-        <li><code>&lt;div&gt;</code>: Es un contenedor genérico que se usa para estructurar el contenido, pero no tiene
-          un significado semántico.</li>
-        <li><code>&lt;hr&gt;</code>: Inserta una línea horizontal que separa contenido en la página.</li>
-      </ul>
-
-      <h3>Ejemplo:</h3>
-      <pre>
-  &lt;address&gt;
-      Contacto: contacto@ejemplo.com
-  &lt;/address&gt;
-  
-  &lt;blockquote&gt;
-      "La mejor forma de predecir el futuro es crearlo." - Peter Drucker
-  &lt;/blockquote&gt;
-  
-  &lt;pre&gt;
-      function holaMundo() {
-          console.log("¡Hola, mundo!");
-      }
-  &lt;/pre&gt;
-  
-  &lt;code&gt;console.log("Hola, mundo");&lt;/code&gt;
-  
-  &lt;hr&gt;
-      </pre>
-    </section>
-
-    <section>
-      <h2>Listas en HTML</h2>
-
-      <h3>Tipos de listas:</h3>
-      <ul>
-        <li><strong>Listas desordenadas (<code>&lt;ul&gt;</code>)</strong>: No tienen un orden específico y se
-          representan con viñetas.</li>
-        <li><strong>Listas ordenadas (<code>&lt;ol&gt;</code>)</strong>: Tienen un orden numérico o con letras.</li>
-        <li><strong>Listas de definición (<code>&lt;dl&gt;</code>)</strong>: Se usan para definir términos y sus
-          descripciones.</li>
-        <li><strong>Listas anidadas</strong>: Una lista dentro de otra lista, útil para subcategorías.</li>
-      </ul>
-
-      <h3>Ejemplo de listas en HTML:</h3>
-
-      <h4>Lista desordenada:</h4>
-      <pre>
-  &lt;ul&gt;
-      &lt;li&gt;Manzana&lt;/li&gt;
-      &lt;li&gt;Banana&lt;/li&gt;
-      &lt;li&gt;Uva&lt;/li&gt;
-  &lt;/ul&gt;
-      </pre>
-
-      <h4>Lista ordenada:</h4>
-      <pre>
-  &lt;ol&gt;
-      &lt;li&gt;Primer paso&lt;/li&gt;
-      &lt;li&gt;Segundo paso&lt;/li&gt;
-      &lt;li&gt;Tercer paso&lt;/li&gt;
-  &lt;/ol&gt;
-      </pre>
-
-      <h4>Lista de definición:</h4>
-      <pre>
-  &lt;dl&gt;
-      &lt;dt&gt;HTML&lt;/dt&gt;
-      &lt;dd&gt;Lenguaje de marcado para la creación de páginas web.&lt;/dd&gt;
-  
-      &lt;dt&gt;CSS&lt;/dt&gt;
-      &lt;dd&gt;Lenguaje para definir estilos en documentos HTML.&lt;/dd&gt;
-  &lt;/dl&gt;
-      </pre>
-
-      <h4>Lista anidada:</h4>
-      <pre>
-  &lt;ul&gt;
-      &lt;li&gt;Frutas
-          &lt;ul&gt;
-              &lt;li&gt;Manzana&lt;/li&gt;
-              &lt;li&gt;Naranja&lt;/li&gt;
-          &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Verduras
-          &lt;ul&gt;
-              &lt;li&gt;Lechuga&lt;/li&gt;
-              &lt;li&gt;Zanahoria&lt;/li&gt;
-          &lt;/ul&gt;
-      &lt;/li&gt;
-  &lt;/ul&gt;
-      </pre>
-    </section>
-
-    <section>
-      <h2>Imágenes en HTML</h2>
-
-      <h3><code>&lt;img&gt;</code> - Insertar una Imagen</h3>
-      <p>La etiqueta <code>&lt;img&gt;</code> se usa para mostrar imágenes en una página web. No tiene etiqueta de
-        cierre.</p>
-      <pre>
-    &lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;
-      </pre>
-      <p><strong>Atributos importantes:</strong></p>
-      <ul>
-        <li><code>src</code>: Define la ruta de la imagen.</li>
-        <li><code>alt</code>: Proporciona una descripción para accesibilidad y en caso de que la imagen no cargue.</li>
-        <li><code>width</code> y <code>height</code>: Permiten definir el tamaño de la imagen (en píxeles o porcentaje).
-        </li>
-      </ul>
-
-      <h3>Ejemplo de Imagen con Dimensiones Definidas</h3>
-      <pre>
-    &lt;img src="paisaje.jpg" alt="Paisaje hermoso" width="400" height="250"&gt;
-      </pre>
-
-      <h3>Imágenes desde una URL Externa</h3>
-      <pre>
-    &lt;img src="https://www.ejemplo.com/imagen.jpg" alt="Imagen desde Internet"&gt;
-      </pre>
-
-      <h3>Uso de <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h3>
-      <p>Para agregar una descripción semántica a la imagen, se puede usar <code>&lt;figure&gt;</code> y
-        <code>&lt;figcaption&gt;</code>.
-      </p>
-      <pre>
-    &lt;figure&gt;
-        &lt;img src="foto.jpg" alt="Persona programando"&gt;
-        &lt;figcaption&gt;Imagen de una persona programando.&lt;/figcaption&gt;
-    &lt;/figure&gt;
-      </pre>
+    <section id="SeccionEjemplos">
+      <div>¡Hola Mundo!</div>
     </section>
   </main>
+
+  <footer>
+    <p>© 2025 Mi Página</p>
+  </footer>
 </body>
 
 </html>
