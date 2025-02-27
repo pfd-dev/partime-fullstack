@@ -1,0 +1,42 @@
+/* ==================================================
+==================== RESET CSS  ====================
+================================================== */
+
+* {
+    box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total del elemento */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5; /* Mejora la legibilidad */
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+}
+
+/* Evita que imágenes y videos excedan su contenedor */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li {
+    list-style: none;
+    padding-left: 0;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}

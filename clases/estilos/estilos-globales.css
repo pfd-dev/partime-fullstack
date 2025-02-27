@@ -1,0 +1,92 @@
+.text-white {
+    color: white;
+}
+
+.text-black {
+    color: black;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-gradient-red {
+    background: linear-gradient(45deg, crimson, lightcoral);
+    background-attachment: fixed;
+}
+
+.bg-gradient-green {
+    background: linear-gradient(45deg, green, orange);
+    background-attachment: fixed;
+}
+
+
+.bg-gradient-blue {
+    background: linear-gradient(45deg, blue, purple);
+    background-attachment: fixed;
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-md {
+    font-size: 24px;
+}
+
+.text-lg {
+    font-size: 32px;
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.font-extrabold {
+    font-weight: 900;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    width: 250px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: blue;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: gray;
+    color: white;
+}
+
+.link {
+    color: blue;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

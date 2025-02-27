@@ -6,12 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase CSS</title>
 
-    <link rel="stylesheet" href="/clase1/estilos/estilos.css">
+    <link rel="stylesheet" href="./../../estilos/reset.css">
+    <link rel="stylesheet" href="./../../estilos/estilos-semana1.css">
+    <link rel="stylesheet" href="./../../estilos/estilos-globales.css">
 </head>
 
-<body>
+<body id="PaginaClaseCSS" class="bg-gradient-blue">
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#HistoriaCSS">Historia de CSS</a></li>
+            <li><a href="#ConceptosCSS">Conceptos Fundamentales</a></li>
+            <li><a href="#BackgroundCSS">Propiedad Background</a></li>
+            <li><a href="#TextoCSS">Estilización de Texto</a></li>
+            <li><a href="#MargenesCSS">Márgenes</a></li>
+            <li><a href="#PaddingCSS">Padding</a></li>
+            <li><a href="#DisplayCSS">Display</a></li>
+            <li><a href="#SelectoresAvanzadosCSS">Selectores Avanzados</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section>
+        <section id="HistoriaCSS">
             <h2>Historia de CSS</h2>
             <p>CSS (Cascading Style Sheets - Hojas de Estilo en Cascada) es el lenguaje utilizado para definir la
                 presentación y el diseño de las páginas web. Su historia está ligada a la evolución del desarrollo web y
@@ -36,15 +52,13 @@
             </ul>
         </section>
 
-
-        <section>
+        <section id="ConceptosCSS">
             <h2>Conceptos Fundamentales de CSS</h2>
 
             <h3>¿Qué es CSS?</h3>
             <p>CSS (Cascading Style Sheets) es un <strong>lenguaje de estilos</strong> utilizado para controlar la
                 apariencia y el diseño de las páginas web. Se usa junto con HTML para definir colores, fuentes,
                 márgenes, posiciones y mucho más.</p>
-
             <ul>
                 <li>CSS permite separar el contenido (HTML) de la presentación (diseño y estilos).</li>
                 <li>Facilita la creación de diseños responsivos y reutilizables.</li>
@@ -95,8 +109,7 @@
             </pre>
         </section>
 
-
-        <section>
+        <section id="BackgroundCSS">
             <h2>Propiedad <code>background</code> en CSS</h2>
 
             <p>La propiedad <code>background</code> en CSS se utiliza para definir el fondo de un elemento. Puede
@@ -152,7 +165,7 @@
             </pre>
         </section>
 
-        <section>
+        <section id="TextoCSS">
             <h2>Estilización de Texto en CSS</h2>
 
             <h3>¿Cómo se maneja el texto en CSS?</h3>
@@ -210,7 +223,7 @@
 
         </section>
 
-        <section id="margenes">
+        <section id="MargenesCSS">
             <h2>Márgenes en CSS</h2>
 
             <p>Los márgenes en CSS definen el espacio exterior alrededor de un elemento, separándolo de otros elementos
@@ -274,7 +287,7 @@
 
         </section>
 
-        <section>
+        <section id="PaddingCSS">
             <h2>Padding en CSS</h2>
 
             <p>El padding (o <em>relleno</em>) en CSS define el espacio interno entre el contenido de un elemento y su
@@ -336,7 +349,7 @@
             </pre>
         </section>
 
-        <section id="anclaBloqueInline">
+        <section id="DisplayCSS">
             <h2>Display: Block e Inline en CSS</h2>
 
             <h3>¿Qué es la propiedad <code>display</code>?</h3>
@@ -377,9 +390,86 @@
             }
             </pre>
         </section>
-    </main>
 
-    <a href="#arriba" id="btnArriba">boton arriba</a>
+        <section id="SelectoresAvanzadosCSS">
+            <h2>Selectores Avanzados en CSS</h2>
+        
+            <h3>Selectores de Atributo</h3>
+            <p>Los selectores de atributo permiten aplicar estilos a elementos en función de sus atributos y valores.</p>
+        
+            <h4>Ejemplos de uso:</h4>
+            <ul>
+                <li><code>[atributo]</code>: Selecciona elementos que tienen el atributo especificado.</li>
+                <li><code>[atributo="valor"]</code>: Selecciona elementos con un atributo específico y un valor exacto.</li>
+                <li><code>[atributo~="valor"]</code>: Selecciona elementos cuyo atributo contiene una palabra específica.</li>
+                <li><code>[atributo^="valor"]</code>: Selecciona elementos cuyo atributo comienza con un valor específico.</li>
+                <li><code>[atributo$="valor"]</code>: Selecciona elementos cuyo atributo termina con un valor específico.</li>
+                <li><code>[atributo*="valor"]</code>: Selecciona elementos cuyo atributo contiene una cadena específica.</li>
+            </ul>
+        
+            <h4>Ejemplo en CSS:</h4>
+            <pre>
+            /* Seleccionar todos los enlaces que abren en una nueva pestaña */
+            a[target="_blank"] {
+                color: red;
+                font-weight: bold;
+            }
+        
+            /* Seleccionar inputs de tipo texto */
+            input[type="text"] {
+                border: 2px solid blue;
+            }
+        
+            /* Seleccionar imágenes cuyo atributo src contenga "logo" */
+            img[src*="logo"] {
+                width: 150px;
+            }
+            </pre>
+        
+            <h3>Pseudoclase <code>:hover</code></h3>
+            <p>La pseudoclase <code>:hover</code> se aplica cuando el usuario coloca el cursor sobre un elemento.</p>
+        
+            <h4>Ejemplo en CSS:</h4>
+            <pre>
+            /* Cambiar el color de un enlace al pasar el cursor */
+            a:hover {
+                color: green;
+                text-decoration: underline;
+            }
+        
+            /* Cambiar el fondo de un botón al pasar el cursor */
+            button:hover {
+                background-color: darkblue;
+                color: white;
+            }
+            </pre>
+        
+            <h3>Pseudoclase <code>:nth-child()</code></h3>
+            <p>La pseudoclase <code>:nth-child(n)</code> selecciona elementos en función de su posición dentro de su padre.</p>
+        
+            <h4>Ejemplos de uso:</h4>
+            <ul>
+                <li><code>:nth-child(even)</code>: Selecciona los elementos pares.</li>
+                <li><code>:nth-child(odd)</code>: Selecciona los elementos impares.</li>
+                <li><code>:nth-child(3)</code>: Selecciona el tercer elemento.</li>
+                <li><code>:nth-child(2n)</code>: Selecciona los elementos en posiciones múltiplos de 2.</li>
+            </ul>
+        
+            <h4>Ejemplo en CSS:</h4>
+            <pre>
+            /* Colorear filas pares de una lista */
+            ul li:nth-child(even) {
+                background-color: lightgray;
+            }
+        
+            /* Resaltar el tercer párrafo */
+            p:nth-child(3) {
+                font-weight: bold;
+                color: red;
+            }
+            </pre>
+        </section>        
+    </main>
 
     <!--<script>
         // Selecciona todos los elementos del documento
