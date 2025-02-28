@@ -1,0 +1,221 @@
+/* ==================================================
+========== ESTILOS PAGINA INICIO (index.html)  ==========
+/* Estilos cabecera y menú de navegación */
+.menu-navegacion {
+  background-color: rgb(20, 20, 20);
+  border-bottom: 2px solid lightgray;
+  padding: .5em 5em;
+
+  header {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+  }
+
+  ul {
+    text-align: end;
+    width: 69%;
+    display: inline-block;
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+
+      a {
+        padding: .5em 3em;
+        outline: 1px solid lightgray;
+      }
+
+      a:hover {
+        background-color: rgb(30, 30, 30);
+        outline-color: white;
+      }
+    }
+  }
+}
+
+/* ================================================== */
+#PaginaInicio {
+
+  /* Estilos contenido principal */
+  main {
+    background-color: rgba(30, 30, 30, .9);
+    width: 60%;
+    margin: 1em auto;
+    padding: 1em 3em;
+    border: 2px solid white;
+    border-radius: 1em;
+
+    h2 {
+      text-align: center;
+    }
+
+    section {
+      margin-top: 1em;
+      margin-bottom: 1em;
+
+      header {
+        border-bottom: 2px solid white;
+      }
+    }
+
+    div {
+      text-align: center;
+
+      /* Estilos artículos */
+      article {
+        display: inline-block;
+        vertical-align: middle;
+        background: rgb(200, 200, 200);
+        border-radius: 1em;
+        margin: 10px;
+        width: 40%;
+        padding: 20px;
+      }
+      
+      article:hover {
+        transition: background-color .5s, color .5s;
+        color: white;
+        background: rgb(40, 40, 40);
+        outline: 2px solid white;
+      }
+    }
+  }
+
+  /* Estilos pie de página */
+  footer {
+    background-color: rgb(30, 30, 30);
+    padding: 5em 2em;
+    border-top: 1px solid lightgray;
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.seccion-ejemplos {
+  background-color: red;
+  height: 100vh;
+  text-align: center;
+}
+
+.seccion-ejemplos div {
+  background-color: blue;
+  color: white;
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+  display: inline-block;
+}
+
+/* ==================================================
+========== ESTILOS PAGINA CLASE HTML (pagina-clase-HTML.html)  ==========
+================================================== */
+#PaginaClaseHTML .menu-navegacion-anclas {
+  width: 60%;
+  margin: 1em auto;
+}
+
+#PaginaClaseHTML .menu-navegacion-anclas li {
+  display: inline-block;
+  margin: 2px;
+}
+
+#PaginaClaseHTML .menu-navegacion-anclas a {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 0.5em 1em;
+  display: inline-block;
+}
+
+#PaginaClaseHTML .menu-navegacion-anclas a:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+#PaginaClaseHTML main {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#PaginaClaseHTML main section {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  padding: 1em 3em;
+  margin: 1em 0;
+}
+
+/* ==================================================
+========== ESTILOS PAGINA CLASE CSS (pagina-clase-css.html)  ==========
+================================================== */
+#PaginaClaseCSS .menu-navegacion-anclas {
+  width: 60%;
+  margin: 1em auto;
+}
+
+#PaginaClaseCSS .menu-navegacion-anclas li {
+  display: inline-block;
+  margin: 2px;
+}
+
+#PaginaClaseCSS .menu-navegacion-anclas a {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 0.5em 1em;
+  display: inline-block;
+}
+
+#PaginaClaseCSS .menu-navegacion-anclas a:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+#PaginaClaseCSS main {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#PaginaClaseCSS main section {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  padding: 1em 3em;
+  margin: 1em 0;
+}
+
+/* ==================================================
+========== ESTILOS PAGINA GUGEL (pagina-gugel.html)  ==========
+================================================== */
+
+#PaginaGugel span:nth-child(1) {
+  color: red;
+}
+
+#PaginaGugel span:nth-child(2) {
+  color: green;
+}
+
+#PaginaGugel span:nth-child(3) {
+  color: blue;
+}
+
+#PaginaGugel span:nth-child(4) {
+  color: purple;
+}
+
+#PaginaGugel span:nth-child(5) {
+  color: cyan;
+}
+
+/* ==================================================
+========== ESTILOS PAGINA MYBOOK (pagina-mybook.html)  ==========
+================================================== */
+
+
+
+
+
+
+/* ==================================================
+========== ESTILOS PAGINA MYTUBE (pagina-mytube.html)  ==========
+================================================== */

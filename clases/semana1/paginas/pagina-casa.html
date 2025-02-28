@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Linda</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-color: skyblue;
+    }
+
+    header {
+      width: 100%;
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: end;
+      width: 100%;
+    }
+
+    main header {
+      background-color: transparent;
+    }
+
+    .escena {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .casa {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .techo {
+      width: 0;
+      height: 0;
+      border-left: 110px solid transparent;
+      border-right: 110px solid transparent;
+      border-bottom: 80px solid brown;
+    }
+
+    .paredes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      background-color: sandybrown;
+    }
+
+    .ventanas {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .ventana {
+      width: 50px;
+      height: 50px;
+      background-color: whitesmoke;
+    }
+
+    .puerta {
+      width: 60px;
+      height: 80px;
+      background-color: saddlebrown;
+    }
+
+    .pasto {
+      width: 100%;
+      height: 150px;
+      background-color: green;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Casa Bonita</h1>
+  </header>
+
+  <main>
+    <section class="escena">
+      <section class="casa">
+        <header class="techo"></header>
+        <section class="paredes">
+          <section class="ventanas">
+            <article class="ventana"></article>
+            <article class="ventana"></article>
+          </section>
+          
+          <a href="/">
+            <article class="puerta"></article>
+          </a>
+        </section>
+      </section>
+    </section>
+    <aside class="pasto"></aside>
+  </main>
+
+  <footer>
+    <p>&copy; Todos los derechos reservados</p>
+  </footer>
+</body>
+
+</html>

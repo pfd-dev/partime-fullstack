@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio</title>
+
+  <link rel="stylesheet" href="./../estilos/reiniciar-estilos.css">
+  <link rel="stylesheet" href="./../estilos/estilos-globales.css">
+  <link rel="stylesheet" href="./../estilos/mis-estilos.css">
+
+  <style>
+    /* [atributo] - Selecciona elementos que tienen el atributo especificado */
+    p[title] {
+      background-color: blue;
+    }
+
+    /* [atributo="valor"] - Selecciona elementos con un atributo y valor exacto */
+    p[title="importante"] {
+      background-color: yellow;
+    }
+
+    /* [atributo~="valor"] - Selecciona elementos cuyo atributo contiene una palabra específica */
+    p[class~="destacado"] {
+      background-color: purple;
+    }
+
+    /* [atributo^="valor"] - Selecciona elementos cuyo atributo comienza con un valor específico */
+    p[class^="nota"] {
+      background-color: aqua;
+    }
+
+    /* [atributo$="valor"] - Selecciona elementos cuyo atributo termina con un valor específico */
+    p[class$="final"] {
+      background-color: royalblue;
+    }
+
+    /* [atributo*="valor"] - Selecciona elementos cuyo atributo contiene una cadena específica */
+    p[class*="especial"] {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <nav class="menu-navegacion">
+      <a href="./../index.html" title="ir al inicio">
+        <header>
+          <h1 class="text-lg text-white font-extrabold">Semana 1</h1>
+          <h2 class="text-grey font-bold">HTML & CSS Basico</h2>
+        </header>
+      </a>
+
+      <ul>
+        <li>
+          <a href="./../paginas/pagina-clase-html.html" title="ir a la clase HTML" class="text-white font-bold">pagina
+            html</a>
+        </li>
+
+        <li>
+          <a href="./../paginas/pagina-clase-css.html" title="ir a la clase CSS" class="text-white font-bold">pagina
+            css</a>
+        </li>
+
+        <li>
+          <a href="./../paginas/pagina-ejemplos.html" title="ir a los ejemplos" class="text-white font-bold">pagina de
+            ejemplos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="seccion-ejemplos">
+      <div>¡Hola Mundo!</div>
+    </section>
+
+    <section>
+      <p title="información">Este párrafo tiene un atributo <code>title</code>.</p>
+
+      <p title="importante">Este párrafo tiene <code>title="importante"</code> y un fondo amarillo.</p>
+
+      <p class="texto destacado">Este párrafo tiene una clase con la palabra "destacado".</p>
+
+      <p class="nota-advertencia">Este párrafo tiene una clase que comienza con "nota".</p>
+
+      <p class="mensaje-final">Este párrafo tiene una clase que termina con "final".</p>
+
+      <p class="texto-especial-info">Este párrafo tiene una clase que contiene "especial".</p>
+    </section>
+
+    <section>
+      <audio controls>
+        <source src="./../utilidades/audio/marlboro. - a great day.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+    </section>
+
+    <section>
+      <video width="640" height="360" controls poster="./../utilidades/imagenes/logo-noland.png">
+        <source src="./../utilidades/video/Marlboro - A Greatf Day.mp4" type="video/mp4">
+        <source src="./../utilidades/video/Eddie Rohosy - Night fRide.webm" type="video/mp4">
+        <track src="./../utilidades/video/subtitles-es.vtt" kind="subtitles" srclang="es" label="Español">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </section>
+  </main>
+</body>
+
+</html>
