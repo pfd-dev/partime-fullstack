@@ -1,0 +1,257 @@
+<!--
+==================================================
+-------------- FORMULARIOS EN HTML ---------------
+==================================================
+
+Descripción:
+Los formularios en HTML permiten a los usuarios ingresar datos y enviarlos a un servidor
+para su procesamiento. Son esenciales en sitios web para registros, búsquedas y encuestas.
+
+Principales etiquetas de formularios:
+- <form> : Define un formulario.
+- <input> : Crea campos de entrada de datos (texto, contraseña, correo, etc.).
+- <label> : Asocia un texto descriptivo con un campo de entrada.
+- <select> : Crea un menú desplegable de opciones.
+- <option> : Define cada opción dentro de un <select>.
+- <textarea> : Campo de texto de múltiples líneas.
+- <button> : Botón para enviar o resetear un formulario.
+
+Atributos más utilizados en formularios:
+- action : Especifica la URL donde se enviarán los datos del formulario.
+- method : Define el método de envío (GET o POST).
+- name : Identifica el campo dentro del formulario.
+- placeholder : Texto guía dentro del campo de entrada.
+- required : Indica que un campo es obligatorio.
+- disabled : Deshabilita un campo para que no se pueda editar.
+- type : Especifica el tipo de <input> (text, email, password, checkbox, etc.).
+
+Otras etiquetas que dan estructura a un formulario:
+- <fieldset> : Agrupa varios elementos dentro del formulario.
+- <legend> : Proporciona una leyenda para un <fieldset>.
+- <datalist> : Crea una lista de opciones sugeridas en un campo <input>.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios HTML5</title>
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/styles.css">
+</head>
+
+<body id="PageForm">
+    <header class="navbar-header">
+        <a href="./../index.html">
+            <h1>semana 2</h1>
+        </a>
+    </header>
+
+    <main class="main-content">
+        <section class="container-content">
+            <header>
+                <h2>Formulario de Login</h2>
+            </header>
+
+            <form action="/login" method="POST">
+                <label for="F1email">Correo electrónico:</label>
+                <input type="email" id="F1email" name="email" required>
+
+                <label for="F1password">Contraseña:</label>
+                <input type="password" id="F1password" name="password" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Formulario de Contacto</h2>
+            </header>
+
+            <form action="/contacto" method="POST">
+                <label for="F2nombre">Nombre:</label>
+                <input type="text" id="F2nombre" name="nombre" required>
+
+                <label for="F2email">Correo electrónico:</label>
+                <input type="email" id="F2email" name="email" required>
+
+                <label for="F2motivo">Motivo:</label>
+                <select id="F2motivo" name="motivo" required>
+                    <option value="" disabled selected>Seleccione un motivo</option>
+                    <option value="consulta">Consulta</option>
+                    <option value="soporte">Soporte</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="F2comentario">Comentario:</label>
+                <textarea id="F2comentario" name="comentario" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Buscar Producto</h2>
+            </header>
+
+            <form action="/buscar-producto" method="GET">
+                <label for="F3nombre">Nombre del producto:</label>
+                <input type="text" id="F3nombre" name="nombre" placeholder="Ej. Laptop, Celular, Reloj">
+
+                <label for="F3estado">Estado:</label>
+                <select id="F3estado" name="estado">
+                    <option value="nuevo" selected>Nuevo</option>
+                    <option value="usado">Usado</option>
+                    <option value="reacondicionado">Reacondicionado</option>
+                </select>
+
+                <fieldset>
+                    <legend>Rango de Precio (USD)</legend>
+                    <label for="F3precio-min">Mínimo:</label>
+                    <input type="number" id="F3precio-min" name="precio-min" min="0" step="1">
+
+                    <label for="F3precio-max">Máximo:</label>
+                    <input type="number" id="F3precio-max" name="precio-max" min="0" step="1">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ubicación y Envío</legend>
+
+                    <label for="F3ubicacion">Zona de venta:</label>
+                    <input type="text" id="F3ubicacion" name="ubicacion" placeholder="Ej. Ciudad, Estado">
+
+                    <p>Envío:</p>
+
+                    <label class="F3LabelRadio">
+                        <span>Envío gratuito (Entrega en 7 días)</span>
+                        <input type="radio" name="envio" value="gratuito">
+                    </label>
+
+                    <label class="F3LabelRadio">
+                        <span>Envío con costo (Entrega en 24 horas)</span>
+                        <input type="radio" name="envio" value="pago" checked>
+                    </label>
+                </fieldset>
+
+                <label for="F3color">Color del producto:</label>
+                <input type="color" id="F3color" name="color">
+
+                <div>
+                    <button type="submit">Buscar</button>
+                    <button type="reset">Restablecer</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Organizador de Tareas</h2>
+            </header>
+
+            <form action="/agregar-tarea" method="POST">
+                <label for="F4titulo">Título de la tarea:</label>
+                <input type="text" id="F4titulo" name="titulo" placeholder="Ej. Entregar informe" required>
+
+                <label for="F4fecha-inicio">Fecha de inicio:</label>
+                <input type="date" id="F4fecha-inicio" name="fecha-inicio" required>
+
+                <label for="F4echa-limite">Fecha límite:</label>
+                <input type="date" id="F4fecha-limite" name="fecha-limite" required>
+
+                <fieldset>
+                    <legend>Prioridad</legend>
+                    <div class="radio-description">
+                        <label for="F4alta">Alta</label>
+                        <input type="radio" id="F4alta" name="prioridad" value="alta" required>
+                    </div>
+                    <div class="radio-description">
+                        <label for="F4media">Media</label>
+                        <input type="radio" id="F4media" name="prioridad" value="media" checked>
+                    </div>
+                    <div class="radio-description">
+                        <label for="F4baja">Baja</label>
+                        <input type="radio" id="F4baja" name="prioridad" value="baja">
+                    </div>
+                </fieldset>
+
+                <label for="F4estado">Estado de la tarea:</label>
+                <select id="F4estado" name="estado">
+                    <option value="pendiente" selected>Pendiente</option>
+                    <option value="en-progreso">En progreso</option>
+                    <option value="completada">Completada</option>
+                </select>
+
+                <label for="F4descripcion">Descripción:</label>
+                <textarea id="F4descripcion" name="descripcion" rows="4"
+                    placeholder="Detalles de la tarea..."></textarea>
+
+                <div>
+                    <button type="submit">Guardar tarea</button>
+                    <button type="reset">Restablecer</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Formulario de Inscripción - Gimnasio</h2>
+            </header>
+
+            <form action="/inscribirse-gimnasio" method="POST">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+
+                    <label for="F5nombre">Nombre completo:</label>
+                    <input type="text" id="F5nombre" name="nombre" required>
+
+                    <label for="F5edad">Edad:</label>
+                    <input type="number" id="F5edad" name="edad" min="16" required>
+
+                    <label for="F5genero">Género:</label>
+                    <select id="F5genero" name="genero">
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Selecciona tu actividad principal</legend>
+
+                    <label for="F5actividad">Actividad:</label>
+                    <input list="actividades" id="F5actividad" name="actividad" required>
+                    <datalist id="F5actividades">
+                        <option value="Musculación"></option>
+                        <option value="Crossfit"></option>
+                        <option value="Yoga"></option>
+                        <option value="Pilates"></option>
+                        <option value="Natación"></option>
+                        <option value="Boxeo"></option>
+                    </datalist>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Estado Físico</legend>
+
+                    <label for="F5peso">Peso (kg):</label>
+                    <input type="number" id="F5peso" name="peso" min="30" required>
+
+                    <label for="F5altura">Altura (cm):</label>
+                    <input type="number" id="F5altura" name="altura" min="100" required>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Enviar Inscripción</button>
+                    <button type="reset">Restablecer</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

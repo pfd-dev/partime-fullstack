@@ -1,0 +1,212 @@
+<!--
+==================================================
+-------------------- FLEXBOX ---------------------
+==================================================
+
+Descripción:
+Flexbox (Flexible Box) es un modelo de diseño en CSS que permite distribuir y alinear elementos
+dentro de un contenedor de manera eficiente, incluso si tienen tamaños dinámicos.
+Es ideal para crear estructuras responsivas sin necesidad de usar flotaciones o posicionamiento complejo.
+
+Propiedades principales de Flexbox:
+
+1. Contenedor flexible (display: flex;)
+- Convierte un elemento en un contenedor flexible, activando Flexbox para sus hijos.
+
+2. Eje principal y secundario (main and cross axis):
+- flex-direction: Define la dirección del eje principal (row, column, row-reverse, column-reverse).
+- flex-wrap: Controla si los elementos se ajustan en varias líneas (nowrap, wrap, wrap-reverse).
+- flex-flow: Combina flex-direction y flex-wrap.
+
+3. Distribución de elementos:
+- justify-content: Alinea elementos en el eje principal (flex-start, center, flex-end, space-between, space-around, space-evenly).
+- align-items: Alinea elementos en el eje secundario (stretch, flex-start, center, flex-end, baseline).
+- align-content: Alinea múltiples líneas en el eje secundario (stretch, center, flex-start, flex-end, space-between, space-around).
+
+4. Propiedades de los elementos flexibles:
+- order: Cambia el orden visual de los elementos.
+- flex-grow: Controla cuánto puede crecer un elemento dentro del contenedor.
+- flex-shrink: Controla cuánto puede reducirse un elemento si el espacio es limitado.
+- flex-basis: Define el tamaño inicial de un elemento antes de aplicar grow o shrink.
+- align-self: Alinea un elemento individual en el eje secundario (auto, stretch, flex-start, center, flex-end).
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Flexbox</title>
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/styles.css">
+</head>
+
+<body id="PageFlexbox">
+    <header class="navbar-header">
+        <a href="./../index.html">
+            <h1>semana 2</h1>
+        </a>
+    </header>
+
+    <main class="main-content">
+        <section class="container-content">
+            <header>
+                <h2>Estructura Básica de Flexbox</h2>
+            </header>
+
+            <p>Para activar Flexbox, se debe aplicar <code>display: flex;</code> a un contenedor. Esto hace que sus
+                hijos se distribuyan en una línea o columna flexible.</p>
+
+            <div class="flex-container">
+                <div class="item">Elemento 1</div>
+                <div class="item">Elemento 2</div>
+                <div class="item">Elemento 3</div>
+            </div>
+
+            <p>En este ejemplo, el contenedor <code>div.flex-container</code> es un contenedor flexible y sus elementos
+                internos se distribuyen en línea por defecto.</p>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Dirección del Eje Principal</h2>
+            </header>
+
+            <p>La propiedad <code>flex-direction</code> define la dirección en la que los elementos flexibles se
+                organizan dentro del contenedor.</p>
+
+            <div class="flex-direction">
+                <div class="item">Fila (row)</div>
+                <div class="item">Columna (column)</div>
+                <div class="item">Fila inversa (row-reverse)</div>
+                <div class="item">Columna inversa (column-reverse)</div>
+            </div>
+
+            <p>Valores posibles:</p>
+            <ul>
+                <li><code>row</code>: Dirección predeterminada, los elementos se organizan en una fila.</li>
+                <li><code>column</code>: Los elementos se organizan en una columna.</li>
+                <li><code>row-reverse</code>: Los elementos se organizan en fila, pero en orden inverso.</li>
+                <li><code>column-reverse</code>: Los elementos se organizan en columna, pero en orden inverso.</li>
+            </ul>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Distribución de Elementos en el Eje Principal</h2>
+            </header>
+
+            <p>La propiedad <code>justify-content</code> controla la alineación de los elementos en el eje principal del
+                contenedor.</p>
+
+            <div class="justify-content">
+                <div class="item">Inicio (flex-start)</div>
+                <div class="item">Centro (center)</div>
+                <div class="item">Final (flex-end)</div>
+                <div class="item">Espaciado entre (space-between)</div>
+                <div class="item">Espaciado alrededor (space-around)</div>
+                <div class="item">Espaciado uniforme (space-evenly)</div>
+            </div>
+
+            <p>Valores posibles:</p>
+            <ul>
+                <li><code>flex-start</code>: Los elementos se alinean al inicio del contenedor.</li>
+                <li><code>center</code>: Los elementos se alinean al centro del contenedor.</li>
+                <li><code>flex-end</code>: Los elementos se alinean al final del contenedor.</li>
+                <li><code>space-between</code>: Los elementos se distribuyen con el mayor espacio posible entre ellos.
+                </li>
+                <li><code>space-around</code>: Los elementos tienen espacio alrededor de ellos.</li>
+                <li><code>space-evenly</code>: El espacio entre todos los elementos es uniforme.</li>
+            </ul>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Alineación de Elementos en el Eje Secundario</h2>
+            </header>
+
+            <p>La propiedad <code>align-items</code> controla la alineación de los elementos en el eje secundario del
+                contenedor.</p>
+
+            <div class="align-items">
+                <div class="item">Estirar (stretch)</div>
+                <div class="item">Inicio (flex-start)</div>
+                <div class="item">Centro (center)</div>
+                <div class="item">Final (flex-end)</div>
+                <div class="item">Línea base (baseline)</div>
+            </div>
+
+            <p>Valores posibles:</p>
+            <ul>
+                <li><code>stretch</code>: Los elementos se estiran para ocupar toda la altura del contenedor.</li>
+                <li><code>flex-start</code>: Los elementos se alinean al inicio del eje secundario.</li>
+                <li><code>center</code>: Los elementos se alinean al centro del eje secundario.</li>
+                <li><code>flex-end</code>: Los elementos se alinean al final del eje secundario.</li>
+                <li><code>baseline</code>: Los elementos se alinean según su línea base de texto.</li>
+            </ul>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Distribución de Múltiples Líneas</h2>
+            </header>
+
+            <p>La propiedad <code>align-content</code> controla la distribución del espacio entre líneas cuando hay
+                varias en un contenedor flexible con <code>flex-wrap</code>.</p>
+
+            <div class="align-content">
+                <div class="item">Estirar (stretch)</div>
+                <div class="item">Inicio (flex-start)</div>
+                <div class="item">Centro (center)</div>
+                <div class="item">Final (flex-end)</div>
+                <div class="item">Espaciado entre (space-between)</div>
+                <div class="item">Espaciado alrededor (space-around)</div>
+            </div>
+
+            <p>Valores posibles:</p>
+            <ul>
+                <li><code>stretch</code>: Las líneas se estiran para ocupar todo el espacio disponible.</li>
+                <li><code>flex-start</code>: Las líneas se alinean al inicio del contenedor.</li>
+                <li><code>center</code>: Las líneas se alinean al centro del contenedor.</li>
+                <li><code>flex-end</code>: Las líneas se alinean al final del contenedor.</li>
+                <li><code>space-between</code>: Las líneas se distribuyen con el mayor espacio posible entre ellas.</li>
+                <li><code>space-around</code>: Las líneas tienen espacio alrededor de ellas.</li>
+            </ul>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Propiedades Individuales de los Elementos Flexibles</h2>
+            </header>
+
+            <p>Los elementos flexibles dentro de un contenedor pueden comportarse de manera independiente con
+                propiedades como <code>order</code>, <code>flex-grow</code>, <code>flex-shrink</code>,
+                <code>flex-basis</code> y <code>align-self</code>.
+            </p>
+
+            <div class="flex-item-properties">
+                <div class="item order">Orden (order)</div>
+                <div class="item flex-grow">Crecimiento (flex-grow)</div>
+                <div class="item flex-shrink">Encogimiento (flex-shrink)</div>
+                <div class="item flex-basis">Tamaño Base (flex-basis)</div>
+                <div class="item align-self">Alineación Individual (align-self)</div>
+            </div>
+
+            <p>Explicación de las propiedades:</p>
+            <ul>
+                <li><code>order</code>: Define el orden en que se muestran los elementos dentro del contenedor.</li>
+                <li><code>flex-grow</code>: Controla cuánto puede crecer un elemento en comparación con otros.</li>
+                <li><code>flex-shrink</code>: Determina cuánto puede reducirse un elemento si no hay suficiente espacio.
+                </li>
+                <li><code>flex-basis</code>: Especifica el tamaño inicial de un elemento antes de aplicar
+                    <code>flex-grow</code> o <code>flex-shrink</code>.
+                </li>
+                <li><code>align-self</code>: Permite alinear un solo elemento de manera diferente al resto en el eje
+                    secundario.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!--
+==================================================
+---------------- METODOLOGÍA BEM -----------------
+==================================================
+
+Descripción:
+BEM (Block, Element, Modifier) es una metodología para escribir código CSS más estructurado y reutilizable.
+Organiza los nombres de clase en bloques, elementos y modificadores, facilitando el mantenimiento del código.
+
+Estructura de BEM:
+- Bloque (block): Representa un componente independiente y reutilizable.
+- Ejemplo: .header, .nav, .banner, .services
+
+- Elemento (element): Es parte del bloque y no tiene sentido por sí solo. Se usa con __.
+- Ejemplo: .header__logo, .nav__list, .banner__title, .service__title
+
+- Modificador (modifier): Se usa para cambiar la apariencia o comportamiento de un bloque o elemento. Se usa con --.
+- Ejemplo: .button--primary, .banner__button--large
+
+Ventajas de BEM:
+- Facilita la escalabilidad y mantenimiento del código.
+- Reduce conflictos en los estilos.
+- Mejora la legibilidad y organización del CSS.
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo BEM</title>
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/styles.css">
+</head>
+
+<body id="PageCssBem">
+    <header class="header">
+        <a href="./../index.html">
+            <figure class="header__logo">Logo</figure>
+        </a>
+
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="#" class="header__nav-link">Inicio</a></li>
+                <li class="header__nav-item"><a href="#" class="header__nav-link">Servicios</a></li>
+                <li class="header__nav-item"><a href="#" class="header__nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="banner">
+            <h1 class="banner__title">Bienvenido a nuestro sitio</h1>
+            <p class="banner__description">Este es un ejemplo de estructura HTML utilizando la metodología BEM.</p>
+            <button class="banner__button">Saber más</button>
+        </section>
+
+        <section class="services">
+            <h2 class="services__title">Nuestros Servicios</h2>
+
+            <div class="services__list">
+                <div class="services__item">
+                    <div class="service">
+                        <h3 class="service__title">Servicio 1</h3>
+                        <p class="service__description">Descripción del servicio 1.</p>
+                    </div>
+                </div>
+
+                <div class="services__item">
+                    <div class="service">
+                        <h3 class="service__title">Servicio 1</h3>
+                        <p class="service__description">Descripción del servicio 1.</p>
+                    </div>
+                </div>
+
+                <div class="services__item">
+                    <div class="service">
+                        <h3 class="service__title">Servicio 1</h3>
+                        <p class="service__description">Descripción del servicio 1.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">&copy; 2025 - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!--  
+==================================================
+-------------------- CSS GRID --------------------
+==================================================
+
+Descripción:
+CSS Grid es un sistema de diseño bidimensional que permite crear diseños de página complejos
+utilizando filas y columnas. Es ideal para estructurar interfaces de manera flexible y eficiente.
+
+Propiedades principales de Grid:
+
+1. Definir un contenedor Grid (display: grid;)
+- Activa Grid en un elemento contenedor y convierte sus hijos en elementos de la cuadrícula.
+
+2. Definir filas y columnas:
+- grid-template-columns: Define el número y tamaño de las columnas.
+- grid-template-rows: Define el número y tamaño de las filas.
+- grid-auto-columns y grid-auto-rows: Define tamaños predeterminados para columnas o filas adicionales.
+- grid-template-areas: Permite nombrar áreas específicas dentro de la cuadrícula.
+
+3. Espaciado y alineación:
+- gap: Define el espacio entre filas y columnas.
+- justify-items: Alinea los elementos dentro de sus celdas en el eje horizontal.
+- align-items: Alinea los elementos dentro de sus celdas en el eje vertical.
+- place-items: Combinación de justify-items y align-items.
+- justify-content: Alinea todo el grid dentro del contenedor en el eje horizontal.
+- align-content: Alinea todo el grid dentro del contenedor en el eje vertical.
+
+4. Ubicación de los elementos en la cuadrícula:
+- grid-column-start y grid-column-end: Controlan en qué columnas comienza y termina un elemento.
+- grid-row-start y grid-row-end: Controlan en qué filas comienza y termina un elemento.
+- grid-area: Permite asignar un elemento a un área específica definida en grid-template-areas.
+
+5. Propiedades de los elementos dentro del Grid:
+- order: Cambia el orden visual de los elementos dentro del Grid.
+- grid-auto-flow: Controla si los elementos se colocan en filas o columnas automáticamente (row, column, dense).
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Grid</title>
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/styles.css">
+</head>
+
+<body id="PageGrid">
+    <header class="navbar-header">
+        <a href="./../index.html">
+            <h1>semana 2</h1>
+        </a>
+    </header>
+
+    <main class="main-content">
+        <section class="container-content">
+            <header>
+                <h2>Ejemplo de Contenedor Grid</h2>
+            </header>
+
+            <p>Este es un ejemplo básico de cómo definir un contenedor Grid en CSS.</p>
+
+            <div class="grid-container">
+                <div class="item">Elemento 1</div>
+                <div class="item">Elemento 2</div>
+                <div class="item">Elemento 3</div>
+                <div class="item">Elemento 4</div>
+            </div>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Definir Filas y Columnas en Grid</h2>
+            </header>
+
+            <p>En este ejemplo, se define una cuadrícula con columnas y filas de distintos tamaños.</p>
+
+            <div class="grid-layout">
+                <div class="item">Elemento 1</div>
+                <div class="item">Elemento 2</div>
+                <div class="item">Elemento 3</div>
+                <div class="item">Elemento 4</div>
+                <div class="item">Elemento 5</div>
+                <div class="item">Elemento 6</div>
+            </div>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Ubicación de Elementos en la Cuadrícula</h2>
+            </header>
+
+            <p>Este ejemplo muestra cómo posicionar elementos dentro de la cuadrícula usando <code>grid-column</code> y
+                <code>grid-row</code>.
+            </p>
+
+            <div class="grid-placement">
+                <div class="item item-1">Elemento 1</div>
+                <div class="item item-2">Elemento 2</div>
+                <div class="item item-3">Elemento 3</div>
+                <div class="item item-4">Elemento 4</div>
+            </div>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Alineación y Espaciado en CSS Grid</h2>
+            </header>
+
+            <p>Este ejemplo muestra cómo alinear los elementos dentro de la cuadrícula utilizando propiedades como
+                <code>justify-items</code>, <code>align-items</code>, <code>justify-content</code> y
+                <code>align-content</code>.
+            </p>
+
+            <div class="grid-alignment">
+                <div class="item">Elemento 1</div>
+                <div class="item">Elemento 2</div>
+                <div class="item">Elemento 3</div>
+                <div class="item">Elemento 4</div>
+                <div class="item">Elemento 5</div>
+                <div class="item">Elemento 6</div>
+            </div>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Uso de Áreas en CSS Grid</h2>
+            </header>
+
+            <p>Este ejemplo muestra cómo definir y utilizar áreas en CSS Grid con la propiedad
+                <code>grid-template-areas</code>.
+            </p>
+
+            <div class="grid-areas">
+                <div class="item header">Encabezado</div>
+                <div class="item sidebar">Barra lateral</div>
+                <div class="item content">Contenido principal</div>
+                <div class="item footer">Pie de página</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<!--  
+==================================================
+----------------- TABLAS EN HTML -----------------
+==================================================
+
+Descripción:
+Las tablas en HTML se utilizan para organizar y mostrar datos en filas y columnas.
+Son útiles para representar información estructurada, como calendarios, listados y reportes.
+
+Principales etiquetas de tablas:
+- <table> : Define una tabla.
+- <tr> : Representa una fila en la tabla.
+- <th> : Define una celda de encabezado.
+- <td> : Representa una celda de datos.
+- <caption> : Agrega un título o descripción a la tabla.
+
+Propiedades CSS más utilizadas en tablas:
+- border : Define el grosor y estilo del borde de la tabla.
+- border-collapse : Controla la separación de los bordes.
+
+Otras etiquetas que dan estructura a una tabla:
+- <thead> : Agrupa las filas de encabezado de la tabla.
+- <tbody> : Agrupa el cuerpo principal de la tabla.
+- <tfoot> : Define la sección del pie de tabla.
+- <colgroup> : Define un grupo de columnas con estilos específicos.
+- <col> : Especifica atributos de formato para una columna en una tabla.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas HTML5</title>
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/styles.css">
+</head>
+
+<body id="PageTable">
+    <header class="navbar-header">
+        <a href="./../index.html">
+            <h1>semana 2</h1>
+        </a>
+    </header>
+
+    <main class="main-content">
+        <section class="container-content">
+            <header>
+                <h2>Lenguajes para Desarrolladores Web</h2>
+            </header>
+
+            <table>
+                <caption>Lista de lenguajes populares en el desarrollo web</caption>
+                <tr>
+                    <th>Lenguaje</th>
+                    <th>Tipo</th>
+                    <th>Uso Principal</th>
+                    <th>Año de Creación</th>
+                </tr>
+                <tr>
+                    <td>HTML</td>
+                    <td>Markup</td>
+                    <td>Estructura de páginas web</td>
+                    <td>1993</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Stylesheet</td>
+                    <td>Diseño y apariencia</td>
+                    <td>1996</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Lenguaje de programación</td>
+                    <td>Interactividad en la web</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>PHP</td>
+                    <td>Lenguaje de programación</td>
+                    <td>Back-end</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Lenguaje de programación</td>
+                    <td>Back-end y análisis de datos</td>
+                    <td>1991</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>Lenguaje de programación</td>
+                    <td>Aplicaciones web y móviles</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>TypeScript</td>
+                    <td>Superset de JavaScript</td>
+                    <td>Aplicaciones web escalables</td>
+                    <td>2012</td>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td>Lenguaje de consulta</td>
+                    <td>Gestión de bases de datos</td>
+                    <td>1974</td>
+                </tr>
+                <tr>
+                    <td>C#</td>
+                    <td>Lenguaje de programación</td>
+                    <td>Aplicaciones web y backend con .NET</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>MongoDB</td>
+                    <td>Base de datos NoSQL</td>
+                    <td>Almacenamiento de datos en documentos JSON</td>
+                    <td>2009</td>
+                </tr>
+                <tr>
+                    <td>Node.js</td>
+                    <td>Entorno de ejecución</td>
+                    <td>Aplicaciones web en el lado del servidor</td>
+                    <td>2009</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Frameworks y Tecnologías para Desarrollo Web</h2>
+            </header>
+
+            <table>
+                <caption>Comparación de Frameworks y Tecnologías Web</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Categoría</th>
+                        <th rowspan="2">Tecnología</th>
+                        <th colspan="2">Características</th>
+                        <th rowspan="2">Año de Lanzamiento</th>
+                    </tr>
+                    <tr>
+                        <th>Lenguaje Base</th>
+                        <th>Uso Principal</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td rowspan="3">Front-end</td>
+                        <td>React</td>
+                        <td>JavaScript</td>
+                        <td>Componentes reutilizables</td>
+                        <td>2013</td>
+                    </tr>
+                    <tr>
+                        <td>Vue.js</td>
+                        <td>JavaScript</td>
+                        <td>Ligero y progresivo</td>
+                        <td>2014</td>
+                    </tr>
+                    <tr>
+                        <td>Angular</td>
+                        <td>TypeScript</td>
+                        <td>Arquitectura basada en módulos</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Back-end</td>
+                        <td>Express.js</td>
+                        <td>JavaScript (Node.js)</td>
+                        <td>Minimalista y flexible</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td>Django</td>
+                        <td>Python</td>
+                        <td>Seguridad y rapidez</td>
+                        <td>2005</td>
+                    </tr>
+                    <tr>
+                        <td>Spring Boot</td>
+                        <td>Java</td>
+                        <td>Desarrollo empresarial</td>
+                        <td>2014</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Bases de Datos</td>
+                        <td>MySQL</td>
+                        <td>SQL</td>
+                        <td>Relacional y escalable</td>
+                        <td>1995</td>
+                    </tr>
+                    <tr>
+                        <td>MongoDB</td>
+                        <td>NoSQL</td>
+                        <td>Basado en documentos</td>
+                        <td>2009</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="text-align:center; font-weight:bold;">Las tecnologías mencionadas son
+                            fundamentales para el desarrollo web moderno.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="container-content">
+            <header>
+                <h2>Compatibilidad de Tecnologías Web en Navegadores</h2>
+            </header>
+
+            <table>
+                <caption>Comparación del soporte de tecnologías web en navegadores</caption>
+
+                <colgroup>
+                    <col style="background-color: #ccc">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th>Tecnología</th>
+                        <th>Google Chrome</th>
+                        <th>Mozilla Firefox</th>
+                        <th>Microsoft Edge</th>
+                        <th>Safari</th>
+                        <th>Opera</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>HTML5</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>CSS3</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript ES6</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>WebAssembly</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>WebSockets</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>PWA (Progressive Web Apps)</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>⚠️ (Limitado)</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>Service Workers</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>⚠️ (Parcial)</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>IndexedDB</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>Shadow DOM</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="6">✅ Compatible | ❌ No soportado | ⚠️ Soporte limitado</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
