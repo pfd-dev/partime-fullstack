@@ -11,24 +11,94 @@ Principales etiquetas de formularios:
 - <form> : Define un formulario.
 - <input> : Crea campos de entrada de datos (texto, contraseña, correo, etc.).
 - <label> : Asocia un texto descriptivo con un campo de entrada.
-- <select> : Crea un menú desplegable de opciones.
-- <option> : Define cada opción dentro de un <select>.
-- <textarea> : Campo de texto de múltiples líneas.
 - <button> : Botón para enviar o resetear un formulario.
 
-Atributos más utilizados en formularios:
-- action : Especifica la URL donde se enviarán los datos del formulario.
-- method : Define el método de envío (GET o POST).
-- name : Identifica el campo dentro del formulario.
-- placeholder : Texto guía dentro del campo de entrada.
-- required : Indica que un campo es obligatorio.
-- disabled : Deshabilita un campo para que no se pueda editar.
-- type : Especifica el tipo de <input> (text, email, password, checkbox, etc.).
+Botones en formularios:
+- <input type="button">: Crea un botón sin funcionalidad predeterminada. Se usa con JavaScript.
+- <input type="submit">: Envía el formulario al servidor.
+- <input type="reset">: Restablece todos los campos del formulario a su valor inicial.
 
-Otras etiquetas que dan estructura a un formulario:
-- <fieldset> : Agrupa varios elementos dentro del formulario.
-- <legend> : Proporciona una leyenda para un <fieldset>.
-- <datalist> : Crea una lista de opciones sugeridas en un campo <input>.
+- <button>: Botón versátil que puede contener texto, imágenes o íconos. Su atributo "type" puede ser:
+    - button: No tiene acción por defecto, ideal para usar con JavaScript.
+    - reset: Equivalente a <input type="reset">.
+    - submit: Equivalente a <input type="submit">.
+
+Campos de fecha y hora:
+- date: Selección de fecha (YYYY-MM-DD).
+- datetime: Obsoleto, no se debe usar.
+- datetime-local: Fecha y hora sin zona horaria (revisar compatibilidad con navegadores).
+- time: Entrada de hora en formato HH:MM.
+- month: Selección de mes y año.
+- week: Selección de una semana específica del año.
+
+Modifican el teclado en dispositivos móviles:
+- email: Muestra un teclado con "@" y "." accesibles.
+- url: Teclado con "/" y ".com" optimizado para direcciones web.
+- search: Puede mostrar un botón "Buscar" en lugar de "Enter" en algunos navegadores móviles.
+- tel: Teclado numérico con símbolos adicionales como "+", "*", y "#".
+- number: Teclado solo numérico, útil para cantidades.
+
+Campos de entrada general:
+- text: Entrada de texto estándar.
+- textarea: Entrada para la edición de texto mutilínea sin formato.
+- password: Oculta el texto ingresado, útil para contraseñas.
+- color: Selector de color.
+- range: Barra deslizante para valores dentro de un rango (usa min, max y step).
+- number: Entrada numérica con controles de incremento/decremento.
+- file: Permite seleccionar archivos para subir (puede aceptar múltiples archivos con "multiple").
+- image: Botón de envío con imagen en lugar de un botón estándar.
+- hidden: Campo invisible que puede contener datos.
+
+Inputs de selección:
+- select: Menú desplegable con opciones definidas mediante <option>.
+- datalist: Lista de sugerencias para un <input>, como autocompletar.
+- checkbox: Casilla de verificación, permite múltiples selecciones. Se recomienda usar con <label>.
+- radio: Permite elegir solo una opción dentro de un grupo con el mismo "name". Se recomienda usar con <label>.
+
+Elementos adicionales útiles en formularios:
+- <fieldset>: Agrupa campos relacionados dentro del formulario.
+- <legend>: Proporciona un título descriptivo para un <fieldset>.
+
+Consejos:
+- Usa <label> con checkbox y radio para mejorar accesibilidad.
+- Evita usar <input type="datetime"> ya que está obsoleto.
+- Prefiere <button> en lugar de <input type="button"> si necesitas agregar contenido dentro del botón.
+
+Atributos comunes en etiquetas de formulario:
+- text → (id, name, placeholder, maxlength, minlength, required)
+- password → (id, name, placeholder, maxlength, minlength, required)
+- email → (id, name, placeholder, required, pattern)
+- tel → (id, name, placeholder, pattern, minlength, maxlength, required)
+- number → (id, name, min, max, step, required)
+- range → (id, name, min, max, step, value)
+- url → (id, name, placeholder, required, pattern)
+- search → (id, name, placeholder, required)
+- date → (id, name, min, max, required)
+- datetime-local → (id, name, min, max, required)
+- time → (id, name, min, max, step, required)
+- month → (id, name, min, max, required)
+- week → (id, name, min, max, required)
+- color → (id, name, value)
+- file → (id, name, accept, multiple, required)
+- checkbox → (id, name, value, checked, required)
+- radio → (id, name, value, checked, required)
+- select → (id, name, required, multiple)
+- datalist → (id)
+- textarea → (id, name, rows, cols, maxlength, minlength, placeholder, required)
+- button → (id, type, disabled)
+- submit → (id, value, disabled)
+- reset → (id, value, disabled)
+- image → (id, src, alt, width, height)
+- hidden → (id, name, value)
+
+Notas:
+- "required" obliga a que el campo no esté vacío.
+- "pattern" permite definir una expresión regular para validar la entrada.
+- "maxlength" y "minlength" definen la cantidad máxima y mínima de caracteres permitidos.
+- "min" y "max" establecen valores mínimo y máximo para números, fechas y rangos.
+- "step" define los intervalos en los que se puede incrementar un valor.
+- "checked" hace que checkbox o radio aparezcan seleccionados por defecto.
+- "multiple" permite seleccionar varios archivos en <input type="file"> y varias opciones en <select>.
 -->
 
 <!DOCTYPE html>
@@ -50,6 +120,74 @@ Otras etiquetas que dan estructura a un formulario:
     </header>
 
     <main class="main-content">
+        <section class="container-content">
+            <form action="./page-demo-form-data.php" method="post">
+                <fieldset>
+                    <legend>Campos de Fecha y Hora</legend>
+                    <input type="date" name="fecha">
+                    <input type="datetime-local" name="fecha-hora">
+                    <input type="time" name="hora">
+                    <input type="month" name="mes">
+                    <input type="week" name="semana">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Teclado Optimizado</legend>
+                    <input type="email" placeholder="Correo">
+                    <input type="url" placeholder="Sitio web">
+                    <input type="search" placeholder="Buscar">
+                    <input type="tel" placeholder="Teléfono">
+                    <input type="number" placeholder="Número">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Campos de Entrada General</legend>
+                    <input type="text" placeholder="Texto">
+                    <input type="password" placeholder="Contraseña">
+                    <input type="color" value="#ff0000">
+                    <input type="range" min="0" max="100" step="10">
+                    <input type="number" min="1" max="10">
+                    <input type="file" multiple>
+                    <input type="image" src="boton.png" alt="Enviar">
+                    <input type="hidden" name="oculto" value="valor-secreto">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Inputs de Selección</legend>
+                    <select>
+                        <option value="opcion1">Opción 1</option>
+                        <option value="opcion2">Opción 2</option>
+                    </select>
+                    <input list="sugerencias">
+                    <datalist id="sugerencias">
+                        <option value="Sugerencia 1">
+                        <option value="Sugerencia 2">
+                    </datalist>
+                    <label><input type="checkbox" checked> Acepto términos</label>
+                    <label><input type="radio" name="grupo" value="1" checked> Opción 1</label>
+                    <label><input type="radio" name="grupo" value="2"> Opción 2</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Botones</legend>
+
+                    <fieldset>
+                        <legend>Botones input</legend>
+                        <input disabled type="button" value="Botón sin acción">
+                        <input disabled type="submit" value="Enviar">
+                        <input disabled type="reset" value="Restablecer">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Botones comunes</legend>
+                        <button type="button">Botón con contenido</button>
+                        <button type="reset">Restablecer</button>
+                        <button type="submit">Enviar</button>
+                    </fieldset>
+                </fieldset>
+            </form>
+        </section>
+
         <section class="container-content">
             <header>
                 <h2>Formulario de Login</h2>
