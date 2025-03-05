@@ -1,5 +1,75 @@
+<!--
+==================================================
+------------ RESPONSIVE WEB DESIGN ---------------
+==================================================
+
+* Descripción:
+El Responsive Web Design es una técnica de diseño web que permite que una página 
+se adapte a diferentes tamaños de pantalla y dispositivos, mejorando la experiencia del usuario.
+
+* Media Queries:
+Son los estilos a aplicar según el tamaño de la pantalla o el dispositivo.
+
+* Breakpoints (puntos de quiebre):
+Son valores específicos de ancho de pantalla donde se aplican cambios en el diseño.
+
+* Breakpoints recomendados:
+- Móviles pequeños (Extra Small - XS)
+    . Rango: 0px - 480px
+    . Dispositivos: Teléfonos pequeños.
+    . Ajustes: Menús hamburguesa, tipografía más grande, botones accesibles.
+
+- Móviles medianos y grandes (Small - SM)
+    . Rango: 481px - 768px
+    . Dispositivos: Smartphones estándar.
+    . Ajustes: Columnas apiladas, imágenes flexibles, ajustar márgenes laterales.
+
+- Tablets (Medium - MD)
+    . Rango: 769px - 1024px
+    . Dispositivos: tablets, pantallas en posición vertical.
+    . Ajustes: Distribución en 2 columnas, navegación visible, mayor espacio en contenido.
+
+- Laptops y monitores pequeños (Large - LG)
+    . Rango: 1025px - 1440px
+    . Dispositivos: Laptops estándar, monitores de oficina.
+    . Ajustes: Layouts en varias columnas, contenedores centrados con `max-width`.
+
+- Monitores grandes y televisores (Extra Large - XL)
+    . Rango: 1441px en adelante
+    . Dispositivos: Monitores grandes, televisores Smart TV.
+    . Ajustes: Contenido con `max-width`, aumento del tamaño de imágenes y elementos.
+
+* Ejemplo de media queries recomendadas:
+/* Móviles pequeños */
+@media (max-width: 480px) { ... }
+
+/* Móviles grandes */
+@media (min-width: 481px) and (max-width: 768px) { ... }
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) { ... }
+
+/* Laptops y monitores pequeños */
+@media (min-width: 1025px) and (max-width: 1440px) { ... }
+
+/* Monitores grandes y TV */
+@media (min-width: 1441px) { ... }
+
+====================================================================================================
+
+* Diseño responsivo en landcape
+- El modo landscape (horizontal) ocurre cuando el ancho de la pantalla es mayor que su altura.  
+- Es común en tablets, smartphones girados y monitores ultrapanorámicos.  
+- Es importante adaptar el diseño para evitar desbordamientos o elementos mal posicionados.
+- orientation: landscape; Media Query para detectar landscape.
+
+/* aplicar estilos cuando el dispositivo está en modo horizontal */
+   @media (orientation: landscape) { ... }
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +77,22 @@
 
     <style>
         main {
-            padding: 1rem;
-            background-color: blue;
-            text-align: center;
+            background-color: black;
             color: white;
-        }
+            padding: 1rem;
+            height: 100vh;
 
-        /* @media (min-width: 500px) {
-            main {
-                background-color: green;
+            h1 {
+                text-align: center;
             }
         }
-
-        @media (min-width: 769px) {
-            main {
-                background-color: orange;
-            }
-        }
-
-        @media (min-width: 1025px) {
-            main {
-                background-color: red;
-            }
-        } */
     </style>
 </head>
 
 <body>
     <main>
-        <h1>hola</h1>
+        <h1>Responsive Web Design</h1>
     </main>
 </body>
+
 </html>
