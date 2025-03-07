@@ -1,0 +1,11 @@
+.text-grey {
+    color: gray;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}

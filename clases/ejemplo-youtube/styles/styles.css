@@ -1,0 +1,160 @@
+body {
+    background-color: #0f0f0f;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* ==================================================
+ ===================== CABECERA =====================
+ ================================================== */
+.cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
+
+.cabecera div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cabecera .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cabecera .icono-menu-cerrar {
+    display: none;
+}
+
+/* ==================================================
+CONTENEDOR DIVISOR DE .menu-lateral-izquierdo Y .contenido-principal
+================================================== */
+
+.contenedor-divisor {
+    display: flex;
+    height: calc(100vh - 3rem);
+}
+
+/* ==================================================
+============== MENU LATERAL IZQUIERDO ==============
+================================================== */
+
+#MenuInputCheckbox {
+    display: none;
+}
+
+#MenuInputCheckbox:checked~.menu-lateral-izquierdo {
+    width: 25%;
+}
+
+.menu-lateral-izquierdo nav {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.menu-lateral-izquierdo nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.menu-lateral-izquierdo nav ul li:hover {
+    background-color: grey;
+}
+
+.menu-lateral-izquierdo nav ul li a {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#MenuInputCheckbox:checked~.menu-lateral-izquierdo nav ul li a {
+    flex-direction: row;
+    gap: 1rem;
+    padding: .5rem 1rem;
+}
+
+.menu-lateral-izquierdo .extra-links {
+    display: none;
+}
+
+#MenuInputCheckbox:checked~.menu-lateral-izquierdo .extra-links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==================================================
+================ CONTENIDO PRINCIPAL ================
+================================================== */
+
+.contenido-principal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.tarjeta-video>figure {
+    height: 15rem;
+}
+
+.tarjeta-video>figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.tarjeta-video section {
+    display: flex;
+    align-items: center;
+    padding: .5rem 0;
+    gap: 1rem;
+}
+
+.tarjeta-video section figure {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.tarjeta-video section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ==================================================
+==================== MEDIA QUERY ====================
+================================================== */
+
+@media (max-width: 700px) {
+
+    /* ==================================================
+    ===================== CABECERA =====================
+    ================================================== */
+    #MenuInputCheckbox:checked~.menu-lateral-izquierdo {
+        display: flex;
+    }
+
+    /* ==================================================
+    ================ CONTENIDO PRINCIPAL ================
+    ================================================== */
+    .contenido-principal {
+        grid-template-columns: 1fr;
+    }
+
+    /* ==================================================
+    ============== MENU LATERAL IZQUIERDO ==============
+    ================================================== */
+    .menu-lateral-izquierdo {
+        display: none;
+    }
+}
