@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
-<body>
+<body id="BODY">
     <header class="cabecera">
         <div>
             <label class="boton-menu" for="MenuInputCheckbox">
@@ -58,7 +58,32 @@
             <button>buscar</button>
         </form>
 
-        <span>perfil</span>
+        <button id="btnCambiarTema">oscuro</button>
+
+        <section id="boton-perfil">
+            <span>perfil</span>
+
+            <div id="venta-modal-perfil" class="d-none">
+                <header>
+                    titulo de la ventana modal
+                </header>
+
+                <section>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eum fuga tempore rerum,
+                        perferendis quo nam quis aut voluptatibus itaque illo consequatur expedita quod aspernatur quam
+                        inventore doloribus minima ipsam?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eum fuga tempore rerum,
+                        perferendis quo nam quis aut voluptatibus itaque illo consequatur expedita quod aspernatur quam
+                        inventore doloribus minima ipsam?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eum fuga tempore rerum,
+                        perferendis quo nam quis aut voluptatibus itaque illo consequatur expedita quod aspernatur quam
+                        inventore doloribus minima ipsam?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eum fuga tempore rerum,
+                        perferendis quo nam quis aut voluptatibus itaque illo consequatur expedita quod aspernatur quam
+                        inventore doloribus minima ipsam?</p>
+                </section>
+            </div>
+        </section>
     </header>
 
     <section class="contenedor-divisor">
@@ -181,6 +206,26 @@
             </article>
         </main>
     </section>
+
+    <script>
+        const botonPerfil = document.getElementById("boton-perfil");
+
+        const ventaModalPerfil = document.getElementById("venta-modal-perfil");
+
+        botonPerfil.addEventListener('click', () => {
+            // ventaModalPerfil.style.display = "block"
+            ventaModalPerfil.classList.toggle('d-none');
+        })
+
+        /*=====================================*/
+
+        const cuerpo = document.getElementById("BODY");
+        const btnCambiarTema = document.getElementById("btnCambiarTema");
+
+        btnCambiarTema.addEventListener('click', () => {
+            cuerpo.classList.toggle('dark');
+        })
+    </script>
 </body>
 
 </html>

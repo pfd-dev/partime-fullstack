@@ -1,8 +1,17 @@
+:root {
+    --negro: #000;
+    --blanco: #fff;
+}
+
 body {
-    background-color: #0f0f0f;
-    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+body.dark {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
 
 /* ==================================================
  ===================== CABECERA =====================
@@ -11,10 +20,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem 1rem;
+    padding: var(--botonXS) var(--botonMD);
 }
 
-.cabecera div {
+.cabecera > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +39,22 @@ body {
 
 .cabecera .icono-menu-cerrar {
     display: none;
+}
+
+.cabecera #boton-perfil {
+    position: relative;
+}
+
+.cabecera #boton-perfil #venta-modal-perfil {
+    background-color: #333;
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    right: 10px;
+    overflow-y: auto;
 }
 
 /* ==================================================

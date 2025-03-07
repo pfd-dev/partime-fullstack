@@ -9,3 +9,7 @@
 .d-grid {
     display: grid;
 }
+
+.d-none {
+    display: none;
+}
