@@ -1,0 +1,110 @@
+<!--
+==================================================
+------------ POSICIONAMIENTO EN CSS --------------
+==================================================
+
+Descripción:
+El posicionamiento en CSS permite controlar cómo se ubican los elementos en la página.
+Cada elemento tiene un flujo de diseño natural, pero con CSS podemos modificarlo usando la propiedad "position".
+
+Propiedades de posicionamiento:
+
+1. static (Estático - por defecto):
+- Es el valor predeterminado de todos los elementos.
+- Sigue el flujo normal del documento, sin permitir ajustes mediante "top", "right", "bottom" o "left".
+
+2. relative (Relativo):
+- Posiciona el elemento en relación con su posición original en el flujo normal.
+- Conservara sus medidas y espacio reservado.
+- Se puede mover usando "top", "right", "bottom" y "left" sin afectar a otros elementos.
+
+3. absolute (Absoluto):
+- Elimina el elemento del flujo normal del documento.
+- Se posiciona en relación con su primer ancestro con "position: relative", o con el <html> si no hay ancestros con "position" establecida.
+- Puede superponerse a otros elementos.
+- Ejemplo común: Menús desplegables o elementos flotantes.
+
+4. fixed (Fijo):
+- Similar a "absolute", pero siempre permanece en la misma posición incluso al hacer scroll.
+- Se posiciona en relación con la ventana del navegador (viewport).
+- Útil para barras de navegación fijas, botones flotantes o avisos emergentes.
+
+5. sticky (Pegajoso):
+- Combinación de "relative" y "fixed".
+- Se comporta como "relative" hasta que el usuario hace scroll y se alcanza un umbral definido con "top", "left", etc.
+- Al llegar a ese punto, se comporta como "fixed".
+- Ejemplo común: Menús de navegación que permanecen visibles al hacer scroll.
+
+PROPIEDADES RELACIONADAS: 
+* top, right, bottom, left:
+- Controlan la distancia de un elemento respecto a su referencia de posicionamiento.
+- Solo funcionan con "relative", "absolute", "fixed" y "sticky".
+
+* z-index:
+- Define la superposición de elementos en el eje Z (profundidad).
+- Los valores más altos se colocan por encima de los valores más bajos.
+- Elementos con "position: static" no pueden usar "z-index".
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento HTML5</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: crimson;
+            height: 100vh;
+            outline: 5px solid darkred;
+        }
+
+        section {
+            background: white;
+            border: 5px solid grey;
+            /* display: flex; */
+        }
+
+        .contenedor {
+            height: 100px;
+            width: 100px;
+            color: white;
+
+        }
+
+        .contenedor1 {
+            background-color: green;
+        }
+
+        .contenedor2 {
+            background-color: blue;
+            position: absolute;
+            right: 100px;
+        }
+
+        .contenedor3 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="contenedor contenedor1">contenedor 1</div>
+        </section>
+
+        <div class="contenedor contenedor2">contenedor 2</div>
+        <div class="contenedor contenedor3">contenedor 2</div>
+    </main>
+</body>
+
+</html>
