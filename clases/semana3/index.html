@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Semana 3</title>
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/global-styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body class="body_container bg-grandient-1">
+    <nav class="navbar_container">
+        <header>
+            <a href="">
+                <h1>nombre pagina</h1>
+            </a>
+        </header>
+
+        <div>
+            <ul>
+                <li>
+                    <a href="">link</a>
+                </li>
+                <li>
+                    <a href="">link</a>
+                </li>
+                <li>
+                    <a href="">link</a>
+                </li>
+            </ul>
+
+            <button id="BtnOptions" class="btn-small">⚙️</button>
+        </div>
+
+        <section id="Modal" class="modal">
+            <button id="BtnThemeMode" class="btn-small">Tema Oscuro</button>
+
+            <select id="BtnThemeSelector">
+                <option value="bg-grandient-1">Gradiente 1</option>
+                <option value="bg-grandient-2">Gradiente 2</option>
+                <option value="bg-grandient-3">Gradiente 3</option>
+            </select>
+        </section>
+    </nav>
+
+    <main class="main_container">
+        <header>
+            <h2>titulo seccion</h2>
+        </header>
+
+        <section>
+            <a href="">
+                <article class="card">
+                    <h3>titulo contenido</h3>
+                    <h4>subtitulo</h4>
+
+                    <figure>
+                        <img src="https://picsum.photos/300/300" alt="">
+                    </figure>
+
+                    <div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt assumenda sapiente aliquid
+                            deleniti ipsum explicabo animi vitae nemo rerum facere! Totam molestias sequi expedita natus
+                            ullam
+                            doloribus ea quidem a.</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt assumenda sapiente aliquid
+                            deleniti ipsum explicabo animi vitae nemo rerum facere! Totam molestias sequi expedita natus
+                            ullam
+                            doloribus ea quidem a.</p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="">
+                <article class="card">
+                    <h3>titulo contenido</h3>
+                    <h4>subtitulo</h4>
+
+                    <figure>
+                        <img src="https://picsum.photos/300/400" alt="">
+                    </figure>
+
+                    <div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt assumenda sapiente aliquid
+                            deleniti ipsum explicabo animi vitae nemo rerum facere! Totam molestias sequi expedita natus
+                            ullam
+                            doloribus ea quidem a.</p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="">
+                <article class="card">
+                    <h3>titulo contenido</h3>
+                    <h4>subtitulo</h4>
+
+                    <figure>
+                        <img src="https://picsum.photos/400/300" alt="">
+                    </figure>
+
+                    <div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt assumenda sapiente aliquid
+                            deleniti ipsum explicabo animi vitae nemo rerum facere! Totam molestias sequi expedita natus
+                            ullam
+                            doloribus ea quidem a.</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt assumenda sapiente aliquid
+                            deleniti ipsum explicabo animi vitae nemo rerum facere! Totam molestias sequi expedita natus
+                            ullam
+                            doloribus ea quidem a.</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt assumenda sapiente aliquid
+                            deleniti ipsum explicabo animi vitae nemo rerum facere! Totam molestias sequi expedita natus
+                            ullam
+                            doloribus ea quidem a.</p>
+                    </div>
+                </article>
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer_container">
+        <section>
+            <header>
+                <h2>Contacto</h2>
+            </header>
+
+            <ul>
+                <li>
+                    <a href="#">a@a.com</a>
+                </li>
+                <li>
+                    <a href="#">a@a.com</a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <header>
+                <h2>Contacto</h2>
+            </header>
+
+            <ul>
+                <li>
+                    <a href="#">a@a.com</a>
+                </li>
+                <li>
+                    <a href="#">a@a.com</a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+
+    <script>
+        const btnOptions = document.getElementById('BtnOptions');
+        const modalWindow = document.getElementById('Modal');
+
+        btnOptions.addEventListener('click', () => {
+            modalWindow.classList.toggle('show')
+        })
+
+        /* ================================================== */
+
+        const btnThemeMode = document.getElementById('BtnThemeMode');
+
+        btnThemeMode.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+
+            if (document.body.classList.contains('dark')) {
+                BtnThemeMode.textContent = 'Tema Claro';
+            } else {
+                BtnThemeMode.textContent = 'Tema Oscuro';
+            }
+        })
+
+
+        const btnThemeSelector = document.getElementById('BtnThemeSelector');
+
+        btnThemeSelector.addEventListener('change', () => {
+            document.body.classList.remove('bg-grandient-1', 'bg-grandient-2', 'bg-grandient-3');
+            document.body.classList.add(btnThemeSelector.value);
+        });
+    </script>
+</body>
+
+</html>

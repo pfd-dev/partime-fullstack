@@ -1,0 +1,103 @@
+@import url("./root.css");
+
+.bg-grandient-1 {
+    background-image: linear-gradient(200deg, lightcoral, crimson);
+    background-attachment: fixed;
+}
+
+.bg-grandient-2 {
+    background-image: linear-gradient(200deg, lightslategrey, purple);
+    background-attachment: fixed;
+}
+
+.bg-grandient-3 {
+    background-image: linear-gradient(200deg, lightgreen, yellowgreen);
+    background-attachment: fixed;
+}
+
+.btn-small {
+    padding: var(--size-xs);
+    border-radius: var(--size-sm);
+}
+
+.card {
+    background-color: var(--color-light);
+    border-radius: var(--size-xs);
+    box-shadow: 0 0 0 .1em var(--color-dark);
+    min-height: 8em;
+    padding: var(--size-sm);
+    transition: all .3s ease-in-out;
+    display: grid;
+    gap: var(--size-xs);
+
+    h3 {
+        text-transform: capitalize;
+    }
+
+    h4 {
+        color: grey;
+    }
+
+    figure {
+        background-color: var(--color-dark);
+        border-radius: var(--size-xs);
+        height: 14em;
+        outline: 2px solid var(--color-dark);
+        overflow: hidden;
+
+        img {
+            filter: grayscale();
+            height: 100%;
+            object-fit: cover;
+            transition: 1s ease;
+            width: 100%;
+        }
+    }
+
+    div {
+        height: 8em;
+        overflow-y: auto;
+    }
+}
+
+.card:hover {
+    background-color: var(--color-white);
+    box-shadow: .0 .0 .5em .1em var(--color-black);
+
+    img {
+        filter: none;
+    }
+}
+
+.dark .card {
+    background-color: var(--color-black);
+    box-shadow: 0 0 0 .1em var(--color-light);
+
+    figure {
+        background-color: var(--color-light);
+        outline-color: var(--color-light);
+    }
+}
+
+.dark .card:hover {
+    background-color: var(--color-dark);
+    box-shadow: 0 0 .5em .1em var(--color-white);
+}
+
+.modal {
+    background-color: var(--color-black);
+    border-radius: var(--size-sm);
+    width: 16em;
+    height: 16em;
+    padding: var(--size-sm);
+    outline: 2px solid var(--color-light);
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 3%;
+    display: none;
+}
+
+.modal.show {
+    display: block;
+}
