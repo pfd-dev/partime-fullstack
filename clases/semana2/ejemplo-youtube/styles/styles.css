@@ -23,7 +23,7 @@ body.dark {
     padding: var(--botonXS) var(--botonMD);
 }
 
-.cabecera > div {
+.cabecera>div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,6 +64,7 @@ CONTENEDOR DIVISOR DE .menu-lateral-izquierdo Y .contenido-principal
 .contenedor-divisor {
     display: flex;
     height: calc(100vh - 3rem);
+    position: relative;
 }
 
 /* ==================================================
@@ -74,8 +75,16 @@ CONTENEDOR DIVISOR DE .menu-lateral-izquierdo Y .contenido-principal
     display: none;
 }
 
+.menu-lateral-izquierdo {
+    position: absolute;
+    background-color: red;
+    width: 10em;
+    left: -12em;
+    transition: 2s;
+}
+
 #MenuInputCheckbox:checked~.menu-lateral-izquierdo {
-    width: 25%;
+    left: 0;
 }
 
 .menu-lateral-izquierdo nav {
@@ -95,20 +104,18 @@ CONTENEDOR DIVISOR DE .menu-lateral-izquierdo Y .contenido-principal
 }
 
 .menu-lateral-izquierdo nav ul li a {
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #MenuInputCheckbox:checked~.menu-lateral-izquierdo nav ul li a {
-    flex-direction: row;
+    /* flex-direction: row; */
     gap: 1rem;
-    padding: .5rem 1rem;
 }
 
 .menu-lateral-izquierdo .extra-links {
-    display: none;
+    /* display: none; */
 }
 
 #MenuInputCheckbox:checked~.menu-lateral-izquierdo .extra-links {
@@ -180,6 +187,6 @@ CONTENEDOR DIVISOR DE .menu-lateral-izquierdo Y .contenido-principal
     ============== MENU LATERAL IZQUIERDO ==============
     ================================================== */
     .menu-lateral-izquierdo {
-        display: none;
+        /* display: none; */
     }
 }

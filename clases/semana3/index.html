@@ -1,3 +1,53 @@
+<!--
+==================================================
+-------------------- FAVICONS --------------------
+==================================================
+
+Descripción:
+Los favicons (favorecidos) son pequeños íconos gráficos que aparecen en las pestañas del navegador, 
+marcadores y accesos directos, ayudando a los usuarios a identificar y acceder rápidamente a su página web.
+
+nombre-imagen.ico
+
+Extensiones recomendadas para favicons:
+- .ico (Formato clásico y más compatible)
+- .png (Alta calidad y transparencia)
+- .svg (Escalable y adaptable)
+- .gif (Soporte para animaciones)
+- .jpg/.jpeg (Fotografías y gráficos complejos)
+- .webp (Compresión eficiente y soporte moderno)
+
+Tamaños recomendados para favicons:
+- 16x16 píxeles (Tamaño clásico de pestañas de navegador)
+- 32x32 píxeles (Para dispositivos de mayor resolución)
+- 48x48 píxeles (Accesos directos y favoritos en algunos sistemas)
+- 64x64 píxeles (Accesos directos y favoritos)
+- 128x128 píxeles (Íconos de aplicaciones web instalables)
+
+Etiquetas <link> para cada extensión:
+
+1. Icono clásico (ICO):
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+2. Icono en PNG:
+<link rel="icon" href="favicon.png" type="image/png">
+
+3. Icono en SVG:
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+4. Icono en GIF:
+<link rel="icon" href="favicon.gif" type="image/gif">
+
+5. Icono en JPG/JPEG:
+<link rel="icon" href="favicon.jpg" type="image/jpeg">
+
+6. Icono en WebP:
+<link rel="icon" href="favicon.webp" type="image/webp">
+
+También puedes definir múltiples tamaños para un solo ícono .ico:
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128" type="image/x-icon">
+-->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,7 +65,7 @@
 <body class="body_container bg-grandient-1">
     <nav class="navbar_container">
         <header>
-            <a href="">
+            <a href="#">
                 <h1>nombre pagina</h1>
             </a>
         </header>
@@ -23,13 +73,13 @@
         <div>
             <ul>
                 <li>
-                    <a href="">link</a>
+                    <a href="#">link</a>
                 </li>
                 <li>
-                    <a href="">link</a>
+                    <a href="#">link</a>
                 </li>
                 <li>
-                    <a href="">link</a>
+                    <a href="#">link</a>
                 </li>
             </ul>
 
@@ -53,7 +103,7 @@
         </header>
 
         <section>
-            <a href="">
+            <a href="#">
                 <article class="card">
                     <h3>titulo contenido</h3>
                     <h4>subtitulo</h4>
@@ -75,7 +125,7 @@
                 </article>
             </a>
 
-            <a href="">
+            <a href="#">
                 <article class="card">
                     <h3>titulo contenido</h3>
                     <h4>subtitulo</h4>
@@ -93,7 +143,7 @@
                 </article>
             </a>
 
-            <a href="">
+            <a href="#">
                 <article class="card">
                     <h3>titulo contenido</h3>
                     <h4>subtitulo</h4>
@@ -137,7 +187,7 @@
             </ul>
         </section>
 
-        <section>
+        <section class="modal show">
             <header>
                 <h2>Contacto</h2>
             </header>

@@ -1,0 +1,29 @@
+.contenedor-articulo-noticia {
+    background-color: grey;
+    padding: .5em;
+    display: flex;
+
+    .foto-articulo-noticia {
+        height: 8em;
+        width: 30em;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    section {
+        header {
+            display: flex;
+            justify-content: space-between;
+
+            div:nth-child(2) {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .contenedor-comentario {}
+    }
+}

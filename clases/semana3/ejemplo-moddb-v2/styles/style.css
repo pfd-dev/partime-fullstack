@@ -1,0 +1,146 @@
+body {
+    padding: 0 5em;
+    background-color: black;
+}
+
+.cabecera {
+    background-image: url('./../assets/bg_header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+    form {
+        align-self: start;
+        padding: .5em;
+        color: white;
+        background-color: #541610;
+        display: flex;
+        margin-left: 2em;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .menu-navegacion-principal {
+        display: flex;
+        align-items: end;
+        padding: 0 1em;
+        justify-content: space-between;
+
+        span {
+            background-color: #dd8088;
+            border-top: 5px solid white;
+            border-right: 5px solid white;
+            border-left: 5px solid white;
+            padding: .3em;
+            color: white;
+        }
+
+        span:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+
+    .menu-navegacion-secundario {
+        display: flex;
+        background-color: black;
+        color: white;
+
+        a {
+            width: 100%;
+            text-align: center;
+            /* border-right: 1px solid white; */
+            padding: .2em 0;
+            color: white;
+        }
+
+        a:nth-last-child(1) {
+            border-right: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .sub-links {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            border-right: 1px solid white;
+
+            ul {
+                display: none;
+                top: 100%;
+                left: -10%;
+                width: 10em;
+                position: absolute;
+                flex-direction: column;
+                gap: .1em;
+
+                li {
+                    background-color: black;
+                    padding: 1em;
+                    outline: 1px solid white;
+                    text-align: center;
+                }
+            }
+        }
+
+        .sub-links:hover {
+            ul {
+                display: flex;
+            }
+        }
+    }
+}
+
+.contenedor-principal {
+    background-image: url('./../assets/bg_page_new.png');
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+
+    main {
+        width: 70vw;
+
+        a:nth-child(even) .tarjeta-noticia {
+            background-color: white;
+        }
+
+        .tarjeta-noticia {
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5em;
+            padding: .5em;
+
+            >figure {
+                width: 30em;
+            }
+
+            section {
+                header {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .cabecera-info {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    aside {
+        background-color: green;
+        width: 30vw;
+    }
+}

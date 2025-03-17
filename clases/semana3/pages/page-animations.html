@@ -1,0 +1,103 @@
+<!--
+==================================================
+---------------- TRANSFORMACIONES ----------------
+==================================================
+
+Descripción:
+Las transformaciones permiten modificar la posición, rotación, tamaño y perspectiva de los elementos.
+
+Propiedades de animación:
+translate(X, Y) -> Mueve el elemento en el eje X e Y.
+- transform: translate(50px, 100px);
+
+rotate(angulo) -> Rota el elemento en sentido horario o antihorario.
+- transform: rotate(45deg);
+
+scale(X, Y) -> Escala el tamaño del elemento (X horizontal, Y vertical).
+- transform: scale(1.5, 0.5);
+
+skew(X, Y) -> Inclina el elemento en los ejes X e Y.
+- transform: skew(20deg, 10deg);
+
+==================================================
+------------------ TRANSICIONES ------------------
+==================================================
+
+Descripción:
+Las transiciones en CSS permiten animar cambios en las propiedades de un elemento, 
+suavizando la transformación en lugar de aplicar el cambio de manera instantánea.
+
+Sintaxis básica:
+   transition: propiedad duración función_de_tiempo retraso;
+
+Parámetros:
+- propiedad -> La propiedad CSS que se animará (ej: opacity, background-color, transform).
+- duración -> Tiempo que tarda la transición (ej: 0.5s, 200ms).
+- función_de_tiempo -> Controla la aceleración (ej: ease, linear, ease-in-out).
+- retraso -> Tiempo antes de iniciar la transición.
+
+==================================================
+------------------ ANIMACIONES -------------------
+==================================================
+
+Descripción:
+Las animaciones en CSS permiten crear efectos visuales complejos mediante la 
+declaración de una secuencia de cambios en las propiedades de un elemento.
+
+Sintaxis básica:
+   animation: nombre_dela_animación duración función_de_tiempo retraso iteraciones dirección;
+
+Propiedades de animación:
+- animation-name -> Nombre de la animación (`@keyframes` definido).
+- animation-duration -> Duración de la animación (ej: 2s, 500ms).
+- animation-timing-function -> Tipo de aceleración (ease, linear, ease-in, etc.).
+- animation-delay -> Retraso antes de iniciar la animxdación.
+- animation-iteration-count -> Veces que se repite la animación (infinite, 1, 3, etc.).
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: '';
+        }
+
+        .caja-prueba {
+            width: 50px;
+            background-color: red;
+            animation: moverCaja 5s ease-in 0s infinite;
+        }
+
+        @keyframes moverCaja {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(100%);
+                border-radius: 50%;
+                background-color: gold;
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caja-prueba">caja</div>
+</body>
+
+</html>
