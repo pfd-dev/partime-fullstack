@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+
+    tr {
+        font-weight: normal;
+    }
+
+    th,
+    tr {
+        border: 1px solid black;
+    }
+}
+
+label {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+hr {
+    border: 1px solid black;
+    width: 100%;
+}
+
+details {
+    summary {
+        cursor: pointer;
+        display: flex;
+    }
+}
