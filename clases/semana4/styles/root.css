@@ -8,6 +8,9 @@
     --color-light: #DDD;
     --color-dark: #222;
 
+    --color-primary: darkblue;
+    --color-secondary: greenyellow;
+
     --color-success: #28a745;
     --color-warning: #ffc107;
     --color-error: #dc3545;

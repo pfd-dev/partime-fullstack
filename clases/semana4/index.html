@@ -1,85 +1,3 @@
-<!--
-===========================================
-=============== JavaScript ================
-===========================================
-
-Descripción:
-JavaScript es un lenguaje de programación de alto nivel, dinámico y multiparadigma. Se utiliza principalmente para el desarrollo web, permitiendo crear sitios interactivos y dinámicos. Es un lenguaje basado en prototipos, orientado a eventos y con soporte para programación funcional y orientada a objetos.
-
-Historia:
-JavaScript se creo en 1995 por Netscape. Fue nombrado como JavaScript para aprovechar la popularidad de Java en ese momento. Con el tiempo, se convirtió en un estándar bajo el nombre de ECMAScript.
-
-Versiones del estándar ECMAScript:
-JavaScript sigue las especificaciones de ECMAScript (ES). Algunas versiones clave son:
-- ES1 (1997) - Primera versión estándar.
-- ES3 (1999) - Introdujo mejoras como el manejo de excepciones.
-- ES5 (2009) - Agregó `strict mode`, JSON y otros métodos nativos.
-- ES6 (2015) - Introdujo `let`, `const`, `arrow functions`, `classes` y `promises`.
-- ES7 (2016) en adelante - Mejoras incrementales cada año con nuevas funciones como `async/await` (ES8) y `optional chaining` (ES11).
-
-JavaScript se ejecuta en el navegador mediante el motor de JavaScript del propio navegador (como V8 en Chrome o SpiderMonkey en Firefox). También puede ejecutarse en el servidor con entornos como Node.js.
-
-Características principales:
-- Lenguaje interpretado: No necesita compilación previa.
-- Basado en eventos: Puede responder a acciones del usuario como clics o movimientos del ratón.
-- Multiparadigma: Soporta programación funcional, orientada a objetos y basada en eventos.
-- Dinámico y débilmente tipado: No es necesario definir tipos de variables explícitamente.
-- Ejecutado en el cliente: Reduce la carga en el servidor y mejora la experiencia del usuario.
-- Compatible con HTML y CSS: Se usa junto con estos lenguajes para crear aplicaciones web interactivas.
-- Gran ecosistema: Posee una comunidad activa y numerosas bibliotecas y frameworks (React, Angular, Vue, etc.).
-
-Uso de JavaScript:
-- Desarrollo web frontend (manipulación del DOM, eventos, animaciones).
-- Desarrollo backend con Node.js (servidores, APIs REST).
-- Aplicaciones móviles con frameworks como React Native.
-- Desarrollo de videojuegos con librerías como three.js.
-- Automatización y desarrollo de herramientas mediante scripts.
-
-==================================================
-
-VARIABLES: se utilizan variables para almacenar información.
-Las variables pueden contener diferentes tipos de datos, como números, cadenas de texto y booleanos.
-
-- var: Variable de ámbito global o de función. Puede ser redeclarada y reasignada.
-- let: Variable de ámbito de bloque. Puede ser reasignada, pero no redeclarada en el mismo ámbito.IF user = returning
-    PRINT "¡Bienvenido de nuevo!"
-- const: Variable de ámbito de bloque. No puede ser reasignada ni redeclarada.
-
-Ejemplos:
-var nombre = "Juan";  // Se puede reasignar y redeclarar
-let edad = 25;        // Se puede reasignar pero no redeclarar
-const pais = "México"; // No se puede reasignar ni redeclarar
-
-TIPOS DE DATOS:
-
-Number: Representa valores numéricos, enteros o decimales.
-Ejemplo: let numero = 42;
-
-String: Representa texto, debe ir entre comillas (simples o dobles).
-Ejemplo: let saludo = "Hola, mundo!";
-
-Boolean: Solo puede tener dos valores: true (verdadero) o false (falso).
-Ejemplo: let esMayor = true;
-
-Undefined: Una variable declarada pero sin valor asignado.
-Ejemplo: let sinValor;
-
-Null: Representa la ausencia intencional de valor.
-Ejemplo: let vacio = null;
-
-Array: Estructura de datos que almacena múltiples valores en una lista ordenada.
-Ejemplo: let frutas = ["Manzana", "Pera", "Plátano"];
-
-Object: Estructura de datos que almacena pares clave-valor.
-Ejemplo:
-let persona = {
-    nombre: "Diego",
-    edad: 30,
-    ciudad: "Madrid"
-};
-
--->
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -98,7 +16,10 @@ let persona = {
             <h1>Semana4</h1>
         </header>
 
-        <button id="BtnChangeTheme" onclick="changeTheme();">cambiar tema</button>
+        <div>
+            <a href="./pages/ejemplos.html">ejemplos</a>
+            <button id="BtnChangeTheme" onclick="changeTheme();">cambiar tema</button>
+        </div>
     </nav>
 
     <main class="mainContainer">
@@ -616,7 +537,7 @@ let persona = {
 
             <details>
                 <summary>
-                    <h3>Selección de Elementos </h3>
+                    <h3>Selección de Elementos del DOM</h3>
                 </summary>
                 <article>
                     <p>
@@ -681,7 +602,7 @@ let persona = {
 
             <hr>
 
-            <details>
+            <details open>
                 <summary>
                     <h3>Modificación del contenido en el DOM</h3>
                 </summary>
@@ -801,6 +722,8 @@ if (condición1) {
                         toma de decisiones dentro de un programa en JavaScript.</p>
                 </article>
             </details>
+
+            <hr>
         </section>
     </main>
 

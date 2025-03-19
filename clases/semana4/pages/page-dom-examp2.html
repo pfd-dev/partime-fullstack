@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div id="miElemento1">Texto elemento 1</div>
+
+    <div id="miElemento2">Texto elemento 2</div>
+
+    <div id="miElemento3">Texto elemento 3</div>
+
+    <script>
+        const elemento1 = document.getElementById("miElemento1");
+        console.log(elemento1.textContent);
+        // elemento1.textContent = "<strong>Texto modificado elemento 1 con textContent</strong>";
+        // console.log(elemento1.textContent);
+    </script>
+
+    <script>
+        const elemento2 = document.getElementById("miElemento2");
+        console.log(elemento2.innerHTML);
+        // elemento2.innerHTML = "<strong>Texto modificado elemento 2 con innerHTML</strong>";
+        // console.log(elemento2.innerHTML);
+    </script>
+
+    <script>
+        const elemento3 = document.getElementById("miElemento3");
+        console.log(elemento3.innerText);
+        // elemento3.innerText = "<strong>Texto modificado elemento 3 con innerText</strong>";
+        // console.log(elemento3.innerText);
+    </script>
+</body>
+
+</html>

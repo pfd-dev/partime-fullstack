@@ -13,8 +13,12 @@
     color: var(--color-white);
 }
 
+hr {
+    border-color: var(--color-primary);
+}
+
 .dark hr {
-    border-color: greenyellow;
+    border-color: var(--color-secondary);
 }
 
 /* ==================================================

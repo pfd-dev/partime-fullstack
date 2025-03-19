@@ -109,9 +109,14 @@
     list-style: disc;
     padding: .5em 2em;
     margin: 1em 0;
-    outline: 3px solid var(--color-dark);
+    outline: 3px solid var(--color-primary);
 
     strong {
         text-decoration: underline;
     }
 }
+
+.dark .list {
+    outline-color: var(--color-secondary);
+}
+

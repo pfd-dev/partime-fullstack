@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div id="miElemento">Hola, mundo</div>
+
+    <div class="miClase">Elemento 1</div>
+    <div class="miClase bg-red">Elemento 2</div>
+    <div class="miClase bg-blue">Elemento 3
+        <ul>
+            <li>item de lista 1</li>
+            <li>item de lista 2</li>
+        </ul>
+    </div>
+
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+
+    <script>
+        // selector de id =============================================
+        const elemento = document.getElementById("miElemento");
+        console.log(elemento)
+
+        // selector de clases =============================================
+        const elementos = document.getElementsByClassName("miClase");
+        console.log(elementos)
+
+        // selector de etiquetas =============================================
+        const parrafos = document.getElementsByTagName("p");
+        console.log(parrafos)
+
+        // selector de etiquetas =============================================
+        const elementoQuery = document.querySelector(".miClase");
+        console.log(elementoQuery)
+
+        // selector de etiquetas =============================================
+        const elementoQuerys = document.querySelectorAll(".miClase");
+        console.log(elementoQuerys)
+
+        const elementoAnidado = document.querySelector(".miClase ul li");
+        console.log(elementoAnidado);
+    </script>
+</body>
+
+</html>
