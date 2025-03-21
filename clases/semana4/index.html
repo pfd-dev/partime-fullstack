@@ -17,7 +17,8 @@
         </header>
 
         <div>
-            <a href="./pages/ejemplos.html">ejemplos</a>
+            <a href="./ejercicios/" target="_blank">ejercicios</a>
+            <a href="./pages/" target="_blank">paginas</a>
             <button id="BtnChangeTheme" onclick="changeTheme();">cambiar tema</button>
         </div>
     </nav>
@@ -602,7 +603,7 @@
 
             <hr>
 
-            <details open>
+            <details>
                 <summary>
                     <h3>Modificación del contenido en el DOM</h3>
                 </summary>
@@ -654,7 +655,7 @@
 
             <details>
                 <summary>
-                    <h3>Estructuras de Control: `if`, `if else` y `else if`</h3>
+                    <h3>Estructuras de Control: `if`, `if else` y `else`</h3>
                 </summary>
                 <article>
                     <p>
@@ -720,6 +721,323 @@ if (condición1) {
 
                     <p>Las estructuras <code>if</code>, <code>else if</code> y <code>else</code> son fundamentales en la
                         toma de decisiones dentro de un programa en JavaScript.</p>
+                </article>
+            </details>
+
+            <hr>
+
+            <details>
+                <summary>
+                    <h3>Estructura de Control: switch</h3>
+                </summary>
+                <article>
+                    <p>
+                        En JavaScript, la sentencia <code>switch</code> se usa para tomar decisiones basadas en el valor
+                        de una expresión.
+                        En lugar de evaluar múltiples condiciones con <code>if else</code>, el <code>switch</code>
+                        compara un valor con diferentes
+                        casos y ejecuta el código correspondiente.
+                    </p>
+
+                    <h4>1. Sintaxis de <code>switch</code></h4>
+                    <p><strong>Ejemplo de uso:</strong></p>
+                    <pre><code>
+            switch (expresión) {
+                case valor1:
+                    // Código a ejecutar si expresión === valor1
+                    break;
+                case valor2:
+                    // Código a ejecutar si expresión === valor2
+                    break;
+                default:
+                    // Código a ejecutar si ningún caso coincide
+            }
+                    </code></pre>
+
+                    <h4>2. Funcionamiento</h4>
+                    <ul>
+                        <li>La expresión dentro de <code>switch</code> se evalúa y se compara con los valores de cada
+                            <code>case</code>.</li>
+                        <li>Si hay una coincidencia, se ejecuta el código del caso correspondiente.</li>
+                        <li>La sentencia <code>break</code> evita que la ejecución continúe en los siguientes casos.
+                        </li>
+                        <li>El bloque <code>default</code> es opcional y se ejecuta si no hay coincidencias.</li>
+                    </ul>
+
+                    <h4>3. Ejemplo Práctico</h4>
+                    <pre><code>
+            let dia = "lunes";
+            
+            switch (dia) {
+                case "lunes":
+                    console.log("Inicio de semana.");
+                    break;
+                case "viernes":
+                    console.log("Fin de semana cerca.");
+                    break;
+                case "sábado":
+                case "domingo":
+                    console.log("Es fin de semana.");
+                    break;
+                default:
+                    console.log("Día no reconocido.");
+            }
+                    </code></pre>
+
+                    <h4>4. Consideraciones Importantes</h4>
+                    <ul>
+                        <li>El uso de <code>break</code> es importante para evitar la ejecución de múltiples casos.</li>
+                        <li>Si dos casos deben ejecutar el mismo código, pueden agruparse sin <code>break</code> entre
+                            ellos.</li>
+                        <li>El <code>switch</code> solo compara valores con <code>===</code> (estrictamente iguales).
+                        </li>
+                        <li>Para condiciones más complejas, <code>if else</code> puede ser una mejor opción.</li>
+                    </ul>
+
+                    <p>El uso de <code>switch</code> ayuda a organizar el código y mejorar la legibilidad cuando hay
+                        múltiples comparaciones posibles.</p>
+                </article>
+            </details>
+
+            <hr>
+
+            <details>
+                <summary>
+                    <h3>Bucle for</h3>
+                </summary>
+                <article>
+                    <p>
+                        El bucle <code>for</code> es una estructura de control en JavaScript que permite ejecutar un
+                        bloque de código
+                        un número determinado de veces. Se compone de tres partes: inicialización, condición y
+                        actualización.
+                    </p>
+
+                    <h4>1. Sintaxis del bucle <code>for</code></h4>
+                    <p>El bucle <code>for</code> sigue la siguiente estructura:</p>
+                    <pre><code>
+for (inicialización; condición; actualización) {
+// Código a ejecutar en cada iteración
+}
+                    </code></pre>
+
+                    <h4>2. Explicación de los parámetros</h4>
+                    <ul>
+                        <li><strong>Inicialización:</strong> Se ejecuta una sola vez antes de que el bucle comience.
+                            Generalmente, se usa para declarar e inicializar una variable de control.</li>
+                        <li><strong>Condición:</strong> Se evalúa antes de cada iteración. Si es <code>true</code>, el
+                            bloque de código se ejecuta; si es <code>false</code>, el bucle termina.</li>
+                        <li><strong>Actualización:</strong> Se ejecuta al final de cada iteración y generalmente se usa
+                            para modificar la variable de control.</li>
+                    </ul>
+
+                    <h4>3. Ejemplo de uso</h4>
+                    <p>Este ejemplo muestra un bucle <code>for</code> que imprime los números del 1 al 5 en la consola:
+                    </p>
+                    <pre><code>
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+                    </code></pre>
+
+                    <h4>4. Consideraciones</h4>
+                    <ul>
+                        <li>Si la condición nunca se cumple, el bucle no se ejecuta.</li>
+                        <li>Si no hay una actualización correcta de la variable de control, el bucle puede volverse
+                            infinito.</li>
+                        <li>Se puede usar la palabra clave <code>break</code> para salir del bucle antes de que la
+                            condición sea falsa.</li>
+                        <li>La palabra clave <code>continue</code> permite saltar una iteración sin salir del bucle.
+                        </li>
+                    </ul>
+
+                    <h4>5. Uso de <code>break</code> y <code>continue</code></h4>
+                    <p>Ejemplo con <code>break</code>: el bucle se detiene cuando <code>i</code> vale 3.</p>
+                    <pre><code>
+for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+        break; // Sale del bucle cuando i es 3
+    }
+    console.log(i);
+}
+                    </code></pre>
+
+                    <p>Ejemplo con <code>continue</code>: la iteración se salta cuando <code>i</code> es 3.</p>
+                    <pre><code>
+for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+        continue; // Salta la iteración cuando i es 3
+    }
+    console.log(i);
+}
+            </code></pre>
+
+                    <p>El bucle <code>for</code> es una herramienta esencial en JavaScript para recorrer estructuras
+                        como arrays, listas y ejecutar tareas repetitivas de manera controlada.</p>
+                </article>
+            </details>
+
+            <hr>
+
+            <details>
+                <summary>
+                    <h3>Bucle while</h3>
+                </summary>
+
+                <article>
+                    <p>
+                        El bucle <code>while</code> es una estructura de control que ejecuta un bloque de código
+                        mientras una condición especificada sea <code>true</code>. A diferencia del bucle
+                        <code>for</code>,
+                        no requiere una inicialización ni una actualización dentro de su estructura.
+                    </p>
+
+                    <h4>1. Sintaxis del bucle <code>while</code></h4>
+                    <p>La estructura básica del bucle <code>while</code> es la siguiente:</p>
+                    <pre><code>
+while (condición) {
+    // Código a ejecutar mientras la condición sea verdadera
+}
+                    </code></pre>
+
+                    <h4>2. Funcionamiento</h4>
+                    <ul>
+                        <li>Primero, se evalúa la <strong>condición</strong>.</li>
+                        <li>Si la condición es <code>true</code>, el bloque de código se ejecuta.</li>
+                        <li>Después de ejecutar el código, la condición se vuelve a evaluar.</li>
+                        <li>El proceso se repite hasta que la condición se vuelva <code>false</code>.</li>
+                    </ul>
+
+                    <h4>3. Ejemplo de uso</h4>
+                    <p>Este ejemplo usa un bucle <code>while</code> para imprimir los números del 1 al 5 en la consola:
+                    </p>
+                    <pre><code>
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++; // Se incrementa la variable de control
+}
+                    </code></pre>
+                    <h4>4. Peligro de bucles infinitos</h4>
+                    <p>Si la condición nunca se vuelve <code>false</code>, el bucle <code>while</code> se ejecutará
+                        indefinidamente.</p>
+                    <pre><code>
+    // ❌ Esto causará un bucle infinito, ya que la condición siempre es verdadera
+    while (true) {
+        console.log("Esto nunca terminará");
+    }
+                    </code></pre>
+                    <h4>5. Uso de <code>break</code> y <code>continue</code></h4>
+                    <p>Se puede usar <code>break</code> para salir del bucle antes de que la condición sea falsa.</p>
+                    <pre><code>
+let i = 1;
+while (i <= 5) {
+    if (i === 3) {
+        break; // Sale del bucle cuando i es 3
+    }
+    console.log(i);
+    i++;
+}
+                    </code></pre>
+
+                    <p>También se puede usar <code>continue</code> para saltar una iteración.</p>
+                    <pre><code>
+let i = 0;
+while (i < 5) {
+    i++;
+    if (i === 3) {
+        continue; // Salta la iteración cuando i es 3
+    }
+    console.log(i);
+}
+                </code></pre>
+
+                    <p>El bucle <code>while</code> es útil cuando no se conoce de antemano cuántas veces se ejecutará el
+                        código, como en validaciones o lecturas de datos dinámicos.</p>
+                </article>
+            </details>
+
+            <hr>
+
+            <details>
+                <summary>
+                    <h3>Arrays en JavaScript</h3>
+                </summary>
+                <article>
+                    <p>
+                        Un <strong>array</strong> en JavaScript es una estructura de datos que permite almacenar
+                        múltiples valores en una sola variable.
+                        Los arrays pueden contener cualquier tipo de dato, incluidos números, strings, booleanos,
+                        objetos e incluso otros arrays.
+                    </p>
+
+                    <h4>1. Crear un Array</h4>
+                    <p>Se pueden crear arrays de diferentes formas:</p>
+                    <pre><code>
+// Usando corchetes []
+let frutas = ["Manzana", "Banana", "Cereza"];
+
+// Usando el constructor Array()
+let numeros = new Array(1, 2, 3, 4, 5);
+                    </code></pre>
+
+                    <h4>2. Acceder a Elementos de un Array</h4>
+                    <p>Para acceder a los elementos de un array, se usa un índice (que empieza en 0).</p>
+                    <pre><code>
+let colores = ["Rojo", "Verde", "Azul"];
+console.log(colores[0]); // "Rojo"
+console.log(colores[2]); // "Azul"
+                    </code></pre>
+
+                    <h4>3. Modificar Elementos</h4>
+                    <p>Los elementos de un array pueden modificarse accediendo a su índice.</p>
+                    <pre><code>
+let numeros = [10, 20, 30];
+numeros[1] = 25; 
+console.log(numeros); // [10, 25, 30]
+                    </code></pre>
+
+                    <h4>4. Métodos Comunes de los Arrays</h4>
+                    <p>JavaScript proporciona varios métodos para manipular arrays:</p>
+                    <ul>
+                        <li><code>push()</code>: Agrega un elemento al final.</li>
+                        <li><code>pop()</code>: Elimina el último elemento.</li>
+                        <li><code>shift()</code>: Elimina el primer elemento.</li>
+                        <li><code>unshift()</code>: Agrega un elemento al inicio.</li>
+                        <li><code>splice()</code>: Agrega o elimina elementos en una posición específica.</li>
+                        <li><code>slice()</code>: Extrae una porción del array sin modificarlo.</li>
+                        <li><code>indexOf()</code>: Busca la posición de un elemento.</li>
+                        <li><code>includes()</code>: Verifica si un elemento está en el array.</li>
+                    </ul>
+
+                    <h4>5. Recorrer un Array</h4>
+                    <p>Se pueden recorrer los arrays usando bucles:</p>
+                    <pre><code>
+let numeros = [1, 2, 3, 4, 5];
+
+// Usando for clásico
+for (let i = 0; i < numeros.length; i++) {
+    console.log(numeros[i]);
+}
+
+// Usando forEach()
+numeros.forEach(num => console.log(num));
+                    </code></pre>
+
+                    <h4>6. Arrays Multidimensionales</h4>
+                    <p>Un array puede contener otros arrays, creando una estructura de múltiples dimensiones.</p>
+                    <pre><code>
+let matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+console.log(matriz[1][2]); // 6
+                    </code></pre>
+
+                    <p>Los arrays son una estructura fundamental en JavaScript y se usan en una gran variedad de
+                        aplicaciones.</p>
                 </article>
             </details>
 

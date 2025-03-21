@@ -1,0 +1,47 @@
+<!--
+Calcular el área de un triángulo:
+Crea un programa que solicite al usuario la base y la altura de un triángulo mediante prompt(), y luego calcule y muestre el área del triángulo en el documento.
+
+Fórmula del área de un triángulo:
+Área = (base x altura) / 2
+​
+Requisitos:
+- Utilizar prompt() para pedir los valores al usuario.
+- Convertir los valores ingresados a números.
+- Calcular el área usando la fórmula matemática.
+- Mostrar el resultado en la página web.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Área del triángulo</title>
+</head>
+
+<body>
+    <p><strong>Base:</strong><span  id="usuarioBase">0</span></p>
+    <p><strong>Altura:</strong><span id="usuarioAltura">0</span></p>
+    <p><strong>Área del triángulo:</strong> <span id="resultado">0</span></p>
+
+    <script>
+        let base = prompt("Ingrese la base del triángulo (metros):");
+        let altura = prompt("Ingrese la altura del triángulo (metros):");
+
+        base = parseFloat(base);
+        altura = parseFloat(altura);
+
+        if (isNaN(base) || isNaN(altura) || base <= 0 || altura <= 0) {
+            document.getElementById("resultado").innerHTML = "<strong>Error:</strong> Por favor, ingrese valores numéricos positivos.";
+        } else {
+            let area = (base * altura) / 2;
+            document.getElementById("usuarioBase").innerHTML = base + 'metros';
+            document.getElementById("usuarioAltura").innerHTML = altura;
+            document.getElementById("resultado").innerHTML = area;
+        }
+    </script>
+</body>
+
+</html>

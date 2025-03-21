@@ -1,0 +1,51 @@
+<!-- USAR BUCLE FOR
+Ejercicio: Contador de Números Pares e Impares
+Crea un programa que solicite al usuario un número entero positivo y luego cuente cuántos números pares e impares hay desde el 1 hasta el número ingresado.
+
+- Pedir un número al usuario con prompt().
+- Convertir el valor ingresado a número y validar que sea positivo.
+- Usar un for para recorrer los números desde 1 hasta el número ingresado.
+- Contar cuántos son pares y cuántos son impares usando if.
+- Mostrar el resultado en la página web.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Pares e Impares</title>
+</head>
+
+<body>
+    <h2>Contador de Números Pares e Impares</h2>
+    <p><strong>Número ingresado:</strong> <span id="numero"></span></p>
+    <p><strong>Cantidad de números pares:</strong> <span id="pares"></span></p>
+    <p><strong>Cantidad de números impares:</strong> <span id="impares"></span></p>
+
+    <script>
+        let numero = parseInt(prompt("Ingrese un número entero positivo:"));
+        let pares = 0;
+        let impares = 0;
+
+        if (!isNaN(numero) && numero > 0) {
+            document.getElementById("numero").innerText = numero;
+
+            for (let i = 1; i <= numero; i++) {
+                if (i % 2 === 0) {
+                    pares++;
+                } else {
+                    impares++;
+                }
+            }
+
+            document.getElementById("pares").innerText = pares;
+            document.getElementById("impares").innerText = impares;
+        } else {
+            document.body.innerHTML += '<p style="color: red;">Error: Ingrese un número entero positivo válido.</p>';
+        }
+    </script>
+</body>
+
+</html>

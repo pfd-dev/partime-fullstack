@@ -1,0 +1,46 @@
+<!--  USAR BUCLE FOR
+Ejercicio: Tabla de Multiplicar Interactiva.
+Crea un programa que solicite al usuario un número.
+Muestre en pantalla una tabla o lista del numero ingresado multiplicado del 1 al 10.
+
+Requisitos:
+- Pedir un número con prompt().
+- Convertir el valor ingresado a número.
+- Validar que el usuario haya ingresado un número válido.
+- Usar un for para calcular y mostrar la tabla de multiplicar del 1 al 10 del número ingresado.
+- Mostrar el resultado en la página web.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+</head>
+
+<body>
+    <h2>Tabla de Multiplicar</h2>
+    <p><strong>Número elegido:</strong> <span id="numero"></span></p>
+    <ul id="lista"></ul>
+
+    <script>
+        let numero = parseInt(prompt("Ingrese un número para ver su tabla de multiplicar:"));
+
+        if (!isNaN(numero)) {
+            document.getElementById("numero").innerText = numero;
+
+            let tablaHTML = "";
+            for (let i = 1; i <= 10; i++) {
+                tablaHTML += `<li>${numero} x ${i} = ${numero * i}</li>`;
+            }
+
+            document.getElementById("lista").innerHTML = tablaHTML;
+        } else {
+            document.getElementById("lista").innerHTML = '<span style="color: red;">Error: Ingrese un número válido.</span>';
+        }
+    </script>
+</body>
+
+</html>

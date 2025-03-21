@@ -1,0 +1,84 @@
+<!--
+Ejercicio: Guardia de Seguridad en la Discoteca
+Crea un programa en JavaScript que simule el trabajo de un guardia de seguridad en la entrada de una discoteca. El programa debe solicitar información al usuario mediante prompt() y aplicar estructuras de control if para determinar si puede entrar.
+
+Requisitos del programa:
+
+Preguntar el género de la persona:
+Opciones: "hombre", "mujer", "otros".
+
+Preguntar la edad:
+Si es hombre, debe tener al menos 17 años para entrar.
+Si es mujer u otros, deben tener al menos 16 años para entrar.
+
+Si la edad no es suficiente, preguntar cuánto dinero tiene:
+Si la persona no cumple la edad mínima, solo podrá entrar si tiene al menos 1000 euros.
+Mostrar un mensaje indicando si la persona puede entrar o no.
+
+Si cumple con los requisitos de edad o dinero, mostrar: "Puedes entrar a la discoteca."
+Si no cumple, mostrar: "No puedes entrar a la discoteca."
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardia de Seguridad - Discoteca</title>
+</head>
+
+<body>
+    <h2>Simulación de Guardia de Seguridad</h2>
+    <p><strong>Género:</strong> <span id="genero"></span></p>
+    <p><strong>Edad:</strong> <span id="edad"></span></p>
+    <p><strong>Dinero:</strong> <span id="dinero">?</span> euros</p>
+    <p id="resultado"></p>
+
+    <script>
+        let genero = prompt("Ingrese su género (hombre [h], mujer [m], otros [o]):").toLowerCase();
+        let edad = parseInt(prompt("Ingrese su edad:"));
+        let dinero = 0;
+        let puedeEntrar = false;
+
+        document.getElementById("genero").innerText = genero;
+        document.getElementById("edad").innerText = edad;
+
+        if (isNaN(edad) || (genero !== "h" && genero !== "m" && genero !== "o")) {
+            document.getElementById("resultado").innerHTML = '<span class="denegado">Error: Ingrese datos válidos.</span>';
+        } else {
+            if (genero === "h" && edad >= 17) {
+                if (edad === 17) {
+                    dinero = parseFloat(prompt("Tienes 17 años. ¿Cuánto dinero tienes? (en euros)"));
+                    document.getElementById("dinero").innerText = isNaN(dinero) ? "0" : dinero;
+
+                    if (!isNaN(dinero) && dinero >= 1000) {
+                        puedeEntrar = true;
+                    }
+                } else {
+                    puedeEntrar = true;
+                }
+            } else if ((genero === "m" || genero === "o") && edad >= 16) {
+                if (edad < 18) {
+                    dinero = parseFloat(prompt("Tienes entre 16 y 17 años. ¿Cuánto dinero tienes? (en euros)"));
+                    document.getElementById("dinero").innerText = isNaN(dinero) ? "0" : dinero;
+
+                    if (!isNaN(dinero) && dinero >= 1000) {
+                        puedeEntrar = true;
+                    }
+                } else {
+                    puedeEntrar = true;
+                }
+            }
+        }
+
+        if (puedeEntrar) {
+            document.getElementById("resultado").innerHTML = '<span>✅ Puedes entrar a la discoteca.</span>';
+        } else {
+            document.getElementById("resultado").innerHTML = '<span>❌ No puedes entrar a la discoteca.</span>';
+        }
+    </script>
+</body>
+
+
+</html>
