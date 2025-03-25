@@ -9,3 +9,46 @@ Requisitos:
 - Indicar si el número ingresado es mayor o menor al número secreto.
 - Mostrar un mensaje cuando el usuario adivine el número.
 -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número</title>
+</head>
+
+<body>
+    <h2>Adivina el Número</h2>
+    <p>¡Intenta adivinar el número entre 1 y 10!</p>
+
+    <script>
+        let mensaje = document.getElementById("mensaje");
+
+        let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+
+        let numeroIngresado = 0;
+        let ganaJuego = false;
+        
+
+        while (ganaJuego === false) {
+            numeroIngresado = parseInt(prompt("Adivina el número (entre 1 y 10)." + "(" + numeroSecreto + ")"));
+
+            if (isNaN(numeroIngresado) || numeroIngresado < 1 || numeroIngresado > 10) {
+                alert("Por favor, ingresa un número válido entre 1 y 10." + "(" + numeroSecreto + ")");
+            } else if (numeroIngresado < numeroSecreto) {
+                alert("¡Intenta con un número mayor!." + "(" + numeroSecreto + ")");
+            } else if (numeroIngresado > numeroSecreto) {
+                alert("¡Intenta con un número menor!." + "(" + numeroSecreto + ")");
+            } else {
+                alert("¡Felicidades! Adivinaste el número.");
+                ganaJuego = true;
+                // continue;
+                // break;
+            }
+        }
+    </script>
+</body>
+
+</html>

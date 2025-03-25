@@ -9,3 +9,41 @@ Requisitos:
 - Si el usuario acierta la contraseña, mostrar un mensaje de éxito en la pantalla.
 - Si el usuario supera los 3 intentos sin éxito, mostrar un mensaje de bloqueo en la pantalla.
 -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intentos de Contraseña</title>
+</head>
+
+<body>
+    <h2>Acceso Seguro</h2>
+    <p id="mensaje"></p>
+
+    <script>
+        const contrasenaCorrecta = "1234";
+        let intentos = 1;
+        let mensaje = document.getElementById("mensaje");
+
+        while (intentos != 4) {
+            let contrasena = prompt(`Ingresa la contraseña (intento ${intentos}):`);
+
+            if (contrasena === contrasenaCorrecta) {
+                mensaje.innerText = "¡Acceso permitido! Contraseña correcta.";
+                break;
+            } else {
+                intentos++;
+                if (intentos < 3) {
+                    mensaje.innerText = "Contraseña incorrecta. Intentos restantes: " + (3 - intentos);
+                } else {
+                    mensaje.innerText = "¡Acceso bloqueado! Has alcanzado el número máximo de intentos.";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

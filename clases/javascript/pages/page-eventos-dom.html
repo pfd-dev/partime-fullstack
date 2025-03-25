@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Carga de la Página</title>
+</head>
+
+<body>
+    <h1>Ejemplo de Eventos de Carga</h1>
+    <p>Manipulación del DOM en distintos estados de carga.</p>
+    <img src="./../assets/images/Artaud.jpg" alt="Imagen de ejemplo">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("El DOM está listo");
+            alert("El DOM está listo");
+
+            document.querySelector("img").style.border = "6px solid red";
+            document.querySelector("h1").style.color = "red";
+        });
+
+        window.addEventListener("load", () => {
+            console.log("Todos los recursos han cargado");
+            alert("Todos los recursos han cargado");
+
+            document.querySelector("img").style.border = "10px dashed blue";
+            document.querySelector("h1").style.color = "blue";
+        });
+
+        window.addEventListener("beforeunload", (event) => {
+            event.preventDefault();
+        
+            console.log("Recargar Todos los recursos, y confirmación");
+            alert("Recargar Todos los recursos, y confirmación");
+        
+            document.querySelector("img").style.border = "50px dashed green";
+            document.querySelector("h1").style.color = "green";
+        });
+    </script>
+</body>
+
+</html>

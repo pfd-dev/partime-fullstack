@@ -1,0 +1,47 @@
+{
+    "albums": [
+        {
+            "title": "Amor Amarillo",
+            "artist": "Gustavo Cerati",
+            "release_date": "1993-11-01",
+            "genre": [
+                "Rock alternativo",
+                "Neo-psicodelia",
+                "Dream pop"
+            ],
+            "tracklist": [
+                "Amor Amarillo",
+                "Lisa",
+                "Te llevo para que me lleves",
+                "Pulsar",
+                "Cabeza de Medusa",
+                "Av. Alcorta",
+                "Bajan",
+                "Rombos",
+                "Ahora es nunca",
+                "A merced",
+                "Torteval"
+            ]
+        },
+        {
+            "title": "Artaud",
+            "artist": "Pescado Rabioso",
+            "release_date": "1973-10-06",
+            "genre": [
+                "Art rock",
+                "Folk"
+            ],
+            "tracklist": [
+                "Todas las hojas son del viento",
+                "Cementerio Club",
+                "Por",
+                "Superchería",
+                "La sed verdadera",
+                "Cantata de puentes amarillos",
+                "Bajan",
+                "A Starosta, el idiota",
+                "Las habladurías del mundo"
+            ]
+        }
+    ]
+}

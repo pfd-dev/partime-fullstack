@@ -19,3 +19,56 @@ Requisitos del programa:
 - Mostrar el resultado:
     El triángulo debe ser mostrado en la página web, con cada fila de números correctamente alineada.
 -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujar Triángulo Numérico</title>
+</head>
+
+<body>
+    <h2>Dibujar un Triángulo Numérico</h2>
+    <p style="text-align: center;" id="triangulo"></p>
+
+    <script>
+        let base = parseInt(prompt("Ingresa el número que será la base del triángulo:"));
+        let triangulo = document.getElementById("triangulo");
+
+        if (isNaN(base) || base <= 0) {
+            triangulo.innerText = "Por favor, ingresa un número válido mayor que 0.";
+        } else {
+            let tipoTriangulo = confirm("¿Quieres el triángulo con números consecutivos en cada fila? (Aceptar) o con el mismo número repetido por fila? (Cancelar)");
+
+            let resultado = "";
+
+            if (tipoTriangulo) {
+                for (let fila = 1; fila <= base; fila++) {
+                    let filaNumeros = "";
+
+                    for (let numero = 1; numero <= fila; numero++) {
+                        filaNumeros += numero;
+                    }
+
+                    resultado += filaNumeros + "<br>";
+                }
+            } else {
+                for (let fila = 1; fila <= base; fila++) {
+                    let filaNumeros = "";
+
+                    for (let numero = 1; numero <= fila; numero++) {
+                        filaNumeros += fila;
+                    }
+
+                    resultado += filaNumeros + "<br>";
+                }
+            }
+
+            triangulo.innerHTML = resultado;
+        }
+    </script>
+</body>
+
+</html>
