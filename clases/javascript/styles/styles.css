@@ -26,7 +26,7 @@ hr {
 ================== MENU NAVEGACION ==================
 ================================================== */
 
-.navigationBar {
+.navigation_bar {
     background-color: var(--color-light);
     display: flex;
     justify-content: space-between;
@@ -34,66 +34,93 @@ hr {
     padding: .5em 1em;
     outline: 2px solid var(--color-black);
     position: sticky;
-    /* position: relative; */
     top: 0;
+    z-index: 50;
 
-    > div {
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    h1:hover {
+        text-decoration: underline;
+    }
+
+    >div {
         display: flex;
+        align-items: center;
         gap: 1em;
-
-        button {
-            display: flex;
-            gap: .5em;
-        }
-    }
-
-    .menu-lista-links {
-        background-color: var(--color-light);
-        outline: 2px solid var(--color-dark);
-        position: absolute;
-        top: 100%;
-        right: 1em;
-        border-radius: .5em;
-        height: 20em;
-        width: 20em;
-        overflow-y: auto;
-        display: none;
-        flex-direction: column;
-
-        a {
-            outline: 2px solid var(--color-dark);
-            display: block;
-            padding: 1em 2em;
-            text-align: center;
-        }
-
-        a:hover {
-            background-color: var(--color-dark);
-            color: var(--color-white);
-        }
-    }
-
-    .show.menu-lista-links {
-        display: flex;
     }
 }
 
-.dark .navigationBar {
+.dark .navigation_bar {
     background-color: var(--color-dark);
     outline: 2px solid var(--color-light);
+}
 
-    .menu-lista-links {
-        background-color: var(--color-dark);
-        outline: 2px solid var(--color-light);
+/* ==================================================
+================ BANNER CABECERA ================
+================================================== */
 
-        a {
-            outline: 2px solid var(--color-light);
-        }
+.heawder_banner {
+    /* background: url("./../assets/videos/banner_video.mp4"); */
+    height: 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+    overflow: hidden;
 
-        a:hover {
-            background-color: var(--color-white);
-            color: var(--color-black);
-        }
+    video {
+        min-width: 100%;
+        display: block;
+    }
+
+    span {
+        background-color: rgba(0, 0, 0, .5);
+        font-size: 5rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-transform: uppercase;
+    }
+}
+
+/* ==================================================
+================ CONTENEDORES Y DIVISORES PRINCIPALES ================
+================================================== */
+.presentation_section {
+    padding: 3em;
+}
+
+.presentation_section>header h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+.divider_container {
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3em;
+    
+}
+
+.dark .divider_container {
+    background-color: var(--color-black);
+}
+
+@media (max-width: 700px) {
+    .divider_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em;
     }
 }
 
@@ -101,9 +128,7 @@ hr {
 ================ CONTENIDO PRINCIPAL ================
 ================================================== */
 
-.mainContainer {
-    background-color: var(--color-white);
-    padding: 1em 3em;
+.main_content {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -133,9 +158,7 @@ hr {
     }
 }
 
-.dark .mainContainer {
-    background-color: var(--color-black);
-
+.dark .main_content {
     >section {
         background-color: var(--color-dark);
         outline-color: var(--color-light);
@@ -144,4 +167,67 @@ hr {
     code {
         color: greenyellow;
     }
+}
+
+/* ==================================================
+================ MENU LATERAL ================
+================================================== */
+
+.side_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    nav {
+        background-color: var(--color-light);
+        border-radius: .5em;
+        outline: 2px solid var(--color-black);
+        position: sticky;
+        top: 4em;
+        height: 50vh;
+        overflow-y: scroll;
+
+        h2 {
+            text-align: center;
+        }
+
+        .menu_links {
+            a {
+                padding: .5em 1em;
+                display: block;
+                outline: 2px solid var(--color-black);
+            }
+
+            a:hover {
+                background-color: var(--color-white);
+                color: var(--color-black);
+            }
+        }
+    }
+}
+
+.dark .side_menu {
+    nav {
+        background-color: var(--color-dark);
+        outline-color: var(--color-white);
+
+        a {
+            outline-color: var(--color-white);
+        }
+    }
+}
+
+/* ==================================================
+================ PIE PAGINA ================
+================================================== */
+
+.footer_container {
+    background-color: var(--color-light);
+    outline: 2px solid var(--color-black);
+    padding: 5em;
+}
+
+.dark .footer_container {
+    background-color: var(--color-dark);
+    outline: 2px solid var(--color-white);
 }

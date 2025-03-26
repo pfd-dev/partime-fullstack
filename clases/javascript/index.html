@@ -2,19 +2,39 @@
 <html lang="es">
 
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO y accesibilidad -->
+    <meta name="description" content="Breve descripción del contenido de la página. Clases de JavaScript.">
+    <meta name="author" content="Tu Nombre o Nombre de la Empresa. Pablo Diaz.">
+    <meta name="keywords" content="JavaScript, programación, desarrollo web, frontend, backend">
+
+    <!-- Favicon e iconos para diferentes dispositivos -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png"> -->
+    <link rel="manifest" href="site.webmanifest"> <!-- Para Progressive Web Apps (PWA) -->
+
+    <!-- Título de la página -->
     <title>JavaScript</title>
 
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/global-styles.css">
     <link rel="stylesheet" href="./styles/styles.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+    <!-- Compatibilidad con navegadores antiguos -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
 <body class="body_container dark">
-    <nav class="navigationBar">
+    <header class="heawder_banner">
+        <video src="./assets/videos/banner_video.mp4" autoplay loop muted></video>
+        <span>¡Hola Alumnos!</span>
+    </header>
+    <!-- Barra de navegación principal: contiene enlaces a las secciones principales del sitio -->
+    <nav class="navigation_bar">
         <a href="./index.html">
             <header>
                 <h1>NeoLand</h1>
@@ -24,698 +44,818 @@
 
         <div>
             <a href="./pages/" target="_blank">ejemplos</a>
-            <button id="BtnBtnChangeTheme">
-                <span>modo claro</span>
-                <img src="./assets/icons/sun.svg">
-            </button>
 
-            <button id="BtnShowMenu">
+            <button id="BtnShowMenu" class="btn btn-secondary">
                 <span>abrir menú</span>
                 <img src="./assets/icons/menu_open.svg">
             </button>
 
-            <ul class="menu-lista-links">
-                <li><a href="#EjecutarJavaScript">¿Cómo ejecutar JavaScript?</a></li>
-                <li><a href="#Sintaxis">Sintaxis básica</a></li>
-                <li><a href="#TiposDatos">Tipos de datos</a></li>
-                <li><a href="#Variables">Variables</a></li>
-                <li><a href="#Operadores">Operadores</a></li>
-                <li><a href="#Strings">Strings</a></li>
-                <li><a href="#Numeros">Números</a></li>
-                <li><a href="#Casting">(Type Casting) Conversión de Tipos de Datos</a></li>
-                <li><a href="#Ventanas">Ventanas de Diálogo</a></li>
-                <li><a href="#ElementosDOM">Selección de Elementos del DOM</a></li>
-                <li><a href="#ModificacionDOM">Modificación del contenido en el DOM</a></li>
-                <li><a href="#EstructurasControlIf">Estructuras de Control: `if`, `if else` y `else`</a></li>
-                <li><a href="#EstructurasControlSwitch">Estructura de Control: switch</a></li>
-                <li><a href="#BucleFor">Bucle for</a></li>
-                <li><a href="#BucleWhile">Bucle while</a></li>
-                <li><a href="#EstadosCargaDOM">Estados de carga</a></li>
-                <li><a href="#Arrays">Arrays</a></li>
-                <li><a href="#Objets">Objetos</a></li>
-                <li><a href="#Json">Json</a></li>
-            </ul>
+            <section class="modal">
+                <header>
+                    <h2>opciones</h2>
+                </header>
+
+                <div>
+                    <button id="BtnBtnChangeTheme" class="btn btn-primary">
+                        <span>modo claro</span>
+                        <img src="./assets/icons/sun.svg">
+                    </button>
+                </div>
+            </section>
         </div>
     </nav>
 
-    <main class="mainContainer">
+    <section class="presentation_section">
         <header>
-            <h2><marquee>JavaScript</marquee></h2>
+            <h2>JavaScript</h2>
         </header>
 
-        <section>
-            <article>
-                <p>
-                    JavaScript es un lenguaje de programación que permite agregar interactividad y dinamismo a las
-                    páginas web.
-                    Se ejecuta en el navegador y es utilizado para crear efectos visuales, validar formularios,
-                    manipular elementos HTML y mucho más.
-                </p>
-            </article>
-
-            <hr>
-
-            <details id="EjecutarJavaScript">
-                <summary>
-                    <h3>¿Cómo ejecutar JavaScript?</h3>
-                </summary>
-
-                <article>
-                    <p>
-                        JavaScript se puede ejecutar en una página web de tres maneras:
-                    </p>
-
-                    <ul class="list">
-                        <li><strong>En línea:</strong> Dentro de etiquetas HTML usando el atributo <code>onclick</code>
-                            u
-                            otros eventos.
-                        </li>
-
-                        <li><strong>Interno:</strong> Dentro de la etiqueta <code>&lt;script&gt;</code> en el mismo
-                            archivo
-                            HTML.</li>
-
-                        <li><strong>Externo:</strong> En un archivo <code>.js</code> separado y enlazado con
-                            <code>&lt;script src="archivo.js"&gt;&lt;/script&gt;</code>.
-                        </li>
-                    </ul>
-                    <p>
-                        Se recomienda escribir JavaScript en un archivo externo para mantener el código organizado y
-                        reutilizable.
-                    </p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Sintaxis">
-                <summary>
-                    <h3>Sintaxis básica</h3>
-                </summary>
-
-                <article>
-                    <p>
-                        JavaScript tiene una sintaxis simple y flexible. Aquí algunos aspectos clave:
-                    </p>
-                    <ul class="list">
-                        <li><strong>Sentencias:</strong> Cada instrucción suele terminar con un punto y coma
-                            (<code>;</code>), aunque no es obligatorio.</li>
-                        <li><strong>Comentarios:</strong> Se pueden escribir comentarios con
-                            <code>// comentario en una línea</code> o <code>/* comentario en varias líneas */</code>.
-                        </li>
-                        <li><strong>Case sensitive:</strong> JavaScript distingue entre mayúsculas y minúsculas.
-                            <code>miVariable</code> y <code>mivariable</code> son diferentes.
-                        </li>
-                        <li><strong>Indentación:</strong> se refiere a la técnica de agregar un espacio inicial
-                            (indentado) al principio de las líneas de código, que ayuda a delimitar visualmente los
-                            bloques y estructuras de control.</li>
-                    </ul>
-                    <p>
-                        Respetar estas reglas es fundamental para escribir código limpio y funcional.
-                    </p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="TiposDatos">
-                <summary>
-                    <h3>Tipos de datos</h3>
-                </summary>
-                <article>
-                    <p>
-                        En JavaScript, los datos se clasifican en diferentes tipos según su naturaleza. Los principales
-                        tipos de datos son:
-                    </p>
-                    <ul class="list">
-                        <li><strong>String (Cadenas de texto):</strong> Representan texto y se escriben entre comillas.
-                            Ejemplo: <code>"Hola, mundo"</code>.</li>
-                        <li><strong>Number (Números):</strong> Representan valores numéricos, ya sean enteros o
-                            decimales. Ejemplo: <code>42</code>, <code>3.14</code>.</li>
-                        <li><strong>Boolean (Booleanos):</strong> Representan valores de verdadero (<code>true</code>) o
-                            falso (<code>false</code>).</li>
-                        <li><strong>Undefined:</strong> Una variable que ha sido declarada pero no tiene valor asignado.
-                        </li>
-
-                        <hr>
-
-                        <li><strong>Null:</strong> Representa la ausencia intencionada de un valor. Es un valor
-                            primitivo
-                            que indica la ausencia de valor.</li>
-                        <li><strong>Object (Objetos):</strong> Estructuras de datos que pueden contener múltiples
-                            valores en forma de pares clave-valor. Los objetos pueden almacenar cualquier tipo de dato.
-                        </li>
-                        <li><strong>Array (Arreglos):</strong> Un tipo especial de objeto que almacena una colección de
-                            valores. Los elementos de un arreglo se acceden mediante índices numéricos.</li>
-
-                        <hr>
-
-                        <li><strong>Symbol:</strong> Un tipo de dato primitivo introducido en ECMAScript 6. Los símbolos
-                            son
-                            valores únicos e inmutables que pueden ser utilizados como claves de propiedades de objetos,
-                            lo que ayuda a evitar colisiones de nombres entre propiedades de objetos.</li>
-                        <li><strong>BigInt:</strong> Un tipo de dato que permite representar números enteros que son
-                            demasiado grandes para ser representados como valores de tipo <code>Number</code>. Ejemplo:
-                            <code>9007199254740991n</code>.
-                        </li>
-
-                        <hr>
-
-                        <li><strong>Function:</strong> Aunque no es un tipo de dato "primitivo", las funciones en
-                            JavaScript
-                            son objetos de primera clase y se pueden tratar como valores. Ejemplo:
-                            <code>function miFuncion() {}</code>.
-                        </li>
-                    </ul>
-
-                    <p>
-                        JavaScript es un lenguaje de tipado dinámico, lo que significa que no es necesario declarar el
-                        tipo
-                        de una variable, ya que puede cambiar en tiempo de ejecución.
-                    </p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Variables">
-                <summary>
-                    <h3>Variables</h3>
-                </summary>
-                <article>
-                    <p>
-                        Una variable es un espacio en memoria donde se almacena un valor. En JavaScript, existen tres
-                        formas
-                        principales de declarar variables:
-                    </p>
-
-                    <ul class="list">
-                        <li><strong>var:</strong> Forma tradicional de declarar variables, pero tiene un alcance menos
-                            controlado.</li>
-                        <li><strong>let:</strong> Se usa para declarar variables cuyo valor puede cambiar. Tiene un
-                            alcance
-                            limitado al bloque donde se declara.</li>
-                        <li><strong>const:</strong> Se usa para declarar constantes, es decir, valores que no cambiarán
-                            durante la ejecución del programa.</li>
-                    </ul>
-
-                    <p>
-                        Es recomendable usar <code>let</code> y <code>const</code> en lugar de <code>var</code> para
-                        evitar
-                        errores y hacer el código más seguro.
-                    </p>
-
-                    <h4>Buenas prácticas para nombrar variables</h4>
-                    <ul class="list">
-                        <li><strong>Camel Case:</strong> Usar minúsculas para la primera palabra y mayúsculas para cada
-                            palabra
-                            subsecuente. Ejemplo: <code>miVariable</code>, <code>nombreCompleto</code>,
-                            <code>cantidadDeArticulos</code>.
-                        </li>
-                        <li><strong>Snake Case:</strong> Separar las palabras con guiones bajos. Ejemplo:
-                            <code>nombre_completo</code>,
-                            <code>cantidad_de_articulos</code>. Se usa generalmente para constantes o cuando se importa
-                            código de otros lenguajes.
-                        </li>
-                        <li><strong>Uso de Mayúsculas:</strong> Las constantes se escriben completamente en mayúsculas y
-                            se
-                            separan con guiones bajos. Ejemplo: <code>PI</code>, <code>MAX_LONGITUD</code>,
-                            <code>NUMERO_DE_USUARIOS</code>.
-                        </li>
-                        <li><strong>Uso del Símbolo de Dólar (<code>$</code>):</strong> El símbolo de dólar es válido en
-                            los
-                            nombres de variables y se utiliza frecuentemente en bibliotecas como <code>jQuery</code>
-                            para
-                            identificar elementos del DOM. Ejemplo: <code>elemento$</code>, <code>miVariable$</code>.
-                        </li>
-                        <li><strong>Nombres descriptivos:</strong> Es importante usar nombres de variables que sean
-                            descriptivos y representen claramente el valor que almacenan. Ejemplo:
-                            <code>nombreUsuario</code>, <code>cantidadTotal</code>, <code>edadCliente</code>.
-                        </li>
-                        <li><strong>Evitar caracteres especiales:</strong> No utilices caracteres especiales como
-                            <code>!</code>, <code>@</code>, <code>%</code>, etc. Solo se permiten letras, números,
-                            guiones
-                            bajos (<code>_</code>) y símbolos de dólar (<code>$</code>).
-                        </li>
-                        <li><strong>Empieza con una letra:</strong> Los nombres de las variables deben empezar con una
-                            letra, un guion bajo (<code>_</code>) o el símbolo de dólar (<code>$</code>). No deben
-                            comenzar
-                            con un número.</li>
-                        <li><strong>Evitar palabras reservadas:</strong> No utilices palabras reservadas de JavaScript
-                            como
-                            <code>let</code>, <code>const</code>, <code>var</code>, <code>if</code>,
-                            <code>function</code>,
-                            <code>class</code>, etc., como nombres de variables.
-                        </li>
-                    </ul>
-
-                    <p>Siguiendo estas buenas prácticas, puedes escribir código más limpio, legible y mantenible.</p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Operadores">
-                <summary>
-                    <h3>Operadores</h3>
-                </summary>
-                <article>
-                    <p>
-                        Los operadores permiten realizar operaciones con valores y variables. Se
-                        clasifican en
-                        diferentes tipos:
-                    </p>
-
-                    <h4>Operadores aritméticos</h4>
-                    <p>Se usan para realizar cálculos matemáticos.</p>
-                    <ul class="list">
-                        <li><code>+</code> (Suma): <code>5 + 3 // 8</code></li>
-                        <li><code>-</code> (Resta): <code>10 - 4 // 6</code></li>
-                        <li><code>*</code> (Multiplicación): <code>6 * 2 // 12</code></li>
-                        <li><code>/</code> (División): <code>8 / 2 // 4</code></li>
-                        <li><code>%</code> (Módulo o residuo): <code>10 % 3 // 1</code></li>
-                        <li><code>**</code> (Exponente): <code>2 ** 3 // 8</code></li>
-                    </ul>
-
-                    <h4>Operadores de asignación</h4>
-                    <p>Se usan para asignar valores a las variables.</p>
-                    <ul class="list">
-                        <li><code>=</code> (Asignación): <code>x = 10</code></li>
-                        <li><code>+=</code> (Suma y asignación): <code>x += 5 // x = x + 5</code></li>
-                        <li><code>-=</code> (Resta y asignación): <code>x -= 2 // x = x - 2</code></li>
-                        <li><code>*=</code> (Multiplicación y asignación): <code>x *= 3 // x = x * 3</code></li>
-                        <li><code>/=</code> (División y asignación): <code>x /= 4 // x = x / 4</code></li>
-                    </ul>
-
-                    <h4>Operadores de comparación</h4>
-                    <p>Se usan para comparar valores y devuelven un resultado booleano (<code>true</code> o
-                        <code>false</code>).
-                    </p>
-                    <ul class="list">
-                        <li><code>==</code> (Igualdad): <code>5 == "5" // true</code> (compara solo el valor)</li>
-                        <li><code>===</code> (Igualdad estricta): <code>5 === "5" // false</code> (compara valor y tipo
-                            de
-                            dato)</li>
-                        <li><code>!=</code> (Diferente): <code>10 != 5 // true</code></li>
-                        <li><code>!==</code> (Diferente estricto): <code>10 !== "10" // true</code></li>
-                        <li><code>&gt;</code> (Mayor que): <code>8 > 3 // true</code></li>
-                        <li><code>&lt;</code> (Menor que): <code>4 < 7 // true</code></li>
-                        <li><code>&gt;=</code> (Mayor o igual que): <code>6 >= 6 // true</code></li>
-                        <li><code>&lt;=</code> (Menor o igual que): <code>3 <= 5 // true</code></li>
-                    </ul>
-
-                    <h4>Operadores lógicos</h4>
-                    <p>Se usan para combinar expresiones booleanas.</p>
-                    <ul class="list">
-                        <li><code>&&</code> (AND): <code>true && false // false</code> (ambos deben ser
-                            <code>true</code>
-                            para devolver <code>true</code>)
-                        </li>
-                        <li><code>||</code> (OR): <code>true || false // true</code> (al menos uno debe ser
-                            <code>true</code>)
-                        </li>
-                        <li><code>!</code> (NOT): <code>!true // false</code> (niega el valor booleano)</li>
-                    </ul>
-
-                    <p>Los operadores son esenciales para trabajar con condiciones y cálculos en JavaScript.</p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Strings">
-                <summary>
-                    <h3>Strings</h3>
-                </summary>
-                <article>
-                    <p>
-                        Un <strong>string</strong> es una cadena de caracteres utilizada para representar texto. Se
-                        puede
-                        definir usando comillas simples (<code>' '</code>), comillas dobles (<code>" "</code>) o
-                        template
-                        literals (<code>` `</code>).
-                    </p>
-
-                    <h4>Concatenación de Strings</h4>
-                    <p>
-                        La concatenación permite unir dos o más strings. Se puede hacer de dos formas:
-                    </p>
-                    <ul class="list">
-                        <li><strong>Usando el operador <code>+</code>:</strong> <code>"Hola" + " mundo"</code>:
-                            <code>"Hola mundo"</code>
-                        </li>
-                        <li><strong>Usando Template Literals:</strong> Se utilizan comillas invertidas (<code>`</code>)
-                            y la
-                            sintaxis <code>${}</code> para insertar variables.</li>
-                    </ul>
-
-                    <h4>Métodos útiles para Strings</h4>
-                    <p>
-                        JavaScript proporciona varios métodos para manipular strings:
-                    </p>
-                    <ul class="list">
-                        <li><code>.length</code>: Devuelve la longitud del string.</li>
-                        <li><code>.toUpperCase()</code>: Convierte el texto a mayúsculas.</li>
-                        <li><code>.toLowerCase()</code>: Convierte el texto a minúsculas.</li>
-                        <li><code>.trim()</code>: Elimina espacios en blanco al inicio y al final.</li>
-                        <li><code>.includes("texto")</code>: Verifica si una cadena contiene otra.</li>
-                        <li><code>.slice(inicio, fin)</code>: Extrae parte de un string.</li>
-                        <li><code>.replace("viejo", "nuevo")</code>: Reemplaza parte de un string</li>
-                        <li><code>.split("separador")</code>: Divide un string en un array.</li>
-                    </ul>
-
-                    <p>Estos métodos facilitan la manipulación de texto en JavaScript.</p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Numeros">
-                <summary>
-                    <h3>Números</h3>
-                </summary>
-                <article>
-                    <p>
-                        En JavaScript, los números se representan con el tipo de dato <strong>Number</strong>. No hay
-                        diferencia entre enteros y decimales, ambos se manejan bajo el mismo tipo.
-                    </p>
-
-                    <h4>Operaciones con Números</h4>
-                    <p>
-                        Se pueden realizar operaciones matemáticas usando operadores aritméticos como <code>+</code>
-                        (suma),
-                        <code>-</code> (resta), <code>*</code> (multiplicación), <code>/</code> (división),
-                        <code>%</code>
-                        (módulo) y <code>**</code> (exponente).
-                    </p>
-
-                    <h4>Métodos útiles para Números</h4>
-                    <p>
-                        JavaScript proporciona varios métodos para trabajar con números:
-                    </p>
-                    <ul class="list">
-                        <li><code>isInteger(numero)</code>: Verifica si un número es un entero.</li>
-                        <li><code>parseInt(string)</code>: Convierte un string en un número entero.</li>
-                        <li><code>parseFloat(string)</code>: Convierte un string en un número decimal.</li>
-                        <li><code>toFixed(decimales)</code>: Redondea un número a la cantidad de decimales especificada.
-                        </li>
-                        <li><code>toPrecision(dígitos)</code>: Formatea un número con una cantidad específica de dígitos
-                            significativos.</li>
-                        <li><code>Math.round(numero)</code>: Redondea al entero más cercano.</li>
-                        <li><code>Math.floor(numero)</code>: Redondea hacia abajo.</li>
-                        <li><code>Math.ceil(numero)</code>: Redondea hacia arriba.</li>
-                        <li><code>Math.random()</code>: Genera un número decimal aleatorio entre 0 y 1.</li>
-                        <li><code>Math.abs(numero)</code>: Devuelve el valor absoluto de un número.</li>
-                        <li><code>Math.max(num1, num2, ...)</code>: Devuelve el número más grande de una lista.</li>
-                        <li><code>Math.min(num1, num2, ...)</code>: Devuelve el número más pequeño de una lista.</li>
-                        <li><code>Math.pow(base, exponente)</code>: Calcula una potencia.</li>
-                        <li><code>Math.sqrt(numero)</code>: Calcula la raíz cuadrada de un número.</li>
-                    </ul>
-
-                    <p>Estos métodos permiten realizar cálculos y manipular valores numéricos de forma sencilla en
-                        JavaScript.</p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Casting">
-                <summary>
-                    <h3>(Type Casting) Conversión de Tipos de Datos</h3>
-                </summary>
-                <article>
-                    <p>
-                        En JavaScript, es común tener que convertir valores de un tipo de dato a otro. Para ello,
-                        JavaScript
-                        ofrece varias funciones y métodos.
-                    </p>
-
-                    <h4>Conversión de String a Número</h4>
-                    <p>
-                        Si tenemos un valor de tipo string y queremos convertirlo a un número, podemos usar los
-                        siguientes
-                        métodos:
-                    </p>
-                    <ul class="list">
-                        <li><code>Number(valor)</code>: Convierte el valor a un número, si es posible. Si no puede
-                            convertirlo, devuelve <code>NaN</code>.</li>
-                        <li><code>parseInt(valor)</code>: Convierte un string en un número entero. Si el string no
-                            comienza
-                            con un número, devuelve <code>NaN</code>.</li>
-                        <li><code>parseFloat(valor)</code>: Convierte un string en un número decimal. Al igual que
-                            <code>parseInt()</code>, devuelve <code>NaN</code> si no puede realizar la conversión.
-                        </li>
-                    </ul>
-
-                    <h4>Conversión de Número a String</h4>
-                    <p>
-                        Para convertir un número a un string, se pueden usar los siguientes métodos:
-                    </p>
-                    <ul class="list">
-                        <li><code>toString()</code>: Convierte un número a su representación en string. Ejemplo:
-                            <code>123.toString()</code>: <code>"123"</code>
-                        </li>
-                        <li><code>String(valor)</code>: Convierte cualquier tipo de valor (número, objeto, etc.) a
-                            string.
-                    </ul>
-
-                    <h4>Conversión a Booleano</h4>
-                    <p>
-                        En JavaScript, ciertos valores se consideran "falsy" (falsos) y otros "truthy" (verdaderos).
-                        Para
-                        convertir cualquier valor a un booleano, puedes usar la función <code>Boolean(valor)</code>, que
-                        devuelve:
-                    </p>
-                    <ul class="list">
-                        <li><strong>Falsy:</strong> <code>undefined</code>, <code>null</code>, <code>0</code>,
-                            <code>NaN</code>, <code>""</code>, <code>false</code>
-                        </li>
-                        <li><strong>Truthy:</strong> Cualquier valor que no sea falsy.</li>
-                    </ul>
-
-                    <h4>Uso del operador <code>+</code> para coerción de tipo o type casting.</h4>
-                    <p>
-                        El operador <code>+</code> puede ser utilizado para convertir un número a string. Por
-                        ejemplo, si intentamos sumar un número con un string, el número se convertirá automáticamente a
-                        string:
-                    </p>
-
-                    <p>Estas conversiones son muy útiles cuando trabajamos con diferentes tipos de datos.
-                    </p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Ventanas">
-                <summary>
-                    <h3>Ventanas de Diálogo</h3>
-                </summary>
-                <article>
-                    <p>
-                        En JavaScript, se pueden utilizar ventanas de diálogo para interactuar con el usuario. Estas
-                        ventanas son proporcionadas por el navegador y permiten mostrar mensajes, recibir respuestas o
-                        confirmar acciones. Las principales ventanas de diálogo son <code>alert()</code>,
-                        <code>confirm()</code>, y <code>prompt()</code>.
-                    </p>
-
-                    <h4>1. <code>alert()</code></h4>
-                    <p>
-                        La función <code>alert()</code> muestra una ventana emergente con un mensaje y un botón
-                        "Aceptar". Esta ventana no devuelve ningún valor y simplemente sirve para mostrar información al
-                        usuario. Cuando aparece, detiene la ejecución del código hasta que el usuario haga clic en
-                        "Aceptar".
-                    </p>
-
-                    <h4>2. <code>confirm()</code></h4>
-                    <p>
-                        La función <code>confirm()</code> muestra una ventana con un mensaje y dos botones: "Aceptar" y
-                        "Cancelar". Devuelve un valor booleano: <code>true</code> si el usuario hace clic en "Aceptar",
-                        y <code>false</code> si hace clic en "Cancelar". Este método se usa comúnmente para confirmar
-                        una acción o decisión del usuario, como la eliminación de un elemento.
-                    </p>
-                    <p><strong>Ejemplo:</strong></p>
-
-                    <h4>3. <code>prompt()</code></h4>
-                    <p>
-                        La función <code>prompt()</code> permite al usuario ingresar un valor en un campo de texto.
-                        Muestra un mensaje, un campo de entrada y dos botones: "Aceptar" y "Cancelar". El valor
-                        ingresado por el usuario se devuelve como un string. Si el usuario hace clic en "Cancelar", se
-                        devuelve <code>null</code>.
-                    </p>
-
-                    <h4>4. Otros tipos de ventanas emergentes (no estándar)</h4>
-                    <p>
-                        Algunos navegadores también ofrecen otras funciones para mostrar ventanas emergentes, aunque no
-                        son tan comunes como las anteriores. Estas incluyen:
-                    </p>
-                    <ul class="list">
-                        <li><strong>console.log()</strong>: Aunque no es una ventana emergente, se utiliza para mostrar
-                            información en la consola del navegador, útil para depuración.</li>
-                        <li><strong>window.open()</strong>: Abre una nueva ventana del navegador con una URL específica.
-                            Es comúnmente usada para abrir páginas en nuevas pestañas o ventanas.</li>
-                    </ul>
-
-                    <h4>Impacto en el flujo de ejecución</h4>
-                    <p>
-                        Las funciones <code>alert()</code>, <code>confirm()</code>, y <code>prompt()</code> interrumpen
-                        el flujo de ejecución de la página. Cuando una de estas ventanas aparece, detiene el código
-                        JavaScript hasta que el usuario haya interactuado con la ventana, lo que puede resultar en una
-                        mala experiencia de usuario si se usan en exceso. En general, es recomendable utilizarlas con
-                        moderación y considerar alternativas como modales o notificaciones personalizadas cuando sea
-                        necesario.
-                    </p>
-                </article>
-
-            </details>
-
-            <hr>
-
-            <details id="ElementosDOM">
-                <summary>
-                    <h3>Selección de Elementos del DOM</h3>
-                </summary>
-                <article>
-                    <p>
-                        En JavaScript, se puede seleccionar elementos del DOM (Document Object Model) para poder
-                        interactuar con ellos. Existen varias funciones dentro del objeto <code>document</code> que
-                        permiten seleccionar elementos de la página web para luego modificarlos o extraer información. A
-                        continuación se describen las funciones más comunes.
-                    </p>
-
-                    <h4>1. <code>document.getElementById()</code></h4>
-                    <p>
-                        La función <code>getElementById()</code> permite seleccionar un elemento del DOM usando su
-                        identificador único (<code>id</code>). Esta función devuelve un solo elemento, ya que
-                        <code>id</code> debe ser único dentro de la página.
-                    </p>
-
-                    <h4>2. <code>document.getElementsByClassName()</code></h4>
-                    <p>
-                        La función <code>getElementsByClassName()</code> selecciona todos los elementos que tienen una
-                        clase específica. Esta función devuelve una colección de nodos (una lista de elementos) que
-                        coinciden con la clase dada. Es importante notar que devuelve una colección en vivo, lo que
-                        significa que si se agregan o eliminan elementos con esa clase, la colección se actualizará
-                        automáticamente.
-                    </p>
-
-                    <h4>3. <code>document.getElementsByTagName()</code></h4>
-                    <p>
-                        La función <code>getElementsByTagName()</code> selecciona todos los elementos del DOM que
-                        coinciden con una etiqueta HTML específica. Al igual que <code>getElementsByClassName()</code>,
-                        devuelve una colección de nodos en vivo.
-                    </p>
-
-                    <h4>4. <code>document.querySelector()</code></h4>
-                    <p>La función <code>querySelector()</code>, selecciona el primer elemento del DOM que coincide con
-                        un selector CSS especificado. A diferencia de <code></code>getElementById()</code>, que
-                        selecciona por ID, esta función permite usar selectores más flexibles, como clases (.clase), IDs
-                        (#id) o etiquetas (etiqueta). Devuelve un único nodo, incluso si hay múltiples coincidencias, y
-                        la colección no es en vivo.
-                    </p>
-
-                    <h4>5. <code>document.querySelectorAll()</code></h4>
-                    <p>
-                        <code>querySelectorAll()</code> selecciona todos los elementos que coinciden con un selector CSS
-                        especificado, devolviendo una NodeList estática (no en vivo). Esto significa que, a diferencia
-                        de <code>getElementsByClassName()</code> o <code>getElementsByTagName()</code>, si el DOM cambia
-                        después de la selección,
-                        la lista no se actualizará automáticamente. Se pueden usar métodos como </code>.forEach()</code>
-                        para recorrer
-                        los elementos de la lista.
-                    </p>
-
-                    <h4>Impacto en el flujo</h4>
-                    <p>
-                        Las funciones como <code>getElementById()</code>, <code>getElementsByClassName()</code>, y
-                        <code>getElementsByTagName()</code> permiten manipular elementos de forma directa. Al
-                        seleccionar un elemento, se puede modificar su contenido, estilo, atributos, entre otros. Es
-                        fundamental entender cómo funcionan las colecciones de nodos devueltas (en vivo o no en vivo)
-                        para evitar problemas de actualización y manipulación incorrecta de los elementos.
-                    </p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="ModificacionDOM">
-                <summary>
-                    <h3>Modificación del contenido en el DOM</h3>
-                </summary>
-                <article>
-                    <p>
-                        El DOM (Document Object Model) permite manipular dinámicamente el contenido de una página web.
-                        JavaScript ofrece múltiples métodos para modificar el texto, insertar nuevos elementos y
-                        eliminar nodos dentro del documento HTML.
-                    </p>
-
-                    <h4>1. Modificar el texto de un elemento</h4>
-                    <p>Existen diferentes formas de cambiar el contenido textual de un elemento:</p>
-                    <ul class="list">
-                        <li><strong><code>textContent</code></strong>: Modifica o devuelve el contenido de texto sin
-                            interpretar etiquetas HTML.</li>
-                        <li><strong><code>innerHTML</code></strong>: Modifica el contenido del elemento e interpreta
-                            etiquetas HTML.</li>
-                        <li><strong><code>innerText</code></strong>: Similar a <code>textContent</code>, pero respeta
-                            los estilos CSS como <code>display: none</code>.</li>
-                    </ul>
-
-                    <h4>2. Insertar nuevos elementos en el DOM</h4>
-                    <p>JavaScript permite agregar nuevos elementos dentro del DOM utilizando diferentes métodos:</p>
-                    <ul class="list">
-                        <li><strong><code>appendChild()</code></strong>: Agrega un nuevo elemento dentro de otro como su
-                            hijo.</li>
-                        <li><strong><code>prepend()</code></strong>: Inserta un nuevo elemento como el primer hijo de un
-                            contenedor.</li>
-                        <li><strong><code>insertAdjacentHTML()</code></strong>: Inserta contenido HTML en distintas
-                            posiciones respecto a un elemento (<code>"beforebegin"</code>, <code>"afterbegin"</code>,
-                            <code>"beforeend"</code>, <code>"afterend"</code>).
-                        </li>
-                    </ul>
-
-                    <h4>3. Eliminar contenido o elementos del DOM</h4>
-                    <p>Para eliminar elementos del DOM, se pueden utilizar los siguientes métodos:</p>
-                    <ul class="list">
-                        <li><strong><code>removeChild()</code></strong>: Elimina un elemento hijo dentro de otro.</li>
-                        <li><strong><code>remove()</code></strong>: Borra directamente un elemento del DOM.</li>
-                        <li><strong><code>replaceChild()</code></strong>: Reemplaza un nodo hijo por otro.</li>
-                    </ul>
-
-                    <p>Estos métodos permiten modificar dinámicamente el contenido de una página web, ya sea cambiando
-                        texto, insertando elementos o eliminando contenido de manera eficiente.</p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="EstructurasControlIf">
-                <summary>
-                    <h3>Estructuras de Control: `if`, `if else` y `else`</h3>
-                </summary>
-                <article>
-                    <p>
-                        En JavaScript, la estructura de control <code>if</code> permite ejecutar un bloque de código
-                        solo si se cumple una condición específica. Si la condición no se cumple, se pueden usar
-                        <code>else</code> y <code>else if</code> para manejar otros casos posibles.
-                    </p>
-
-                    <h4>1. <code>if</code>: Evaluando una Condición</h4>
-                    <p>
-                        La sentencia <code>if</code> se usa para ejecutar código solo si una condición es verdadera.
-                    </p>
-                    <p><strong>Sintaxis:</strong></p>
-                    <pre><code>
+        <div class="divider_container">
+            <!-- Contenido principal: sección donde se muestra la información más importante de la página -->
+            <main class="main_content">
+                <section>
+                    <article>
+                        <p>
+                            JavaScript es un lenguaje de programación que permite agregar interactividad y dinamismo a
+                            las
+                            páginas web.
+                            Se ejecuta en el navegador y es utilizado para crear efectos visuales, validar formularios,
+                            manipular elementos HTML y mucho más.
+                        </p>
+                    </article>
+
+                    <hr>
+
+                    <details id="EjecutarJavaScript">
+                        <summary>
+                            <h3>¿Cómo ejecutar JavaScript?</h3>
+                        </summary>
+
+                        <article>
+                            <p>
+                                JavaScript se puede ejecutar en una página web de tres maneras:
+                            </p>
+
+                            <ul class="list">
+                                <li><strong>En línea:</strong> Dentro de etiquetas HTML usando el atributo
+                                    <code>onclick</code>
+                                    u
+                                    otros eventos.
+                                </li>
+
+                                <li><strong>Interno:</strong> Dentro de la etiqueta <code>&lt;script&gt;</code> en el
+                                    mismo
+                                    archivo
+                                    HTML.</li>
+
+                                <li><strong>Externo:</strong> En un archivo <code>.js</code> separado y enlazado con
+                                    <code>&lt;script src="archivo.js"&gt;&lt;/script&gt;</code>.
+                                </li>
+                            </ul>
+                            <p>
+                                Se recomienda escribir JavaScript en un archivo externo para mantener el código
+                                organizado y
+                                reutilizable.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Sintaxis">
+                        <summary>
+                            <h3>Sintaxis básica</h3>
+                        </summary>
+
+                        <article>
+                            <p>
+                                JavaScript tiene una sintaxis simple y flexible. Aquí algunos aspectos clave:
+                            </p>
+                            <ul class="list">
+                                <li><strong>Sentencias:</strong> Cada instrucción suele terminar con un punto y coma
+                                    (<code>;</code>), aunque no es obligatorio.</li>
+                                <li><strong>Comentarios:</strong> Se pueden escribir comentarios con
+                                    <code>// comentario en una línea</code> o
+                                    <code>/* comentario en varias líneas */</code>.
+                                </li>
+                                <li><strong>Case sensitive:</strong> JavaScript distingue entre mayúsculas y minúsculas.
+                                    <code>miVariable</code> y <code>mivariable</code> son diferentes.
+                                </li>
+                                <li><strong>Indentación:</strong> se refiere a la técnica de agregar un espacio inicial
+                                    (indentado) al principio de las líneas de código, que ayuda a delimitar visualmente
+                                    los
+                                    bloques y estructuras de control.</li>
+                            </ul>
+                            <p>
+                                Respetar estas reglas es fundamental para escribir código limpio y funcional.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="TiposDatos">
+                        <summary>
+                            <h3>Tipos de datos</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, los datos se clasifican en diferentes tipos según su naturaleza. Los
+                                principales
+                                tipos de datos son:
+                            </p>
+                            <ul class="list">
+                                <li><strong>String (Cadenas de texto):</strong> Representan texto y se escriben entre
+                                    comillas.
+                                    Ejemplo: <code>"Hola, mundo"</code>.</li>
+                                <li><strong>Number (Números):</strong> Representan valores numéricos, ya sean enteros o
+                                    decimales. Ejemplo: <code>42</code>, <code>3.14</code>.</li>
+                                <li><strong>Boolean (Booleanos):</strong> Representan valores de verdadero
+                                    (<code>true</code>) o
+                                    falso (<code>false</code>).</li>
+                                <li><strong>Undefined:</strong> Una variable que ha sido declarada pero no tiene valor
+                                    asignado.
+                                </li>
+
+                                <hr>
+
+                                <li><strong>Null:</strong> Representa la ausencia intencionada de un valor. Es un valor
+                                    primitivo
+                                    que indica la ausencia de valor.</li>
+                                <li><strong>Object (Objetos):</strong> Estructuras de datos que pueden contener
+                                    múltiples
+                                    valores en forma de pares clave-valor. Los objetos pueden almacenar cualquier tipo
+                                    de
+                                    dato.
+                                </li>
+                                <li><strong>Array (Arreglos):</strong> Un tipo especial de objeto que almacena una
+                                    colección
+                                    de
+                                    valores. Los elementos de un arreglo se acceden mediante índices numéricos.</li>
+
+                                <hr>
+
+                                <li><strong>Symbol:</strong> Un tipo de dato primitivo introducido en ECMAScript 6. Los
+                                    símbolos
+                                    son
+                                    valores únicos e inmutables que pueden ser utilizados como claves de propiedades de
+                                    objetos,
+                                    lo que ayuda a evitar colisiones de nombres entre propiedades de objetos.</li>
+                                <li><strong>BigInt:</strong> Un tipo de dato que permite representar números enteros que
+                                    son
+                                    demasiado grandes para ser representados como valores de tipo <code>Number</code>.
+                                    Ejemplo:
+                                    <code>9007199254740991n</code>.
+                                </li>
+
+                                <hr>
+
+                                <li><strong>Function:</strong> Aunque no es un tipo de dato "primitivo", las funciones
+                                    en
+                                    JavaScript
+                                    son objetos de primera clase y se pueden tratar como valores. Ejemplo:
+                                    <code>function miFuncion() {}</code>.
+                                </li>
+                            </ul>
+
+                            <p>
+                                JavaScript es un lenguaje de tipado dinámico, lo que significa que no es necesario
+                                declarar
+                                el
+                                tipo
+                                de una variable, ya que puede cambiar en tiempo de ejecución.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Variables">
+                        <summary>
+                            <h3>Variables</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                Una variable es un espacio en memoria donde se almacena un valor. En JavaScript, existen
+                                tres
+                                formas
+                                principales de declarar variables:
+                            </p>
+
+                            <ul class="list">
+                                <li><strong>var:</strong> Forma tradicional de declarar variables, pero tiene un alcance
+                                    menos
+                                    controlado.</li>
+                                <li><strong>let:</strong> Se usa para declarar variables cuyo valor puede cambiar. Tiene
+                                    un
+                                    alcance
+                                    limitado al bloque donde se declara.</li>
+                                <li><strong>const:</strong> Se usa para declarar constantes, es decir, valores que no
+                                    cambiarán
+                                    durante la ejecución del programa.</li>
+                            </ul>
+
+                            <p>
+                                Es recomendable usar <code>let</code> y <code>const</code> en lugar de <code>var</code>
+                                para
+                                evitar
+                                errores y hacer el código más seguro.
+                            </p>
+
+                            <h4>Buenas prácticas para nombrar variables</h4>
+                            <ul class="list">
+                                <li><strong>Camel Case:</strong> Usar minúsculas para la primera palabra y mayúsculas
+                                    para
+                                    cada
+                                    palabra
+                                    subsecuente. Ejemplo: <code>miVariable</code>, <code>nombreCompleto</code>,
+                                    <code>cantidadDeArticulos</code>.
+                                </li>
+                                <li><strong>Snake Case:</strong> Separar las palabras con guiones bajos. Ejemplo:
+                                    <code>nombre_completo</code>,
+                                    <code>cantidad_de_articulos</code>. Se usa generalmente para constantes o cuando se
+                                    importa
+                                    código de otros lenguajes.
+                                </li>
+                                <li><strong>Uso de Mayúsculas:</strong> Las constantes se escriben completamente en
+                                    mayúsculas y
+                                    se
+                                    separan con guiones bajos. Ejemplo: <code>PI</code>, <code>MAX_LONGITUD</code>,
+                                    <code>NUMERO_DE_USUARIOS</code>.
+                                </li>
+                                <li><strong>Uso del Símbolo de Dólar (<code>$</code>):</strong> El símbolo de dólar es
+                                    válido en
+                                    los
+                                    nombres de variables y se utiliza frecuentemente en bibliotecas como
+                                    <code>jQuery</code>
+                                    para
+                                    identificar elementos del DOM. Ejemplo: <code>elemento$</code>,
+                                    <code>miVariable$</code>.
+                                </li>
+                                <li><strong>Nombres descriptivos:</strong> Es importante usar nombres de variables que
+                                    sean
+                                    descriptivos y representen claramente el valor que almacenan. Ejemplo:
+                                    <code>nombreUsuario</code>, <code>cantidadTotal</code>, <code>edadCliente</code>.
+                                </li>
+                                <li><strong>Evitar caracteres especiales:</strong> No utilices caracteres especiales
+                                    como
+                                    <code>!</code>, <code>@</code>, <code>%</code>, etc. Solo se permiten letras,
+                                    números,
+                                    guiones
+                                    bajos (<code>_</code>) y símbolos de dólar (<code>$</code>).
+                                </li>
+                                <li><strong>Empieza con una letra:</strong> Los nombres de las variables deben empezar
+                                    con
+                                    una
+                                    letra, un guion bajo (<code>_</code>) o el símbolo de dólar (<code>$</code>). No
+                                    deben
+                                    comenzar
+                                    con un número.</li>
+                                <li><strong>Evitar palabras reservadas:</strong> No utilices palabras reservadas de
+                                    JavaScript
+                                    como
+                                    <code>let</code>, <code>const</code>, <code>var</code>, <code>if</code>,
+                                    <code>function</code>,
+                                    <code>class</code>, etc., como nombres de variables.
+                                </li>
+                            </ul>
+
+                            <p>Siguiendo estas buenas prácticas, puedes escribir código más limpio, legible y
+                                mantenible.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Operadores">
+                        <summary>
+                            <h3>Operadores</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                Los operadores permiten realizar operaciones con valores y variables. Se
+                                clasifican en
+                                diferentes tipos:
+                            </p>
+
+                            <h4>Operadores aritméticos</h4>
+                            <p>Se usan para realizar cálculos matemáticos.</p>
+                            <ul class="list">
+                                <li><code>+</code> (Suma): <code>5 + 3 // 8</code></li>
+                                <li><code>-</code> (Resta): <code>10 - 4 // 6</code></li>
+                                <li><code>*</code> (Multiplicación): <code>6 * 2 // 12</code></li>
+                                <li><code>/</code> (División): <code>8 / 2 // 4</code></li>
+                                <li><code>%</code> (Módulo o residuo): <code>10 % 3 // 1</code></li>
+                                <li><code>**</code> (Exponente): <code>2 ** 3 // 8</code></li>
+                            </ul>
+
+                            <h4>Operadores de asignación</h4>
+                            <p>Se usan para asignar valores a las variables.</p>
+                            <ul class="list">
+                                <li><code>=</code> (Asignación): <code>x = 10</code></li>
+                                <li><code>+=</code> (Suma y asignación): <code>x += 5 // x = x + 5</code></li>
+                                <li><code>-=</code> (Resta y asignación): <code>x -= 2 // x = x - 2</code></li>
+                                <li><code>*=</code> (Multiplicación y asignación): <code>x *= 3 // x = x * 3</code></li>
+                                <li><code>/=</code> (División y asignación): <code>x /= 4 // x = x / 4</code></li>
+                            </ul>
+
+                            <h4>Operadores de comparación</h4>
+                            <p>Se usan para comparar valores y devuelven un resultado booleano (<code>true</code> o
+                                <code>false</code>).
+                            </p>
+                            <ul class="list">
+                                <li><code>==</code> (Igualdad): <code>5 == "5" // true</code> (compara solo el valor)
+                                </li>
+                                <li><code>===</code> (Igualdad estricta): <code>5 === "5" // false</code> (compara valor
+                                    y
+                                    tipo
+                                    de
+                                    dato)</li>
+                                <li><code>!=</code> (Diferente): <code>10 != 5 // true</code></li>
+                                <li><code>!==</code> (Diferente estricto): <code>10 !== "10" // true</code></li>
+                                <li><code>&gt;</code> (Mayor que): <code>8 > 3 // true</code></li>
+                                <li><code>&lt;</code> (Menor que): <code>4 < 7 // true</code></li>
+                                <li><code>&gt;=</code> (Mayor o igual que): <code>6 >= 6 // true</code></li>
+                                <li><code>&lt;=</code> (Menor o igual que): <code>3 <= 5 // true</code></li>
+                            </ul>
+
+                            <h4>Operadores lógicos</h4>
+                            <p>Se usan para combinar expresiones booleanas.</p>
+                            <ul class="list">
+                                <li><code>&&</code> (AND): <code>true && false // false</code> (ambos deben ser
+                                    <code>true</code>
+                                    para devolver <code>true</code>)
+                                </li>
+                                <li><code>||</code> (OR): <code>true || false // true</code> (al menos uno debe ser
+                                    <code>true</code>)
+                                </li>
+                                <li><code>!</code> (NOT): <code>!true // false</code> (niega el valor booleano)</li>
+                            </ul>
+
+                            <p>Los operadores son esenciales para trabajar con condiciones y cálculos en JavaScript.</p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Strings">
+                        <summary>
+                            <h3>Strings</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                Un <strong>string</strong> es una cadena de caracteres utilizada para representar texto.
+                                Se
+                                puede
+                                definir usando comillas simples (<code>' '</code>), comillas dobles (<code>" "</code>) o
+                                template
+                                literals (<code>` `</code>).
+                            </p>
+
+                            <h4>Concatenación de Strings</h4>
+                            <p>
+                                La concatenación permite unir dos o más strings. Se puede hacer de dos formas:
+                            </p>
+                            <ul class="list">
+                                <li><strong>Usando el operador <code>+</code>:</strong> <code>"Hola" + " mundo"</code>:
+                                    <code>"Hola mundo"</code>
+                                </li>
+                                <li><strong>Usando Template Literals:</strong> Se utilizan comillas invertidas
+                                    (<code>`</code>)
+                                    y la
+                                    sintaxis <code>${}</code> para insertar variables.</li>
+                            </ul>
+
+                            <h4>Métodos útiles para Strings</h4>
+                            <p>
+                                JavaScript proporciona varios métodos para manipular strings:
+                            </p>
+                            <ul class="list">
+                                <li><code>.length</code>: Devuelve la longitud del string.</li>
+                                <li><code>.toUpperCase()</code>: Convierte el texto a mayúsculas.</li>
+                                <li><code>.toLowerCase()</code>: Convierte el texto a minúsculas.</li>
+                                <li><code>.trim()</code>: Elimina espacios en blanco al inicio y al final.</li>
+                                <li><code>.includes("texto")</code>: Verifica si una cadena contiene otra.</li>
+                                <li><code>.slice(inicio, fin)</code>: Extrae parte de un string.</li>
+                                <li><code>.replace("viejo", "nuevo")</code>: Reemplaza parte de un string</li>
+                                <li><code>.split("separador")</code>: Divide un string en un array.</li>
+                            </ul>
+
+                            <p>Estos métodos facilitan la manipulación de texto en JavaScript.</p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Numeros">
+                        <summary>
+                            <h3>Números</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, los números se representan con el tipo de dato <strong>Number</strong>.
+                                No
+                                hay
+                                diferencia entre enteros y decimales, ambos se manejan bajo el mismo tipo.
+                            </p>
+
+                            <h4>Operaciones con Números</h4>
+                            <p>
+                                Se pueden realizar operaciones matemáticas usando operadores aritméticos como
+                                <code>+</code>
+                                (suma),
+                                <code>-</code> (resta), <code>*</code> (multiplicación), <code>/</code> (división),
+                                <code>%</code>
+                                (módulo) y <code>**</code> (exponente).
+                            </p>
+
+                            <h4>Métodos útiles para Números</h4>
+                            <p>
+                                JavaScript proporciona varios métodos para trabajar con números:
+                            </p>
+                            <ul class="list">
+                                <li><code>isInteger(numero)</code>: Verifica si un número es un entero.</li>
+                                <li><code>parseInt(string)</code>: Convierte un string en un número entero.</li>
+                                <li><code>parseFloat(string)</code>: Convierte un string en un número decimal.</li>
+                                <li><code>toFixed(decimales)</code>: Redondea un número a la cantidad de decimales
+                                    especificada.
+                                </li>
+                                <li><code>toPrecision(dígitos)</code>: Formatea un número con una cantidad específica de
+                                    dígitos
+                                    significativos.</li>
+                                <li><code>Math.round(numero)</code>: Redondea al entero más cercano.</li>
+                                <li><code>Math.floor(numero)</code>: Redondea hacia abajo.</li>
+                                <li><code>Math.ceil(numero)</code>: Redondea hacia arriba.</li>
+                                <li><code>Math.random()</code>: Genera un número decimal aleatorio entre 0 y 1.</li>
+                                <li><code>Math.abs(numero)</code>: Devuelve el valor absoluto de un número.</li>
+                                <li><code>Math.max(num1, num2, ...)</code>: Devuelve el número más grande de una lista.
+                                </li>
+                                <li><code>Math.min(num1, num2, ...)</code>: Devuelve el número más pequeño de una lista.
+                                </li>
+                                <li><code>Math.pow(base, exponente)</code>: Calcula una potencia.</li>
+                                <li><code>Math.sqrt(numero)</code>: Calcula la raíz cuadrada de un número.</li>
+                            </ul>
+
+                            <p>Estos métodos permiten realizar cálculos y manipular valores numéricos de forma sencilla
+                                en
+                                JavaScript.</p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Casting">
+                        <summary>
+                            <h3>(Type Casting) Conversión de Tipos de Datos</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, es común tener que convertir valores de un tipo de dato a otro. Para
+                                ello,
+                                JavaScript
+                                ofrece varias funciones y métodos.
+                            </p>
+
+                            <h4>Conversión de String a Número</h4>
+                            <p>
+                                Si tenemos un valor de tipo string y queremos convertirlo a un número, podemos usar los
+                                siguientes
+                                métodos:
+                            </p>
+                            <ul class="list">
+                                <li><code>Number(valor)</code>: Convierte el valor a un número, si es posible. Si no
+                                    puede
+                                    convertirlo, devuelve <code>NaN</code>.</li>
+                                <li><code>parseInt(valor)</code>: Convierte un string en un número entero. Si el string
+                                    no
+                                    comienza
+                                    con un número, devuelve <code>NaN</code>.</li>
+                                <li><code>parseFloat(valor)</code>: Convierte un string en un número decimal. Al igual
+                                    que
+                                    <code>parseInt()</code>, devuelve <code>NaN</code> si no puede realizar la
+                                    conversión.
+                                </li>
+                            </ul>
+
+                            <h4>Conversión de Número a String</h4>
+                            <p>
+                                Para convertir un número a un string, se pueden usar los siguientes métodos:
+                            </p>
+                            <ul class="list">
+                                <li><code>toString()</code>: Convierte un número a su representación en string. Ejemplo:
+                                    <code>123.toString()</code>: <code>"123"</code>
+                                </li>
+                                <li><code>String(valor)</code>: Convierte cualquier tipo de valor (número, objeto, etc.)
+                                    a
+                                    string.
+                            </ul>
+
+                            <h4>Conversión a Booleano</h4>
+                            <p>
+                                En JavaScript, ciertos valores se consideran "falsy" (falsos) y otros "truthy"
+                                (verdaderos).
+                                Para
+                                convertir cualquier valor a un booleano, puedes usar la función
+                                <code>Boolean(valor)</code>,
+                                que
+                                devuelve:
+                            </p>
+                            <ul class="list">
+                                <li><strong>Falsy:</strong> <code>undefined</code>, <code>null</code>, <code>0</code>,
+                                    <code>NaN</code>, <code>""</code>, <code>false</code>
+                                </li>
+                                <li><strong>Truthy:</strong> Cualquier valor que no sea falsy.</li>
+                            </ul>
+
+                            <h4>Uso del operador <code>+</code> para coerción de tipo o type casting.</h4>
+                            <p>
+                                El operador <code>+</code> puede ser utilizado para convertir un número a string. Por
+                                ejemplo, si intentamos sumar un número con un string, el número se convertirá
+                                automáticamente a
+                                string:
+                            </p>
+
+                            <p>Estas conversiones son muy útiles cuando trabajamos con diferentes tipos de datos.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Ventanas">
+                        <summary>
+                            <h3>Ventanas de Diálogo</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, se pueden utilizar ventanas de diálogo para interactuar con el usuario.
+                                Estas
+                                ventanas son proporcionadas por el navegador y permiten mostrar mensajes, recibir
+                                respuestas
+                                o
+                                confirmar acciones. Las principales ventanas de diálogo son <code>alert()</code>,
+                                <code>confirm()</code>, y <code>prompt()</code>.
+                            </p>
+
+                            <h4>1. <code>alert()</code></h4>
+                            <p>
+                                La función <code>alert()</code> muestra una ventana emergente con un mensaje y un botón
+                                "Aceptar". Esta ventana no devuelve ningún valor y simplemente sirve para mostrar
+                                información al
+                                usuario. Cuando aparece, detiene la ejecución del código hasta que el usuario haga clic
+                                en
+                                "Aceptar".
+                            </p>
+
+                            <h4>2. <code>confirm()</code></h4>
+                            <p>
+                                La función <code>confirm()</code> muestra una ventana con un mensaje y dos botones:
+                                "Aceptar" y
+                                "Cancelar". Devuelve un valor booleano: <code>true</code> si el usuario hace clic en
+                                "Aceptar",
+                                y <code>false</code> si hace clic en "Cancelar". Este método se usa comúnmente para
+                                confirmar
+                                una acción o decisión del usuario, como la eliminación de un elemento.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+
+                            <h4>3. <code>prompt()</code></h4>
+                            <p>
+                                La función <code>prompt()</code> permite al usuario ingresar un valor en un campo de
+                                texto.
+                                Muestra un mensaje, un campo de entrada y dos botones: "Aceptar" y "Cancelar". El valor
+                                ingresado por el usuario se devuelve como un string. Si el usuario hace clic en
+                                "Cancelar",
+                                se
+                                devuelve <code>null</code>.
+                            </p>
+
+                            <h4>4. Otros tipos de ventanas emergentes (no estándar)</h4>
+                            <p>
+                                Algunos navegadores también ofrecen otras funciones para mostrar ventanas emergentes,
+                                aunque
+                                no
+                                son tan comunes como las anteriores. Estas incluyen:
+                            </p>
+                            <ul class="list">
+                                <li><strong>console.log()</strong>: Aunque no es una ventana emergente, se utiliza para
+                                    mostrar
+                                    información en la consola del navegador, útil para depuración.</li>
+                                <li><strong>window.open()</strong>: Abre una nueva ventana del navegador con una URL
+                                    específica.
+                                    Es comúnmente usada para abrir páginas en nuevas pestañas o ventanas.</li>
+                            </ul>
+
+                            <h4>Impacto en el flujo de ejecución</h4>
+                            <p>
+                                Las funciones <code>alert()</code>, <code>confirm()</code>, y <code>prompt()</code>
+                                interrumpen
+                                el flujo de ejecución de la página. Cuando una de estas ventanas aparece, detiene el
+                                código
+                                JavaScript hasta que el usuario haya interactuado con la ventana, lo que puede resultar
+                                en
+                                una
+                                mala experiencia de usuario si se usan en exceso. En general, es recomendable
+                                utilizarlas
+                                con
+                                moderación y considerar alternativas como modales o notificaciones personalizadas cuando
+                                sea
+                                necesario.
+                            </p>
+                        </article>
+
+                    </details>
+
+                    <hr>
+
+                    <details id="ElementosDOM">
+                        <summary>
+                            <h3>Selección de Elementos del DOM</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, se puede seleccionar elementos del DOM (Document Object Model) para poder
+                                interactuar con ellos. Existen varias funciones dentro del objeto <code>document</code>
+                                que
+                                permiten seleccionar elementos de la página web para luego modificarlos o extraer
+                                información. A
+                                continuación se describen las funciones más comunes.
+                            </p>
+
+                            <h4>1. <code>document.getElementById()</code></h4>
+                            <p>
+                                La función <code>getElementById()</code> permite seleccionar un elemento del DOM usando
+                                su
+                                identificador único (<code>id</code>). Esta función devuelve un solo elemento, ya que
+                                <code>id</code> debe ser único dentro de la página.
+                            </p>
+
+                            <h4>2. <code>document.getElementsByClassName()</code></h4>
+                            <p>
+                                La función <code>getElementsByClassName()</code> selecciona todos los elementos que
+                                tienen
+                                una
+                                clase específica. Esta función devuelve una colección de nodos (una lista de elementos)
+                                que
+                                coinciden con la clase dada. Es importante notar que devuelve una colección en vivo, lo
+                                que
+                                significa que si se agregan o eliminan elementos con esa clase, la colección se
+                                actualizará
+                                automáticamente.
+                            </p>
+
+                            <h4>3. <code>document.getElementsByTagName()</code></h4>
+                            <p>
+                                La función <code>getElementsByTagName()</code> selecciona todos los elementos del DOM
+                                que
+                                coinciden con una etiqueta HTML específica. Al igual que
+                                <code>getElementsByClassName()</code>,
+                                devuelve una colección de nodos en vivo.
+                            </p>
+
+                            <h4>4. <code>document.querySelector()</code></h4>
+                            <p>La función <code>querySelector()</code>, selecciona el primer elemento del DOM que
+                                coincide
+                                con
+                                un selector CSS especificado. A diferencia de <code></code>getElementById()</code>, que
+                                selecciona por ID, esta función permite usar selectores más flexibles, como clases
+                                (.clase),
+                                IDs
+                                (#id) o etiquetas (etiqueta). Devuelve un único nodo, incluso si hay múltiples
+                                coincidencias, y
+                                la colección no es en vivo.
+                            </p>
+
+                            <h4>5. <code>document.querySelectorAll()</code></h4>
+                            <p>
+                                <code>querySelectorAll()</code> selecciona todos los elementos que coinciden con un
+                                selector
+                                CSS
+                                especificado, devolviendo una NodeList estática (no en vivo). Esto significa que, a
+                                diferencia
+                                de <code>getElementsByClassName()</code> o <code>getElementsByTagName()</code>, si el
+                                DOM
+                                cambia
+                                después de la selección,
+                                la lista no se actualizará automáticamente. Se pueden usar métodos como
+                                </code>.forEach()</code>
+                                para recorrer
+                                los elementos de la lista.
+                            </p>
+
+                            <h4>Impacto en el flujo</h4>
+                            <p>
+                                Las funciones como <code>getElementById()</code>, <code>getElementsByClassName()</code>,
+                                y
+                                <code>getElementsByTagName()</code> permiten manipular elementos de forma directa. Al
+                                seleccionar un elemento, se puede modificar su contenido, estilo, atributos, entre
+                                otros. Es
+                                fundamental entender cómo funcionan las colecciones de nodos devueltas (en vivo o no en
+                                vivo)
+                                para evitar problemas de actualización y manipulación incorrecta de los elementos.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="ModificacionDOM">
+                        <summary>
+                            <h3>Modificación del contenido en el DOM</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                El DOM (Document Object Model) permite manipular dinámicamente el contenido de una
+                                página
+                                web.
+                                JavaScript ofrece múltiples métodos para modificar el texto, insertar nuevos elementos y
+                                eliminar nodos dentro del documento HTML.
+                            </p>
+
+                            <h4>1. Modificar el texto de un elemento</h4>
+                            <p>Existen diferentes formas de cambiar el contenido textual de un elemento:</p>
+                            <ul class="list">
+                                <li><strong><code>textContent</code></strong>: Modifica o devuelve el contenido de texto
+                                    sin
+                                    interpretar etiquetas HTML.</li>
+                                <li><strong><code>innerHTML</code></strong>: Modifica el contenido del elemento e
+                                    interpreta
+                                    etiquetas HTML.</li>
+                                <li><strong><code>innerText</code></strong>: Similar a <code>textContent</code>, pero
+                                    respeta
+                                    los estilos CSS como <code>display: none</code>.</li>
+                            </ul>
+
+                            <h4>2. Insertar nuevos elementos en el DOM</h4>
+                            <p>JavaScript permite agregar nuevos elementos dentro del DOM utilizando diferentes métodos:
+                            </p>
+                            <ul class="list">
+                                <li><strong><code>appendChild()</code></strong>: Agrega un nuevo elemento dentro de otro
+                                    como su
+                                    hijo.</li>
+                                <li><strong><code>prepend()</code></strong>: Inserta un nuevo elemento como el primer
+                                    hijo
+                                    de un
+                                    contenedor.</li>
+                                <li><strong><code>insertAdjacentHTML()</code></strong>: Inserta contenido HTML en
+                                    distintas
+                                    posiciones respecto a un elemento (<code>"beforebegin"</code>,
+                                    <code>"afterbegin"</code>,
+                                    <code>"beforeend"</code>, <code>"afterend"</code>).
+                                </li>
+                            </ul>
+
+                            <h4>3. Eliminar contenido o elementos del DOM</h4>
+                            <p>Para eliminar elementos del DOM, se pueden utilizar los siguientes métodos:</p>
+                            <ul class="list">
+                                <li><strong><code>removeChild()</code></strong>: Elimina un elemento hijo dentro de
+                                    otro.
+                                </li>
+                                <li><strong><code>remove()</code></strong>: Borra directamente un elemento del DOM.</li>
+                                <li><strong><code>replaceChild()</code></strong>: Reemplaza un nodo hijo por otro.</li>
+                            </ul>
+
+                            <p>Estos métodos permiten modificar dinámicamente el contenido de una página web, ya sea
+                                cambiando
+                                texto, insertando elementos o eliminando contenido de manera eficiente.</p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="EstructurasControlIf">
+                        <summary>
+                            <h3>Estructuras de Control: `if`, `if else` y `else`</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, la estructura de control <code>if</code> permite ejecutar un bloque de
+                                código
+                                solo si se cumple una condición específica. Si la condición no se cumple, se pueden usar
+                                <code>else</code> y <code>else if</code> para manejar otros casos posibles.
+                            </p>
+
+                            <h4>1. <code>if</code>: Evaluando una Condición</h4>
+                            <p>
+                                La sentencia <code>if</code> se usa para ejecutar código solo si una condición es
+                                verdadera.
+                            </p>
+                            <p><strong>Sintaxis:</strong></p>
+                            <pre><code>
 if (condición) {
     // Código que se ejecuta si la condición es verdadera
 }
 </code></pre>
-                    <h4>2. <code>if else</code>: Manejo de Condiciones Alternativas</h4>
-                    <p>
-                        Cuando se necesita ejecutar un bloque de código en caso de que la condición no se cumpla, se usa
-                        <code>else</code>.
-                    </p>
-                    <p><strong>Sintaxis:</strong></p>
-                    <pre><code>
+                            <h4>2. <code>if else</code>: Manejo de Condiciones Alternativas</h4>
+                            <p>
+                                Cuando se necesita ejecutar un bloque de código en caso de que la condición no se
+                                cumpla, se
+                                usa
+                                <code>else</code>.
+                            </p>
+                            <p><strong>Sintaxis:</strong></p>
+                            <pre><code>
 if (condición) {
     // Código si la condición es verdadera
 } else {
@@ -723,13 +863,14 @@ if (condición) {
 }
 </code></pre>
 
-                    <h4>3. <code>else if</code>: Evaluando Múltiples Condiciones</h4>
-                    <p>
-                        Si se tienen varias condiciones posibles, se puede usar <code>else if</code> para evaluar
-                        diferentes escenarios antes de llegar al <code>else</code>.
-                    </p>
-                    <p><strong>Sintaxis:</strong></p>
-                    <pre><code>
+                            <h4>3. <code>else if</code>: Evaluando Múltiples Condiciones</h4>
+                            <p>
+                                Si se tienen varias condiciones posibles, se puede usar <code>else if</code> para
+                                evaluar
+                                diferentes escenarios antes de llegar al <code>else</code>.
+                            </p>
+                            <p><strong>Sintaxis:</strong></p>
+                            <pre><code>
 if (condición1) {
     // Código si condición1 es verdadera
 } else if (condición2) {
@@ -739,44 +880,54 @@ if (condición1) {
 }
 </code></pre>
 
-                    <h4>Consideraciones Importantes</h4>
+                            <h4>Consideraciones Importantes</h4>
 
-                    <ul class="list">
-                        <li>Las condiciones dentro de <code>if</code> deben evaluarse a un valor <code>true</code> o
-                            <code>false</code>.
-                        </li>
-                        <li>El bloque <code>else</code> es opcional, pero se recomienda para manejar casos no
-                            contemplados.</li>
-                        <li>Se pueden anidar múltiples <code>else if</code>, pero es importante no abusar de ellos para
-                            evitar código difícil de leer.</li>
-                        <li>Es recomendable utilizar operadores lógicos como <code>&&</code> (AND), <code>||</code>
-                            (OR) y <code>!</code> (NOT) para combinar condiciones dentro de un mismo <code>if</code>.
-                        </li>
-                    </ul>
+                            <ul class="list">
+                                <li>Las condiciones dentro de <code>if</code> deben evaluarse a un valor
+                                    <code>true</code> o
+                                    <code>false</code>.
+                                </li>
+                                <li>El bloque <code>else</code> es opcional, pero se recomienda para manejar casos no
+                                    contemplados.</li>
+                                <li>Se pueden anidar múltiples <code>else if</code>, pero es importante no abusar de
+                                    ellos
+                                    para
+                                    evitar código difícil de leer.</li>
+                                <li>Es recomendable utilizar operadores lógicos como <code>&&</code> (AND),
+                                    <code>||</code>
+                                    (OR) y <code>!</code> (NOT) para combinar condiciones dentro de un mismo
+                                    <code>if</code>.
+                                </li>
+                            </ul>
 
-                    <p>Las estructuras <code>if</code>, <code>else if</code> y <code>else</code> son fundamentales en la
-                        toma de decisiones dentro de un programa en JavaScript.</p>
-                </article>
-            </details>
+                            <p>Las estructuras <code>if</code>, <code>else if</code> y <code>else</code> son
+                                fundamentales
+                                en la
+                                toma de decisiones dentro de un programa en JavaScript.</p>
+                        </article>
+                    </details>
 
-            <hr>
+                    <hr>
 
-            <details id="EstructurasControlSwitch">
-                <summary>
-                    <h3>Estructura de Control: switch</h3>
-                </summary>
-                <article>
-                    <p>
-                        En JavaScript, la sentencia <code>switch</code> se usa para tomar decisiones basadas en el valor
-                        de una expresión.
-                        En lugar de evaluar múltiples condiciones con <code>if else</code>, el <code>switch</code>
-                        compara un valor con diferentes
-                        casos y ejecuta el código correspondiente.
-                    </p>
+                    <details id="EstructurasControlSwitch">
+                        <summary>
+                            <h3>Estructura de Control: switch</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, la sentencia <code>switch</code> se usa para tomar decisiones basadas en
+                                el
+                                valor
+                                de una expresión.
+                                En lugar de evaluar múltiples condiciones con <code>if else</code>, el
+                                <code>switch</code>
+                                compara un valor con diferentes
+                                casos y ejecuta el código correspondiente.
+                            </p>
 
-                    <h4>1. Sintaxis de <code>switch</code></h4>
-                    <p><strong>Ejemplo de uso:</strong></p>
-                    <pre><code>
+                            <h4>1. Sintaxis de <code>switch</code></h4>
+                            <p><strong>Ejemplo de uso:</strong></p>
+                            <pre><code>
 switch (expresión) {
     case valor1:
         // Código a ejecutar si expresión === valor1
@@ -789,19 +940,22 @@ switch (expresión) {
 }
 </code></pre>
 
-                    <h4>2. Funcionamiento</h4>
-                    <ul>
-                        <li>La expresión dentro de <code>switch</code> se evalúa y se compara con los valores de cada
-                            <code>case</code>.
-                        </li>
-                        <li>Si hay una coincidencia, se ejecuta el código del caso correspondiente.</li>
-                        <li>La sentencia <code>break</code> evita que la ejecución continúe en los siguientes casos.
-                        </li>
-                        <li>El bloque <code>default</code> es opcional y se ejecuta si no hay coincidencias.</li>
-                    </ul>
+                            <h4>2. Funcionamiento</h4>
+                            <ul>
+                                <li>La expresión dentro de <code>switch</code> se evalúa y se compara con los valores de
+                                    cada
+                                    <code>case</code>.
+                                </li>
+                                <li>Si hay una coincidencia, se ejecuta el código del caso correspondiente.</li>
+                                <li>La sentencia <code>break</code> evita que la ejecución continúe en los siguientes
+                                    casos.
+                                </li>
+                                <li>El bloque <code>default</code> es opcional y se ejecuta si no hay coincidencias.
+                                </li>
+                            </ul>
 
-                    <h4>3. Ejemplo Práctico</h4>
-                    <pre><code>
+                            <h4>3. Ejemplo Práctico</h4>
+                            <pre><code>
 let dia = "lunes";
 
 switch (dia) {
@@ -820,76 +974,93 @@ switch (dia) {
 }
 </code></pre>
 
-                    <h4>4. Consideraciones Importantes</h4>
-                    <ul>
-                        <li>El uso de <code>break</code> es importante para evitar la ejecución de múltiples casos.</li>
-                        <li>Si dos casos deben ejecutar el mismo código, pueden agruparse sin <code>break</code> entre
-                            ellos.</li>
-                        <li>El <code>switch</code> solo compara valores con <code>===</code> (estrictamente iguales).
-                        </li>
-                        <li>Para condiciones más complejas, <code>if else</code> puede ser una mejor opción.</li>
-                    </ul>
+                            <h4>4. Consideraciones Importantes</h4>
+                            <ul>
+                                <li>El uso de <code>break</code> es importante para evitar la ejecución de múltiples
+                                    casos.
+                                </li>
+                                <li>Si dos casos deben ejecutar el mismo código, pueden agruparse sin <code>break</code>
+                                    entre
+                                    ellos.</li>
+                                <li>El <code>switch</code> solo compara valores con <code>===</code> (estrictamente
+                                    iguales).
+                                </li>
+                                <li>Para condiciones más complejas, <code>if else</code> puede ser una mejor opción.
+                                </li>
+                            </ul>
 
-                    <p>El uso de <code>switch</code> ayuda a organizar el código y mejorar la legibilidad cuando hay
-                        múltiples comparaciones posibles.</p>
-                </article>
-            </details>
+                            <p>El uso de <code>switch</code> ayuda a organizar el código y mejorar la legibilidad cuando
+                                hay
+                                múltiples comparaciones posibles.</p>
+                        </article>
+                    </details>
 
-            <hr>
+                    <hr>
 
-            <details id="BucleFor">
-                <summary>
-                    <h3>Bucle for</h3>
-                </summary>
-                <article>
-                    <p>
-                        El bucle <code>for</code> es una estructura de control en JavaScript que permite ejecutar un
-                        bloque de código
-                        un número determinado de veces. Se compone de tres partes: inicialización, condición y
-                        actualización.
-                    </p>
+                    <details id="BucleFor">
+                        <summary>
+                            <h3>Bucle for</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                El bucle <code>for</code> es una estructura de control en JavaScript que permite
+                                ejecutar un
+                                bloque de código
+                                un número determinado de veces. Se compone de tres partes: inicialización, condición y
+                                actualización.
+                            </p>
 
-                    <h4>1. Sintaxis del bucle <code>for</code></h4>
-                    <p>El bucle <code>for</code> sigue la siguiente estructura:</p>
-                    <pre><code>
+                            <h4>1. Sintaxis del bucle <code>for</code></h4>
+                            <p>El bucle <code>for</code> sigue la siguiente estructura:</p>
+                            <pre><code>
 for (inicialización; condición; actualización) {
     // Código a ejecutar en cada iteración
 }
                     </code></pre>
 
-                    <h4>2. Explicación de los parámetros</h4>
-                    <ul>
-                        <li><strong>Inicialización:</strong> Se ejecuta una sola vez antes de que el bucle comience.
-                            Generalmente, se usa para declarar e inicializar una variable de control.</li>
-                        <li><strong>Condición:</strong> Se evalúa antes de cada iteración. Si es <code>true</code>, el
-                            bloque de código se ejecuta; si es <code>false</code>, el bucle termina.</li>
-                        <li><strong>Actualización:</strong> Se ejecuta al final de cada iteración y generalmente se usa
-                            para modificar la variable de control.</li>
-                    </ul>
+                            <h4>2. Explicación de los parámetros</h4>
+                            <ul>
+                                <li><strong>Inicialización:</strong> Se ejecuta una sola vez antes de que el bucle
+                                    comience.
+                                    Generalmente, se usa para declarar e inicializar una variable de control.</li>
+                                <li><strong>Condición:</strong> Se evalúa antes de cada iteración. Si es
+                                    <code>true</code>,
+                                    el
+                                    bloque de código se ejecuta; si es <code>false</code>, el bucle termina.
+                                </li>
+                                <li><strong>Actualización:</strong> Se ejecuta al final de cada iteración y generalmente
+                                    se
+                                    usa
+                                    para modificar la variable de control.</li>
+                            </ul>
 
-                    <h4>3. Ejemplo de uso</h4>
-                    <p>Este ejemplo muestra un bucle <code>for</code> que imprime los números del 1 al 5 en la consola:
-                    </p>
-                    <pre><code>
+                            <h4>3. Ejemplo de uso</h4>
+                            <p>Este ejemplo muestra un bucle <code>for</code> que imprime los números del 1 al 5 en la
+                                consola:
+                            </p>
+                            <pre><code>
 for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
                     </code></pre>
 
-                    <h4>4. Consideraciones</h4>
-                    <ul>
-                        <li>Si la condición nunca se cumple, el bucle no se ejecuta.</li>
-                        <li>Si no hay una actualización correcta de la variable de control, el bucle puede volverse
-                            infinito.</li>
-                        <li>Se puede usar la palabra clave <code>break</code> para salir del bucle antes de que la
-                            condición sea falsa.</li>
-                        <li>La palabra clave <code>continue</code> permite saltar una iteración sin salir del bucle.
-                        </li>
-                    </ul>
+                            <h4>4. Consideraciones</h4>
+                            <ul>
+                                <li>Si la condición nunca se cumple, el bucle no se ejecuta.</li>
+                                <li>Si no hay una actualización correcta de la variable de control, el bucle puede
+                                    volverse
+                                    infinito.</li>
+                                <li>Se puede usar la palabra clave <code>break</code> para salir del bucle antes de que
+                                    la
+                                    condición sea falsa.</li>
+                                <li>La palabra clave <code>continue</code> permite saltar una iteración sin salir del
+                                    bucle.
+                                </li>
+                            </ul>
 
-                    <h4>5. Uso de <code>break</code> y <code>continue</code></h4>
-                    <p>Ejemplo con <code>break</code>: el bucle se detiene cuando <code>i</code> vale 3.</p>
-                    <pre><code>
+                            <h4>5. Uso de <code>break</code> y <code>continue</code></h4>
+                            <p>Ejemplo con <code>break</code>: el bucle se detiene cuando <code>i</code> vale 3.</p>
+                            <pre><code>
 for (let i = 1; i <= 5; i++) {
     if (i === 3) {
         break; // Sale del bucle cuando i es 3
@@ -898,8 +1069,8 @@ for (let i = 1; i <= 5; i++) {
 }
                     </code></pre>
 
-                    <p>Ejemplo con <code>continue</code>: la iteración se salta cuando <code>i</code> es 3.</p>
-                    <pre><code>
+                            <p>Ejemplo con <code>continue</code>: la iteración se salta cuando <code>i</code> es 3.</p>
+                            <pre><code>
 for (let i = 1; i <= 5; i++) {
     if (i === 3) {
         continue; // Salta la iteración cuando i es 3
@@ -908,64 +1079,69 @@ for (let i = 1; i <= 5; i++) {
 }
             </code></pre>
 
-                    <p>El bucle <code>for</code> es una herramienta esencial en JavaScript para recorrer estructuras
-                        como arrays, listas y ejecutar tareas repetitivas de manera controlada.</p>
-                </article>
-            </details>
+                            <p>El bucle <code>for</code> es una herramienta esencial en JavaScript para recorrer
+                                estructuras
+                                como arrays, listas y ejecutar tareas repetitivas de manera controlada.</p>
+                        </article>
+                    </details>
 
-            <hr>
+                    <hr>
 
-            <details id="BucleWhile">
-                <summary>
-                    <h3>Bucle while</h3>
-                </summary>
+                    <details id="BucleWhile">
+                        <summary>
+                            <h3>Bucle while</h3>
+                        </summary>
 
-                <article>
-                    <p>
-                        El bucle <code>while</code> es una estructura de control que ejecuta un bloque de código
-                        mientras una condición especificada sea <code>true</code>. A diferencia del bucle
-                        <code>for</code>,
-                        no requiere una inicialización ni una actualización dentro de su estructura.
-                    </p>
+                        <article>
+                            <p>
+                                El bucle <code>while</code> es una estructura de control que ejecuta un bloque de código
+                                mientras una condición especificada sea <code>true</code>. A diferencia del bucle
+                                <code>for</code>,
+                                no requiere una inicialización ni una actualización dentro de su estructura.
+                            </p>
 
-                    <h4>1. Sintaxis del bucle <code>while</code></h4>
-                    <p>La estructura básica del bucle <code>while</code> es la siguiente:</p>
-                    <pre><code>
+                            <h4>1. Sintaxis del bucle <code>while</code></h4>
+                            <p>La estructura básica del bucle <code>while</code> es la siguiente:</p>
+                            <pre><code>
 while (condición) {
     // Código a ejecutar mientras la condición sea verdadera
 }
                     </code></pre>
 
-                    <h4>2. Funcionamiento</h4>
-                    <ul>
-                        <li>Primero, se evalúa la <strong>condición</strong>.</li>
-                        <li>Si la condición es <code>true</code>, el bloque de código se ejecuta.</li>
-                        <li>Después de ejecutar el código, la condición se vuelve a evaluar.</li>
-                        <li>El proceso se repite hasta que la condición se vuelva <code>false</code>.</li>
-                    </ul>
+                            <h4>2. Funcionamiento</h4>
+                            <ul>
+                                <li>Primero, se evalúa la <strong>condición</strong>.</li>
+                                <li>Si la condición es <code>true</code>, el bloque de código se ejecuta.</li>
+                                <li>Después de ejecutar el código, la condición se vuelve a evaluar.</li>
+                                <li>El proceso se repite hasta que la condición se vuelva <code>false</code>.</li>
+                            </ul>
 
-                    <h4>3. Ejemplo de uso</h4>
-                    <p>Este ejemplo usa un bucle <code>while</code> para imprimir los números del 1 al 5 en la consola:
-                    </p>
-                    <pre><code>
+                            <h4>3. Ejemplo de uso</h4>
+                            <p>Este ejemplo usa un bucle <code>while</code> para imprimir los números del 1 al 5 en la
+                                consola:
+                            </p>
+                            <pre><code>
 let i = 1;
 while (i <= 5) {
     console.log(i);
     i++; // Se incrementa la variable de control
 }
                     </code></pre>
-                    <h4>4. Peligro de bucles infinitos</h4>
-                    <p>Si la condición nunca se vuelve <code>false</code>, el bucle <code>while</code> se ejecutará
-                        indefinidamente.</p>
-                    <pre><code>
+                            <h4>4. Peligro de bucles infinitos</h4>
+                            <p>Si la condición nunca se vuelve <code>false</code>, el bucle <code>while</code> se
+                                ejecutará
+                                indefinidamente.</p>
+                            <pre><code>
 // ❌ Esto causará un bucle infinito, ya que la condición siempre es verdadera
 while (true) {
     console.log("Esto nunca terminará");
 }
 </code></pre>
-                    <h4>5. Uso de <code>break</code> y <code>continue</code></h4>
-                    <p>Se puede usar <code>break</code> para salir del bucle antes de que la condición sea falsa.</p>
-                    <pre><code>
+                            <h4>5. Uso de <code>break</code> y <code>continue</code></h4>
+                            <p>Se puede usar <code>break</code> para salir del bucle antes de que la condición sea
+                                falsa.
+                            </p>
+                            <pre><code>
 let i = 1;
 while (i <= 5) {
     if (i === 3) {
@@ -976,8 +1152,8 @@ while (i <= 5) {
 }
                     </code></pre>
 
-                    <p>También se puede usar <code>continue</code> para saltar una iteración.</p>
-                    <pre><code>
+                            <p>También se puede usar <code>continue</code> para saltar una iteración.</p>
+                            <pre><code>
 let i = 0;
 while (i < 5) {
     i++;
@@ -988,73 +1164,318 @@ while (i < 5) {
 }
                 </code></pre>
 
-                    <p>El bucle <code>while</code> es útil cuando no se conoce de antemano cuántas veces se ejecutará el
-                        código, como en validaciones o lecturas de datos dinámicos.</p>
-                </article>
-            </details>
+                            <p>El bucle <code>while</code> es útil cuando no se conoce de antemano cuántas veces se
+                                ejecutará el
+                                código, como en validaciones o lecturas de datos dinámicos.</p>
+                        </article>
+                    </details>
 
-            <hr>
+                    <hr>
 
-            <details id="EstadosCargaDOM">
-                <summary>
-                    <h3>Estados de carga de una página</h3>
-                </summary>
-                <p>Cuando una página web se carga en el navegador, pasa por diferentes estados. Conocer estos estados es
-                    clave para saber en qué momento se puede manipular el <strong>DOM</strong> de manera segura y
-                    eficiente.</p>
+                    <details id="Functions">
+                        <summary>
+                            <h3>Funciones</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                En JavaScript, las funciones son bloques de código reutilizables que pueden ejecutarse
+                                cuando se
+                                necesiten.
+                            </p>
 
-                <h3>1. Estados de carga de un documento</h3>
-                <p>El navegador sigue un flujo específico al cargar una página web, y podemos identificar estos estados
-                    con <code>document.readyState</code>:</p>
-                <ul>
-                    <li><strong>loading:</strong> El navegador está cargando el HTML inicial. Aún no ha construido
-                        completamente el DOM.</li>
-                    <li><strong>interactive:</strong> El DOM ha sido construido, pero los recursos externos (CSS,
-                        imágenes, scripts) pueden seguir cargando.</li>
-                    <li><strong>complete:</strong> Toda la página, incluidos los recursos externos, han terminado de
-                        cargarse.</li>
-                </ul>
-                <pre><code>console.log(document.readyState);</code></pre>
+                            <h4>1. Definición de una Función</h4>
+                            <p>
+                                Para definir una función en JavaScript, se usa la palabra clave <code>function</code>,
+                                seguida
+                                del nombre de la función, paréntesis de parámetros <code>()</code> y un bloque de código
+                                dentro de
+                                llaves
+                                <code>{}</code>.
+                            </p>
+                            <p><strong>Sintaxis:</strong></p>
+                            <pre><code>
+function nombreDeLaFuncion() {
+    // Código que se ejecutará cuando se llame a la función
+}
+</code></pre>
 
-                <h3>2. Eventos clave durante la carga de la página</h3>
+                            <h4>2. Llamado de una Función</h4>
+                            <p>
+                                Para ejecutar una función, simplemente se escribe su nombre seguido de paréntesis
+                                <code>()</code>.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+function saludar() {
+    console.log("¡Hola, bienvenido a JavaScript!");
+}
 
-                <h4><code>DOMContentLoaded</code></h4>
-                <p>Se dispara cuando el HTML ha sido completamente cargado y el DOM ha sido construido, pero sin esperar
-                    a imágenes, CSS u otros recursos externos.</p>
-                <pre><code>document.addEventListener("DOMContentLoaded", () => {
+saludar(); // Llamamos a la función
+</code></pre>
+
+                            <h4>3. Funciones con Parámetros</h4>
+                            <p>
+                                Podemos pasar valores a una función usando parámetros. Estos valores se reciben dentro
+                                de
+                                los
+                                paréntesis y pueden usarse dentro de la función.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+function sumar(a, b) {
+    console.log("La suma es:", a + b);
+}
+
+sumar(5, 3); // Resultado: La suma es: 8
+</code></pre>
+
+                            <h4>4. Funciones con Valor de Retorno</h4>
+                            <p>
+                                Las funciones pueden devolver un valor usando la palabra clave <code>return</code>. Esto
+                                permite
+                                que el resultado se almacene o se use en otro lugar del programa.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+function multiplicar(x, y) {
+    return x * y; // Devuelve el resultado de la multiplicación
+}
+
+let resultado = multiplicar(4, 6);
+console.log("El resultado es:", resultado); // El resultado es: 24
+</code></pre>
+
+                            <h4>5. Funciones como Expresiones</h4>
+                            <p>
+                                También es posible definir funciones dentro de variables. A esto se le llama expresión
+                                de
+                                función.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+let dividir = function(a, b) {
+    return a / b;
+};
+
+console.log(dividir(10, 2)); // Resultado: 5
+</code></pre>
+
+                            <p>
+                                Las funciones son fundamentales en JavaScript y permiten estructurar mejor el código,
+                                evitando
+                                la repetición y mejorando la reutilización.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="ArrowFunctions">
+                        <summary>
+                            <h3>Funciones Flecha (Arrow Functions)</h3>
+                        </summary>
+
+                        <article>
+                            <p>
+                                Las funciones flecha (Arrow Functions) en JavaScript son una forma más compacta de
+                                escribir
+                                funciones. Se introdujeron en ES6 y ofrecen una sintaxis más limpia y moderna.
+                            </p>
+
+                            <h4>1. Sintaxis de una Arrow Function</h4>
+                            <p>
+                                En lugar de usar la palabra clave <code>function</code>, las funciones flecha se definen
+                                con
+                                el
+                                operador <code>=&gt;</code>.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+// Función clásica
+function saludar() {
+    return "¡Hola, mundo!";
+}
+
+// Función flecha equivalente
+const saludar = () => "¡Hola, mundo!";
+console.log(saludar()); // ¡Hola, mundo!
+</code></pre>
+
+                            <h4>2. Arrow Functions con Parámetros</h4>
+                            <p>
+                                Si la función recibe parámetros, se colocan dentro de los paréntesis <code>()</code>.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+// Función clásica
+function sumar(a, b) {
+    return a + b;
+}
+
+// Función flecha equivalente
+const sumar = (a, b) => a + b;
+console.log(sumar(5, 3)); // Resultado: 8
+</code></pre>
+
+                            <h4>3. Arrow Functions con un Solo Parámetro</h4>
+                            <p>
+                                Si hay un solo parámetro, se pueden omitir los paréntesis.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+    const cuadrado = num => num * num;
+    console.log(cuadrado(4)); // Resultado: 16
+</code></pre>
+
+                            <h4>4. Arrow Functions con Múltiples Líneas</h4>
+                            <p>
+                                Si la función tiene más de una línea de código, se deben usar llaves <code>{}</code> y
+                                la
+                                palabra clave <code>return</code>.
+                            </p>
+                            <p><strong>Ejemplo:</strong></p>
+                            <pre><code>
+const multiplicar = (x, y) => {
+    let resultado = x * y;
+    return resultado;
+};
+
+console.log(multiplicar(4, 6)); // Resultado: 24
+</code></pre>
+
+                            <h4>5. Diferencias entre Arrow Functions y Funciones Clásicas</h4>
+                            <p>
+                                Aunque las funciones flecha pueden reemplazar a las clásicas en muchos casos, tienen
+                                diferencias
+                                importantes:
+                            </p>
+                            <ul class="list">
+                                <li><strong>No tienen su propio <code>this</code>:</strong> En las funciones flecha,
+                                    <code>this</code> se mantiene del contexto en el que se creó la función. En cambio,
+                                    en
+                                    las
+                                    funciones clásicas, <code>this</code> cambia según cómo se llama la función.
+                                </li>
+                                <li><strong>No tienen <code>arguments</code>:</strong> No se puede acceder al objeto
+                                    <code>arguments</code> dentro de una función flecha, lo que puede ser un problema si
+                                    necesitas trabajar con argumentos dinámicos.
+                                </li>
+                                <li><strong>No pueden usarse como métodos de objetos:</strong> Si usas una arrow
+                                    function
+                                    dentro
+                                    de un objeto, <code>this</code> no apuntará al objeto, sino al contexto exterior.
+                                </li>
+                                <li><strong>No pueden usarse como constructores:</strong> No se pueden usar con
+                                    <code>new</code>
+                                    para crear instancias de objetos.
+                                </li>
+                            </ul>
+
+                            <h4>6. Ejemplo de <code>this</code> en Arrow Functions vs. Funciones Clásicas</h4>
+                            <p><strong>Ejemplo con función clásica:</strong></p>
+                            <pre><code>
+const objeto = {
+    nombre: "Ejemplo",
+    mostrar: function() {
+        console.log(this.nombre); // "Ejemplo"
+    }
+};
+
+objeto.mostrar();
+</code></pre>
+
+                            <p><strong>Ejemplo con Arrow Function (Error):</strong></p>
+                            <pre><code>
+const objeto2 = {
+    nombre: "Ejemplo",
+    mostrar: () => {
+        console.log(this.nombre); // undefined, porque this apunta al contexto global
+    }
+};
+
+objeto2.mostrar();
+</code></pre>
+
+                            <p>
+                                Las funciones flecha son ideales para callbacks, métodos en arrays como
+                                <code>map()</code> y
+                                <code>filter()</code>, y situaciones donde no necesitas un <code>this</code> específico.
+                            </p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="EstadosCargaDOM">
+                        <summary>
+                            <h3>Estados de carga de una página</h3>
+                        </summary>
+                        <p>Cuando una página web se carga en el navegador, pasa por diferentes estados. Conocer estos
+                            estados es
+                            clave para saber en qué momento se puede manipular el <strong>DOM</strong> de manera segura
+                            y
+                            eficiente.</p>
+
+                        <h3>1. Estados de carga de un documento</h3>
+                        <p>El navegador sigue un flujo específico al cargar una página web, y podemos identificar estos
+                            estados
+                            con <code>document.readyState</code>:</p>
+                        <ul>
+                            <li><strong>loading:</strong> El navegador está cargando el HTML inicial. Aún no ha
+                                construido
+                                completamente el DOM.</li>
+                            <li><strong>interactive:</strong> El DOM ha sido construido, pero los recursos externos
+                                (CSS,
+                                imágenes, scripts) pueden seguir cargando.</li>
+                            <li><strong>complete:</strong> Toda la página, incluidos los recursos externos, han
+                                terminado de
+                                cargarse.</li>
+                        </ul>
+                        <pre><code>console.log(document.readyState);</code></pre>
+
+                        <h3>2. Eventos clave durante la carga de la página</h3>
+
+                        <h4><code>DOMContentLoaded</code></h4>
+                        <p>Se dispara cuando el HTML ha sido completamente cargado y el DOM ha sido construido, pero sin
+                            esperar
+                            a imágenes, CSS u otros recursos externos.</p>
+                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
     console.log("El DOM ha sido completamente cargado");
 });</code></pre>
 
-                <h4><code>load</code></h4>
-                <p>Se dispara cuando la página ha terminado de cargar completamente, incluyendo imágenes, hojas de
-                    estilo y otros recursos.</p>
-                <pre><code>window.addEventListener("load", () => {
+                        <h4><code>load</code></h4>
+                        <p>Se dispara cuando la página ha terminado de cargar completamente, incluyendo imágenes, hojas
+                            de
+                            estilo y otros recursos.</p>
+                        <pre><code>window.addEventListener("load", () => {
     console.log("Todos los recursos han terminado de cargarse.");
 });</code></pre>
 
-                <h4><code>beforeunload</code></h4>
-                <p>Se dispara antes de que el usuario salga de la página. Se usa para mostrar advertencias antes de
-                    cerrar o recargar.</p>
-                <pre><code>window.addEventListener("beforeunload", (event) => {
+                        <h4><code>beforeunload</code></h4>
+                        <p>Se dispara antes de que el usuario salga de la página. Se usa para mostrar advertencias antes
+                            de
+                            cerrar o recargar.</p>
+                        <pre><code>window.addEventListener("beforeunload", (event) => {
     event.preventDefault();
     event.returnValue = "¿Seguro que quieres salir?";
 });</code></pre>
 
-                <h3>3. Dónde comenzar a manipular el DOM</h3>
-                <ul>
-                    <li><strong>Si solo necesitas acceder a elementos HTML y modificar el DOM:</strong> usa
-                        <code>DOMContentLoaded</code>.
-                    </li>
-                    <li><strong>Si necesitas esperar a que las imágenes y estilos estén listos:</strong> usa
-                        <code>load</code>.
-                    </li>
-                    <li><strong>Si necesitas realizar algo antes de que el usuario salga de la página:</strong> usa
-                        <code>beforeunload</code> o <code>unload</code>.
-                    </li>
-                </ul>
+                        <h3>3. Dónde comenzar a manipular el DOM</h3>
+                        <ul>
+                            <li><strong>Si solo necesitas acceder a elementos HTML y modificar el DOM:</strong> usa
+                                <code>DOMContentLoaded</code>.
+                            </li>
+                            <li><strong>Si necesitas esperar a que las imágenes y estilos estén listos:</strong> usa
+                                <code>load</code>.
+                            </li>
+                            <li><strong>Si necesitas realizar algo antes de que el usuario salga de la página:</strong>
+                                usa
+                                <code>beforeunload</code> o <code>unload</code>.
+                            </li>
+                        </ul>
 
-                <h3>4. Ejemplo completo</h3>
-                <pre><code>document.addEventListener("DOMContentLoaded", () => {
+                        <h3>4. Ejemplo completo</h3>
+                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
     console.log("El DOM está listo");
     document.querySelector("h1").style.color = "blue";
 });
@@ -1069,148 +1490,45 @@ window.addEventListener("beforeunload", (event) => {
     event.returnValue = "¿Seguro que quieres salir?";
 });</code></pre>
 
-                <h3>Conclusión</h3>
-                <ul>
-                    <li><strong><code>DOMContentLoaded</code></strong>: Mejor momento para empezar a manipular el DOM.
-                    </li>
-                    <li><strong><code>load</code></strong>: Útil cuando necesitas que imágenes y CSS estén completamente
-                        cargados.</li>
-                    <li><strong><code>beforeunload</code></strong>: Útil para manejar eventos de salida de la página.
-                    </li>
-                </ul>
-                </article>
-            </details>
+                        <h3>Conclusión</h3>
+                        <ul>
+                            <li><strong><code>DOMContentLoaded</code></strong>: Mejor momento para empezar a manipular
+                                el
+                                DOM.
+                            </li>
+                            <li><strong><code>load</code></strong>: Útil cuando necesitas que imágenes y CSS estén
+                                completamente
+                                cargados.</li>
+                            <li><strong><code>beforeunload</code></strong>: Útil para manejar eventos de salida de la
+                                página.
+                            </li>
+                        </ul>
+                        </article>
+                    </details>
 
-            <hr>
+                    <hr>
 
-            <details id="Arrays">
-                <summary>
-                    <h3>Arrays</h3>
-                </summary>
-                <article>
-                    <p>
-                        Un <strong>array</strong> en JavaScript es una estructura de datos que permite almacenar
-                        múltiples valores en una sola variable.
-                        Los arrays pueden contener cualquier tipo de dato, incluidos números, strings, booleanos,
-                        objetos e incluso otros arrays.
-                    </p>
+                    <details id="Objets">
+                        <summary>
+                            <h3>Objetos</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                Un <strong>objeto</strong> en JavaScript es una estructura de datos que permite
+                                almacenar
+                                información en
+                                forma de pares <em>clave-valor</em>.
+                                A diferencia de los arrays, los objetos no tienen un orden específico y permiten
+                                organizar
+                                los
+                                datos de
+                                manera estructurada.
+                            </p>
 
-                    <h4>1. Crear un Array</h4>
-                    <p>Se pueden crear arrays de diferentes formas:</p>
-                    <pre><code>
-// Usando corchetes []
-let frutas = ["Manzana", "Banana", "Cereza"];
+                            <h3>Creación de un Objeto</h3>
+                            <p>Los objetos se pueden crear de varias maneras:</p>
 
-// Usando el constructor Array()
-let numeros = new Array(1, 2, 3, 4, 5);
-                    </code></pre>
-
-                    <h4>2. Acceder a Elementos de un Array</h4>
-                    <p>Para acceder a los elementos de un array, se usa un índice (que empieza en 0).</p>
-                    <pre><code>
-let colores = ["Rojo", "Verde", "Azul"];
-console.log(colores[0]); // "Rojo"
-console.log(colores[2]); // "Azul"
-                    </code></pre>
-
-                    <h4>3. Modificar Elementos</h4>
-                    <p>Los elementos de un array pueden modificarse accediendo a su índice.</p>
-                    <pre><code>
-let numeros = [10, 20, 30];
-numeros[1] = 25; 
-console.log(numeros); // [10, 25, 30]
-                    </code></pre>
-
-                    <h4>4. Métodos Comunes de los Arrays</h4>
-                    <p>JavaScript proporciona varios métodos para manipular arrays:</p>
-                    <ul>
-                        <li><code>push()</code>: Agrega un elemento al final.</li>
-                        <li><code>pop()</code>: Elimina el último elemento.</li>
-                        <li><code>shift()</code>: Elimina el primer elemento.</li>
-                        <li><code>unshift()</code>: Agrega un elemento al inicio.</li>
-                        <li><code>splice()</code>: Agrega o elimina elementos en una posición específica.</li>
-                        <li><code>slice()</code>: Extrae una porción del array sin modificarlo.</li>
-                        <li><code>indexOf()</code>: Busca la posición de un elemento.</li>
-                        <li><code>includes()</code>: Verifica si un elemento está en el array.</li>
-                    </ul>
-
-                    <h4>5. Recorrer un Array</h4>
-                    <p>Se pueden recorrer los arrays usando bucles:</p>
-                    <pre><code>
-let numeros = [1, 2, 3, 4, 5];
-
-// Usando for clásico
-for (let i = 0; i < numeros.length; i++) {
-    console.log(numeros[i]);
-}
-
-// Usando forEach()
-numeros.forEach(num => console.log(num));
-                    </code></pre>
-
-                    <h4>6. Arrays Multidimensionales</h4>
-                    <p>Un array puede contener otros arrays, creando una estructura de múltiples dimensiones.</p>
-                    <pre><code>
-let matriz = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-
-console.log(matriz[1][2]); // 6
-                    </code></pre>
-
-                    <h4 class="mt-4">7. Transformación y filtrado</h4>
-                    <ul>
-                        <li><code>map()</code>: Crea un nuevo array aplicando una función a cada
-                            elemento.</li>
-                        <li><code>filter()</code>: Crea un nuevo array con los elementos que cumplen
-                            una
-                            condición.</li>
-                        <li><code>forEach()</code>: Ejecuta una función para cada elemento del
-                            array.
-                        </li>
-                    </ul>
-
-                    <pre class="p-3 rounded mt-3"><code>
-// Ejemplo de uso
-let numeros = [1, 2, 3, 4, 5];
-
-// Multiplicar cada número por 2
-let duplicados = numeros.map(num => num * 2); // [2, 4, 6, 8, 10]
-
-// Filtrar números mayores a 2
-let mayoresDos = numeros.filter(num => num > 2); // [3, 4, 5]
-
-// Imprimir cada número en consola
-numeros.forEach(num => console.log(num)); 
-</code></pre>
-
-                    <p>Los arrays son una estructura fundamental en JavaScript y se usan en una gran variedad de
-                        aplicaciones.</p>
-                </article>
-            </details>
-
-            <hr>
-
-            <details id="Objets">
-                <summary>
-                    <h3>Objetos</h3>
-                </summary>
-                <article>
-                    <p>
-                        Un <strong>objeto</strong> en JavaScript es una estructura de datos que permite almacenar
-                        información en
-                        forma de pares <em>clave-valor</em>.
-                        A diferencia de los arrays, los objetos no tienen un orden específico y permiten organizar los
-                        datos de
-                        manera estructurada.
-                    </p>
-
-                    <h3>Creación de un Objeto</h3>
-                    <p>Los objetos se pueden crear de varias maneras:</p>
-
-                    <pre><code>
+                            <pre><code>
 // Objeto literal (la forma más común)
 let persona = {
     nombre: "Juan",
@@ -1230,37 +1548,38 @@ usuario.nombre = "Carlos";
 usuario.edad = 25;
 </code></pre>
 
-                    <h3>Acceder a Propiedades</h3>
-                    <p>Podemos acceder a las propiedades de un objeto de dos maneras:</p>
+                            <h3>Acceder a Propiedades</h3>
+                            <p>Podemos acceder a las propiedades de un objeto de dos maneras:</p>
 
-                    <pre><code>
+                            <pre><code>
 console.log(persona.nombre);  // "Juan" (notación de punto)
 console.log(persona["edad"]); // 30 (notación de corchetes)
 </code></pre>
 
-                    <h3>Modificar y Eliminar Propiedades</h3>
-                    <p>Las propiedades de un objeto pueden modificarse o eliminarse en cualquier momento.</p>
+                            <h3>Modificar y Eliminar Propiedades</h3>
+                            <p>Las propiedades de un objeto pueden modificarse o eliminarse en cualquier momento.</p>
 
-                    <pre><code>
+                            <pre><code>
 persona.edad = 31;  // Modificar una propiedad
 delete persona.profesion;  // Eliminar una propiedad 
 </code></pre>
 
-                    <h3>Métodos en Objetos</h3>
-                    <p>Los objetos pueden contener funciones, llamadas <strong>métodos</strong>, que permiten realizar
-                        acciones
-                        con sus propiedades.</p>
+                            <h3>Métodos en Objetos</h3>
+                            <p>Los objetos pueden contener funciones, llamadas <strong>métodos</strong>, que permiten
+                                realizar
+                                acciones
+                                con sus propiedades.</p>
 
-                    <pre><code>
+                            <pre><code>
 let usuario = {
     nombre: "Ana",
     saludo: function() { return "Hola, mi nombre es " + this.nombre;}
 };
 </code></pre>
 
-                    <p>También podemos usar la sintaxis de función flecha dentro de objetos:</p>
+                            <p>También podemos usar la sintaxis de función flecha dentro de objetos:</p>
 
-                    <pre><code>
+                            <pre><code>
 let mascota = {
     nombre: "Firulais",
     edad: 5,
@@ -1270,16 +1589,18 @@ let mascota = {
 console.log(mascota.info()); // "Firulais tiene 5 años."
 </code></pre>
 
-                    <h3>Métodos útiles para manipular Objetos</h3>
-                    <ul>
-                        <li><code>Object.keys(objeto)</code>: Devuelve un array con las claves del objeto.</li>
-                        <li><code>Object.values(objeto)</code>: Devuelve un array con los valores.</li>
-                        <li><code>Object.entries(objeto)</code>: Devuelve un array de pares clave-valor.</li>
-                        <li><code>hasOwnProperty(propiedad)</code>: Verifica si una propiedad existe en el objeto.</li>
-                    </ul>
+                            <h3>Métodos útiles para manipular Objetos</h3>
+                            <ul>
+                                <li><code>Object.keys(objeto)</code>: Devuelve un array con las claves del objeto.</li>
+                                <li><code>Object.values(objeto)</code>: Devuelve un array con los valores.</li>
+                                <li><code>Object.entries(objeto)</code>: Devuelve un array de pares clave-valor.</li>
+                                <li><code>hasOwnProperty(propiedad)</code>: Verifica si una propiedad existe en el
+                                    objeto.
+                                </li>
+                            </ul>
 
-                    <h3>Ejemplo con Métodos</h3>
-                    <pre><code>
+                            <h3>Ejemplo con Métodos</h3>
+                            <pre><code>
 let producto = {
     nombre: "Laptop",
     precio: 1200,
@@ -1291,11 +1612,13 @@ console.log(Object.values(producto)); // ["Laptop", 1200, true]
 console.log(Object.entries(producto)); // [["nombre", "Laptop"], ["precio", 1200], ["disponible", true]]
 </code></pre>
 
-                    <h3>Copiar y Fusionar Objetos</h3>
-                    <p>Para copiar objetos o combinarlos, podemos usar <code>Object.assign()</code> o el operador spread
-                        (<code>...</code>).</p>
+                            <h3>Copiar y Fusionar Objetos</h3>
+                            <p>Para copiar objetos o combinarlos, podemos usar <code>Object.assign()</code> o el
+                                operador
+                                spread
+                                (<code>...</code>).</p>
 
-                    <pre><code>
+                            <pre><code>
 // Copia de un objeto
 let copiaProducto = Object.assign({}, producto);
 console.log(copiaProducto); 
@@ -1310,45 +1633,164 @@ let productoCompleto = { ...producto, ...detallesExtra };
 console.log(productoCompleto);
 </code></pre>
 
-                    <h3>Convertir Objetos a JSON</h3>
-                    <p>JavaScript permite convertir objetos en <strong>JSON</strong> (JavaScript Object Notation) para
-                        enviarlos a servidores o almacenarlos.</p>
+                            <h3>Convertir Objetos a JSON</h3>
+                            <p>JavaScript permite convertir objetos en <strong>JSON</strong> (JavaScript Object
+                                Notation)
+                                para
+                                enviarlos a servidores o almacenarlos.</p>
 
-                    <pre><code>
+                            <pre><code>
 let jsonProducto = JSON.stringify(producto);
 
 // Convertir JSON a objeto
 let objetoProducto = JSON.parse(jsonProducto);
 </code></pre>
-                </article>
-            </details>
+                        </article>
+                    </details>
 
-            <hr>
+                    <hr>
 
-            <details id="Json">
-                <summary>
-                    <h3>JSON</h3>
-                </summary>
-                <article>
-                    <p>
-                        <strong>JSON (JavaScript Object Notation)</strong> es un formato ligero de intercambio de datos.
-                        Es fácil de leer y escribir para los humanos y sencillo de procesar para las máquinas, lo que lo
-                        convierte en
-                        un estándar en comunicación entre aplicaciones.
-                    </p>
+                    <details id="Arrays">
+                        <summary>
+                            <h3>Arrays</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                Un <strong>array</strong> en JavaScript es una estructura de datos que permite almacenar
+                                múltiples valores en una sola variable.
+                                Los arrays pueden contener cualquier tipo de dato, incluidos números, strings,
+                                booleanos,
+                                objetos e incluso otros arrays.
+                            </p>
 
-                    <h3>Casos de uso</h3>
-                    <ul>
-                        <li>Intercambiar datos entre un cliente (navegador) y un servidor.</li>
-                        <li>Almacenar configuraciones en archivos de manera estructurada.</li>
-                        <li>Representar estructuras de datos en APIs y bases de datos.</li>
-                        <li>Serializar y deserializar información en aplicaciones web y móviles.</li>
-                    </ul>
+                            <h4>1. Crear un Array</h4>
+                            <p>Se pueden crear arrays de diferentes formas:</p>
+                            <pre><code>
+// Usando corchetes []
+let frutas = ["Manzana", "Banana", "Cereza"];
 
-                    <h3>Estructura de JSON</h3>
-                    <p>JSON está compuesto por pares clave-valor, similar a un objeto en JavaScript, pero con claves
-                        siempre en formato de cadena:</p>
-                    <pre><code>{
+// Usando el constructor Array()
+let numeros = new Array(1, 2, 3, 4, 5);
+                    </code></pre>
+
+                            <h4>2. Acceder a Elementos de un Array</h4>
+                            <p>Para acceder a los elementos de un array, se usa un índice (que empieza en 0).</p>
+                            <pre><code>
+let colores = ["Rojo", "Verde", "Azul"];
+console.log(colores[0]); // "Rojo"
+console.log(colores[2]); // "Azul"
+                    </code></pre>
+
+                            <h4>3. Modificar Elementos</h4>
+                            <p>Los elementos de un array pueden modificarse accediendo a su índice.</p>
+                            <pre><code>
+let numeros = [10, 20, 30];
+numeros[1] = 25; 
+console.log(numeros); // [10, 25, 30]
+                    </code></pre>
+
+                            <h4>4. Métodos Comunes de los Arrays</h4>
+                            <p>JavaScript proporciona varios métodos para manipular arrays:</p>
+                            <ul>
+                                <li><code>push()</code>: Agrega un elemento al final.</li>
+                                <li><code>pop()</code>: Elimina el último elemento.</li>
+                                <li><code>shift()</code>: Elimina el primer elemento.</li>
+                                <li><code>unshift()</code>: Agrega un elemento al inicio.</li>
+                                <li><code>splice()</code>: Agrega o elimina elementos en una posición específica.</li>
+                                <li><code>slice()</code>: Extrae una porción del array sin modificarlo.</li>
+                                <li><code>indexOf()</code>: Busca la posición de un elemento.</li>
+                                <li><code>includes()</code>: Verifica si un elemento está en el array.</li>
+                            </ul>
+
+                            <h4>5. Recorrer un Array</h4>
+                            <p>Se pueden recorrer los arrays usando bucles:</p>
+                            <pre><code>
+let numeros = [1, 2, 3, 4, 5];
+
+// Usando for clásico
+for (let i = 0; i < numeros.length; i++) {
+    console.log(numeros[i]);
+}
+
+// Usando forEach()
+numeros.forEach(num => console.log(num));
+                    </code></pre>
+
+                            <h4>6. Arrays Multidimensionales</h4>
+                            <p>Un array puede contener otros arrays, creando una estructura de múltiples dimensiones.
+                            </p>
+                            <pre><code>
+let matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+console.log(matriz[1][2]); // 6
+                    </code></pre>
+
+                            <h4 class="mt-4">7. Transformación y filtrado</h4>
+                            <ul>
+                                <li><code>map()</code>: Crea un nuevo array aplicando una función a cada
+                                    elemento.</li>
+                                <li><code>filter()</code>: Crea un nuevo array con los elementos que cumplen
+                                    una
+                                    condición.</li>
+                                <li><code>forEach()</code>: Ejecuta una función para cada elemento del
+                                    array.
+                                </li>
+                            </ul>
+
+                            <pre class="p-3 rounded mt-3"><code>
+// Ejemplo de uso
+let numeros = [1, 2, 3, 4, 5];
+
+// Multiplicar cada número por 2
+let duplicados = numeros.map(num => num * 2); // [2, 4, 6, 8, 10]
+
+// Filtrar números mayores a 2
+let mayoresDos = numeros.filter(num => num > 2); // [3, 4, 5]
+
+// Imprimir cada número en consola
+numeros.forEach(num => console.log(num)); 
+</code></pre>
+
+                            <p>Los arrays son una estructura fundamental en JavaScript y se usan en una gran variedad de
+                                aplicaciones.</p>
+                        </article>
+                    </details>
+
+                    <hr>
+
+                    <details id="Json">
+                        <summary>
+                            <h3>JSON</h3>
+                        </summary>
+                        <article>
+                            <p>
+                                <strong>JSON (JavaScript Object Notation)</strong> es un formato ligero de intercambio
+                                de
+                                datos.
+                                Es fácil de leer y escribir para los humanos y sencillo de procesar para las máquinas,
+                                lo
+                                que lo
+                                convierte en
+                                un estándar en comunicación entre aplicaciones.
+                            </p>
+
+                            <h3>Casos de uso</h3>
+                            <ul>
+                                <li>Intercambiar datos entre un cliente (navegador) y un servidor.</li>
+                                <li>Almacenar configuraciones en archivos de manera estructurada.</li>
+                                <li>Representar estructuras de datos en APIs y bases de datos.</li>
+                                <li>Serializar y deserializar información en aplicaciones web y móviles.</li>
+                            </ul>
+
+                            <h3>Estructura de JSON</h3>
+                            <p>JSON está compuesto por pares clave-valor, similar a un objeto en JavaScript, pero con
+                                claves
+                                siempre en formato de cadena:</p>
+                            <pre><code>{
     "nombre": "Carlos",
     "edad": 28,
     "ciudad": "Madrid",
@@ -1356,26 +1798,27 @@ let objetoProducto = JSON.parse(jsonProducto);
     "activo": true
 }</code></pre>
 
-                    <p><strong>Reglas importantes de JSON:</strong></p>
-                    <ul>
-                        <li>Las claves deben estar entre comillas dobles (<code>""</code>).</li>
-                        <li>Los valores pueden ser: cadenas, números, booleanos, arreglos, objetos o <code>null</code>.
-                        </li>
-                        <li>No se permiten funciones o variables en JSON, solo datos estáticos.</li>
-                    </ul>
+                            <p><strong>Reglas importantes de JSON:</strong></p>
+                            <ul>
+                                <li>Las claves deben estar entre comillas dobles (<code>""</code>).</li>
+                                <li>Los valores pueden ser: cadenas, números, booleanos, arreglos, objetos o
+                                    <code>null</code>.
+                                </li>
+                                <li>No se permiten funciones o variables en JSON, solo datos estáticos.</li>
+                            </ul>
 
-                    <details>
-                        <summary><strong>Métodos para trabajar con JSON</strong></summary>
-                        <ul>
-                            <li><code>JSON.stringify(objeto)</code>: Convierte un objeto de JavaScript en una cadena
-                                JSON.</li>
-                            <li><code>JSON.parse(textoJSON)</code>: Convierte una cadena JSON en un objeto JavaScript.
-                            </li>
-                        </ul>
-                    </details>
+                            <summary><strong>Métodos para trabajar con JSON</strong></summary>
+                            <ul>
+                                <li><code>JSON.stringify(objeto)</code>: Convierte un objeto de JavaScript en una
+                                    cadena
+                                    JSON.</li>
+                                <li><code>JSON.parse(textoJSON)</code>: Convierte una cadena JSON en un objeto
+                                    JavaScript.
+                                </li>
+                            </ul>
 
-                    <h3>Ejemplo práctico</h3>
-                    <pre><code>// Objeto en JavaScript
+                            <h3>Ejemplo práctico</h3>
+                            <pre><code>// Objeto en JavaScript
 let usuario = {
     nombre: "Laura",
     edad: 25,
@@ -1394,8 +1837,8 @@ console.log(nuevoObjeto.nombre); // "Laura"
 console.log(nuevoObjeto.activo); // true
 </code></pre>
 
-                    <h3>Convertir un array de objetos a JSON</h3>
-                    <pre><code>let productos = [
+                            <h3>Convertir un array de objetos a JSON</h3>
+                            <pre><code>let productos = [
     { nombre: "Laptop", precio: 1200, stock: true },
     { nombre: "Mouse", precio: 25, stock: false }
 ];
@@ -1409,28 +1852,59 @@ let productosParseados = JSON.parse(productosJSON);
 console.log(productosParseados[0].nombre); // "Laptop"
 </code></pre>
 
-                    <h3>Uso de JSON con Fetch API</h3>
-                    <p>JSON se usa comúnmente en peticiones HTTP para enviar y recibir datos.</p>
-                    <pre><code>// Obtener datos de una API y convertirlos a un objeto JavaScript
+                            <h3>Uso de JSON con Fetch API</h3>
+                            <p>JSON se usa comúnmente en peticiones HTTP para enviar y recibir datos.</p>
+                            <pre><code>// Obtener datos de una API y convertirlos a un objeto JavaScript
 fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => response.json()) // Convertir JSON a objeto
     .then(data => console.log(data))   // Trabajar con los datos
     .catch(error => console.error("Error:", error));
 </code></pre>
-                </article>
-            </details>
+                        </article>
+                    </details>
 
-            <hr>
-        </section>
-    </main>
+                    <hr>
+                </section>
+            </main>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <script src="./../scripts/scripts.js"></script> -->
+            <aside class="side_menu">
+                <nav>
+                    <header>
+                        <h2>temario</h2>
+                    </header>
+
+                    <ul class="menu_links">
+                        <li><a href="#EjecutarJavaScript">¿Cómo ejecutar JavaScript?</a></li>
+                        <li><a href="#Sintaxis">Sintaxis básica</a></li>
+                        <li><a href="#Variables">Variables</a></li>
+                        <li><a href="#Operadores">Operadores</a></li>
+                        <li><a href="#Strings">Strings</a></li>
+                        <li><a href="#Numeros">Números</a></li>
+                        <li><a href="#Casting">(Type Casting) Conversión de Tipos de Datos</a></li>
+                        <li><a href="#Ventanas">Ventanas de Diálogo</a></li>
+                        <li><a href="#ElementosDOM">Selección de Elementos del DOM</a></li>
+                        <li><a href="#ModificacionDOM">Modificación del contenido en el DOM</a></li>
+                        <li><a href="#EstructurasControlIf">Estructuras de Control: `if`, `if else` y `else`</a></li>
+                        <li><a href="#EstructurasControlSwitch">Estructura de Control: switch</a></li>
+                        <li><a href="#BucleFor">Bucle for</a></li>
+                        <li><a href="#BucleWhile">Bucle while</a></li>
+                        <li><a href="#EstadosCargaDOM">Estados de carga</a></li>
+                        <li><a href="#Objets">Objetos</a></li>
+                        <li><a href="#Arrays">Arrays</a></li>
+                        <li><a href="#Json">Json</a></li>
+                        <li><a href="#Functions">Funciones</a></li>
+                        <li><a href="#ArrowFunctions">Funciones Flecha (Arrow Functions)</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Pie de página: incluye información de contacto, enlaces adicionales o derechos de autor -->
+    <footer class="footer_container">
+        <p>curso de javascript para la clase de neoland</p>
+    </footer>
+
     <script src="./scripts/scripts.js"></script>
 </body>
 

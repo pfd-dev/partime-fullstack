@@ -1,3 +1,23 @@
+const btnShowMenu = document.querySelector("#BtnShowMenu");
+
+btnShowMenu.addEventListener("click", function () {
+    const iconShowMenu = document.querySelector("#BtnShowMenu span");
+    const textShowMenu = document.querySelector("#BtnShowMenu img");
+
+    const menu = document.querySelector(".modal");
+    const changeClassMenu = menu.classList.toggle('show');
+
+    if (changeClassMenu) {
+        iconShowMenu.textContent = 'cerrar menú';
+        textShowMenu.src = "./assets/icons/menu_close.svg";
+    } else {
+        iconShowMenu.textContent = 'abrir menú';
+        textShowMenu.src = "./assets/icons/menu_open.svg";
+    }
+});
+
+/* ================================================== */
+
 const btnChangeTheme = document.querySelector("#BtnBtnChangeTheme");
 
 btnChangeTheme.addEventListener("click", function () {
@@ -18,23 +38,7 @@ btnChangeTheme.addEventListener("click", function () {
 
 /* ================================================== */
 
-const btnShowMenu = document.querySelector("#BtnShowMenu");
 
-btnShowMenu.addEventListener("click", function () {
-    const iconShowMenu = document.querySelector("#BtnShowMenu span");
-    const textShowMenu = document.querySelector("#BtnShowMenu img");
-
-    const menu = document.querySelector(".menu-lista-links");
-    const changeClassMenu = menu.classList.toggle('show');
-
-    if (changeClassMenu) {
-        iconShowMenu.textContent = 'cerrar menú';
-        textShowMenu.src = "./assets/icons/menu_close.svg";
-    } else {
-        iconShowMenu.textContent = 'abrir menú';
-        textShowMenu.src = "./assets/icons/menu_open.svg";
-    }
-});
 
 /* ================================================== */
 

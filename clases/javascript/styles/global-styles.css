@@ -1,2 +1,51 @@
 @import url("./root.css");
 
+.modal {
+    background-color: var(--color-light);
+    outline: 2px solid var(--color-dark);
+    position: absolute;
+    top: 100%;
+    right: 1em;
+    border-radius: .5em;
+    height: 20em;
+    width: 20em;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    div {
+        padding: 1em;
+    }
+}
+
+.dark .modal {
+    background-color: var(--color-dark);
+    outline: 2px solid var(--color-white);
+}
+
+.show.modal {
+    display: flex;
+}
+
+.btn {
+    border-radius: .5em;
+    display: flex;
+    gap: .5em;
+    padding: .3em .5em;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+}

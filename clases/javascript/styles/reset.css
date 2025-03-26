@@ -21,12 +21,10 @@ Reset CSS
 
 /* Configuración de la raíz del documento (html)
 - Establece el tamaño base de la fuente en 16px para coherencia con rem/em.
-- Define una altura del 100% para asegurar que el body ocupe toda la pantalla.
 - Establece desplazamiento suave para navegación.
 */
 html {
     font-size: 16px;
-    height: 100%;
     scroll-behavior: smooth;
 }
 
