@@ -28,8 +28,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
-<body class="body_container dark">
-    <header class="heawder_banner">
+<body class="my-body-container dark">
+    <header class="header_banner">
         <video src="./assets/videos/banner_video.mp4" autoplay loop muted></video>
         <span>¡Hola Alumnos!</span>
     </header>
@@ -42,21 +42,25 @@
             </header>
         </a>
 
-        <div>
-            <a href="./pages/" target="_blank">ejemplos</a>
+        <div class="container_menu">
 
-            <button id="BtnShowMenu" class="btn btn-secondary">
-                <span>abrir menú</span>
+
+            <button id="BtnShowMenu" class="my-btn my-btn-secondary">
+                <span>menú</span>
                 <img src="./assets/icons/menu_open.svg">
             </button>
 
-            <section class="modal">
+            <section class="my-modal">
                 <header>
                     <h2>opciones</h2>
                 </header>
 
+                <a href="./pages/asincronia.html">asd</a>
+
                 <div>
-                    <button id="BtnBtnChangeTheme" class="btn btn-primary">
+                    <a href="./pages/" target="_blank">ejemplos</a>
+
+                    <button id="BtnBtnChangeTheme" class="my-btn my-btn-primary">
                         <span>modo claro</span>
                         <img src="./assets/icons/sun.svg">
                     </button>
@@ -84,9 +88,7 @@
                         </p>
                     </article>
 
-                    <hr>
-
-                    <details id="EjecutarJavaScript">
+                    <details id="EjecutarJavaScript" class="my-details">
                         <summary>
                             <h3>¿Cómo ejecutar JavaScript?</h3>
                         </summary>
@@ -120,9 +122,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Sintaxis">
+                    <details id="Sintaxis" class="my-details">
                         <summary>
                             <h3>Sintaxis básica</h3>
                         </summary>
@@ -152,9 +152,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="TiposDatos">
+                    <details id="TiposDatos" class="my-details">
                         <summary>
                             <h3>Tipos de datos</h3>
                         </summary>
@@ -228,9 +226,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Variables">
+                    <details id="Variables" class="my-details">
                         <summary>
                             <h3>Variables</h3>
                         </summary>
@@ -326,9 +322,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Operadores">
+                    <details id="Operadores" class="my-details">
                         <summary>
                             <h3>Operadores</h3>
                         </summary>
@@ -397,9 +391,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Strings">
+                    <details id="Strings" class="my-details">
                         <summary>
                             <h3>Strings</h3>
                         </summary>
@@ -446,9 +438,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Numeros">
+                    <details id="Numeros" class="my-details">
                         <summary>
                             <h3>Números</h3>
                         </summary>
@@ -503,9 +493,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Casting">
+                    <details id="Casting" class="my-details">
                         <summary>
                             <h3>(Type Casting) Conversión de Tipos de Datos</h3>
                         </summary>
@@ -581,9 +569,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Ventanas">
+                    <details id="Ventanas" class="my-details">
                         <summary>
                             <h3>Ventanas de Diálogo</h3>
                         </summary>
@@ -667,9 +653,7 @@
 
                     </details>
 
-                    <hr>
-
-                    <details id="ElementosDOM">
+                    <details id="ElementosDOM" class="my-details">
                         <summary>
                             <h3>Selección de Elementos del DOM</h3>
                         </summary>
@@ -758,9 +742,7 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="ModificacionDOM">
+                    <details id="ModificacionDOM" class="my-details">
                         <summary>
                             <h3>Modificación del contenido en el DOM</h3>
                         </summary>
@@ -822,13 +804,18 @@
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="EstructurasControlIf">
+                    <details id="EstructurasControlIf" open class="my-details">
                         <summary>
                             <h3>Estructuras de Control: `if`, `if else` y `else`</h3>
                         </summary>
+
                         <article>
+                            <p>
+                                En JavaScript, la estructura de control <code>if</code> permite ejecutar un bloque de
+                                código
+                                solo si se cumple una condición específica. Si la condición no se cumple, se pueden usar
+                                <code>else</code> y <code>else if</code> para manejar otros casos posibles.
+                            </p>
                             <p>
                                 En JavaScript, la estructura de control <code>if</code> permite ejecutar un bloque de
                                 código
@@ -844,7 +831,7 @@
                             <p><strong>Sintaxis:</strong></p>
                             <pre><code>
 if (condición) {
-    // Código que se ejecuta si la condición es verdadera
+    // Código.
 }
 </code></pre>
                             <h4>2. <code>if else</code>: Manejo de Condiciones Alternativas</h4>
@@ -857,9 +844,9 @@ if (condición) {
                             <p><strong>Sintaxis:</strong></p>
                             <pre><code>
 if (condición) {
-    // Código si la condición es verdadera
+    // Código...
 } else {
-    // Código si la condición es falsa
+    // Código...
 }
 </code></pre>
 
@@ -872,22 +859,21 @@ if (condición) {
                             <p><strong>Sintaxis:</strong></p>
                             <pre><code>
 if (condición1) {
-    // Código si condición1 es verdadera
+    // Código...
 } else if (condición2) {
-    // Código si condición2 es verdadera
+    // Código...
 } else {
-    // Código si ninguna de las condiciones anteriores es verdadera
+    // Código...
 }
 </code></pre>
-
                             <h4>Consideraciones Importantes</h4>
-
                             <ul class="list">
                                 <li>Las condiciones dentro de <code>if</code> deben evaluarse a un valor
                                     <code>true</code> o
                                     <code>false</code>.
                                 </li>
-                                <li>El bloque <code>else</code> es opcional, pero se recomienda para manejar casos no
+                                <li>El bloque <code>else</code> es opcional, pero se recomienda para manejar casos
+                                    no
                                     contemplados.</li>
                                 <li>Se pueden anidar múltiples <code>else if</code>, pero es importante no abusar de
                                     ellos
@@ -907,9 +893,7 @@ if (condición1) {
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="EstructurasControlSwitch">
+                    <details id="EstructurasControlSwitch" class="my-details">
                         <summary>
                             <h3>Estructura de Control: switch</h3>
                         </summary>
@@ -995,9 +979,7 @@ switch (dia) {
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="BucleFor">
+                    <details id="BucleFor" class="my-details">
                         <summary>
                             <h3>Bucle for</h3>
                         </summary>
@@ -1085,9 +1067,7 @@ for (let i = 1; i <= 5; i++) {
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="BucleWhile">
+                    <details id="BucleWhile" class="my-details">
                         <summary>
                             <h3>Bucle while</h3>
                         </summary>
@@ -1170,9 +1150,7 @@ while (i < 5) {
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="Functions">
+                    <details id="Functions" class="my-details">
                         <summary>
                             <h3>Funciones</h3>
                         </summary>
@@ -1268,9 +1246,7 @@ console.log(dividir(10, 2)); // Resultado: 5
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="ArrowFunctions">
+                    <details id="ArrowFunctions" class="my-details">
                         <summary>
                             <h3>Funciones Flecha (Arrow Functions)</h3>
                         </summary>
@@ -1404,253 +1380,7 @@ objeto2.mostrar();
                         </article>
                     </details>
 
-                    <hr>
-
-                    <details id="EstadosCargaDOM">
-                        <summary>
-                            <h3>Estados de carga de una página</h3>
-                        </summary>
-                        <p>Cuando una página web se carga en el navegador, pasa por diferentes estados. Conocer estos
-                            estados es
-                            clave para saber en qué momento se puede manipular el <strong>DOM</strong> de manera segura
-                            y
-                            eficiente.</p>
-
-                        <h3>1. Estados de carga de un documento</h3>
-                        <p>El navegador sigue un flujo específico al cargar una página web, y podemos identificar estos
-                            estados
-                            con <code>document.readyState</code>:</p>
-                        <ul>
-                            <li><strong>loading:</strong> El navegador está cargando el HTML inicial. Aún no ha
-                                construido
-                                completamente el DOM.</li>
-                            <li><strong>interactive:</strong> El DOM ha sido construido, pero los recursos externos
-                                (CSS,
-                                imágenes, scripts) pueden seguir cargando.</li>
-                            <li><strong>complete:</strong> Toda la página, incluidos los recursos externos, han
-                                terminado de
-                                cargarse.</li>
-                        </ul>
-                        <pre><code>console.log(document.readyState);</code></pre>
-
-                        <h3>2. Eventos clave durante la carga de la página</h3>
-
-                        <h4><code>DOMContentLoaded</code></h4>
-                        <p>Se dispara cuando el HTML ha sido completamente cargado y el DOM ha sido construido, pero sin
-                            esperar
-                            a imágenes, CSS u otros recursos externos.</p>
-                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
-    console.log("El DOM ha sido completamente cargado");
-});</code></pre>
-
-                        <h4><code>load</code></h4>
-                        <p>Se dispara cuando la página ha terminado de cargar completamente, incluyendo imágenes, hojas
-                            de
-                            estilo y otros recursos.</p>
-                        <pre><code>window.addEventListener("load", () => {
-    console.log("Todos los recursos han terminado de cargarse.");
-});</code></pre>
-
-                        <h4><code>beforeunload</code></h4>
-                        <p>Se dispara antes de que el usuario salga de la página. Se usa para mostrar advertencias antes
-                            de
-                            cerrar o recargar.</p>
-                        <pre><code>window.addEventListener("beforeunload", (event) => {
-    event.preventDefault();
-    event.returnValue = "¿Seguro que quieres salir?";
-});</code></pre>
-
-                        <h3>3. Dónde comenzar a manipular el DOM</h3>
-                        <ul>
-                            <li><strong>Si solo necesitas acceder a elementos HTML y modificar el DOM:</strong> usa
-                                <code>DOMContentLoaded</code>.
-                            </li>
-                            <li><strong>Si necesitas esperar a que las imágenes y estilos estén listos:</strong> usa
-                                <code>load</code>.
-                            </li>
-                            <li><strong>Si necesitas realizar algo antes de que el usuario salga de la página:</strong>
-                                usa
-                                <code>beforeunload</code> o <code>unload</code>.
-                            </li>
-                        </ul>
-
-                        <h3>4. Ejemplo completo</h3>
-                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
-    console.log("El DOM está listo");
-    document.querySelector("h1").style.color = "blue";
-});
-
-window.addEventListener("load", () => {
-    console.log("Todos los recursos han cargado");
-    document.querySelector("img").style.border = "2px solid red";
-});
-
-window.addEventListener("beforeunload", (event) => {
-    event.preventDefault();
-    event.returnValue = "¿Seguro que quieres salir?";
-});</code></pre>
-
-                        <h3>Conclusión</h3>
-                        <ul>
-                            <li><strong><code>DOMContentLoaded</code></strong>: Mejor momento para empezar a manipular
-                                el
-                                DOM.
-                            </li>
-                            <li><strong><code>load</code></strong>: Útil cuando necesitas que imágenes y CSS estén
-                                completamente
-                                cargados.</li>
-                            <li><strong><code>beforeunload</code></strong>: Útil para manejar eventos de salida de la
-                                página.
-                            </li>
-                        </ul>
-                        </article>
-                    </details>
-
-                    <hr>
-
-                    <details id="Objets">
-                        <summary>
-                            <h3>Objetos</h3>
-                        </summary>
-                        <article>
-                            <p>
-                                Un <strong>objeto</strong> en JavaScript es una estructura de datos que permite
-                                almacenar
-                                información en
-                                forma de pares <em>clave-valor</em>.
-                                A diferencia de los arrays, los objetos no tienen un orden específico y permiten
-                                organizar
-                                los
-                                datos de
-                                manera estructurada.
-                            </p>
-
-                            <h3>Creación de un Objeto</h3>
-                            <p>Los objetos se pueden crear de varias maneras:</p>
-
-                            <pre><code>
-// Objeto literal (la forma más común)
-let persona = {
-    nombre: "Juan",
-    edad: 30,
-    profesion: "Desarrollador"
-};
-
-// Usando new Object() (menos común)
-let auto = new Object();
-auto.marca = "Toyota";
-auto.modelo = "Corolla";
-auto.año = 2022;
-
-// Creación dinámica de propiedades
-let usuario = {};
-usuario.nombre = "Carlos";
-usuario.edad = 25;
-</code></pre>
-
-                            <h3>Acceder a Propiedades</h3>
-                            <p>Podemos acceder a las propiedades de un objeto de dos maneras:</p>
-
-                            <pre><code>
-console.log(persona.nombre);  // "Juan" (notación de punto)
-console.log(persona["edad"]); // 30 (notación de corchetes)
-</code></pre>
-
-                            <h3>Modificar y Eliminar Propiedades</h3>
-                            <p>Las propiedades de un objeto pueden modificarse o eliminarse en cualquier momento.</p>
-
-                            <pre><code>
-persona.edad = 31;  // Modificar una propiedad
-delete persona.profesion;  // Eliminar una propiedad 
-</code></pre>
-
-                            <h3>Métodos en Objetos</h3>
-                            <p>Los objetos pueden contener funciones, llamadas <strong>métodos</strong>, que permiten
-                                realizar
-                                acciones
-                                con sus propiedades.</p>
-
-                            <pre><code>
-let usuario = {
-    nombre: "Ana",
-    saludo: function() { return "Hola, mi nombre es " + this.nombre;}
-};
-</code></pre>
-
-                            <p>También podemos usar la sintaxis de función flecha dentro de objetos:</p>
-
-                            <pre><code>
-let mascota = {
-    nombre: "Firulais",
-    edad: 5,
-    info: () => `${this.nombre} tiene ${this.edad} años.`;
-};
-
-console.log(mascota.info()); // "Firulais tiene 5 años."
-</code></pre>
-
-                            <h3>Métodos útiles para manipular Objetos</h3>
-                            <ul>
-                                <li><code>Object.keys(objeto)</code>: Devuelve un array con las claves del objeto.</li>
-                                <li><code>Object.values(objeto)</code>: Devuelve un array con los valores.</li>
-                                <li><code>Object.entries(objeto)</code>: Devuelve un array de pares clave-valor.</li>
-                                <li><code>hasOwnProperty(propiedad)</code>: Verifica si una propiedad existe en el
-                                    objeto.
-                                </li>
-                            </ul>
-
-                            <h3>Ejemplo con Métodos</h3>
-                            <pre><code>
-let producto = {
-    nombre: "Laptop",
-    precio: 1200,
-    disponible: true
-};
-
-console.log(Object.keys(producto));   // ["nombre", "precio", "disponible"]
-console.log(Object.values(producto)); // ["Laptop", 1200, true]
-console.log(Object.entries(producto)); // [["nombre", "Laptop"], ["precio", 1200], ["disponible", true]]
-</code></pre>
-
-                            <h3>Copiar y Fusionar Objetos</h3>
-                            <p>Para copiar objetos o combinarlos, podemos usar <code>Object.assign()</code> o el
-                                operador
-                                spread
-                                (<code>...</code>).</p>
-
-                            <pre><code>
-// Copia de un objeto
-let copiaProducto = Object.assign({}, producto);
-console.log(copiaProducto); 
-
-// Usando spread operator (mejor alternativa)
-let copiaProducto2 = { ...producto };
-console.log(copiaProducto2);
-
-// Fusionar objetos
-let detallesExtra = { marca: "Dell", peso: "1.5kg" };
-let productoCompleto = { ...producto, ...detallesExtra };
-console.log(productoCompleto);
-</code></pre>
-
-                            <h3>Convertir Objetos a JSON</h3>
-                            <p>JavaScript permite convertir objetos en <strong>JSON</strong> (JavaScript Object
-                                Notation)
-                                para
-                                enviarlos a servidores o almacenarlos.</p>
-
-                            <pre><code>
-let jsonProducto = JSON.stringify(producto);
-
-// Convertir JSON a objeto
-let objetoProducto = JSON.parse(jsonProducto);
-</code></pre>
-                        </article>
-                    </details>
-
-                    <hr>
-
-                    <details id="Arrays">
+                    <details id="Arrays" class="my-details">
                         <summary>
                             <h3>Arrays</h3>
                         </summary>
@@ -1760,9 +1490,131 @@ numeros.forEach(num => console.log(num));
                         </article>
                     </details>
 
-                    <hr>
+                    <details id="Objets" class="my-details">
+                        <summary>
+                            <h3>Objetos</h3>
 
-                    <details id="Json">
+                            <span>teoria:
+                                <a
+                                    href="#https://github.com/pfd-dev/partime-fullstack/blob/main/documentacion/4%20-%20Fundamentos%20de%20JavaScript.md">MDN</a>
+                            </span>
+                        </summary>
+                        <article>
+                            <p>
+                                Un <strong>objeto</strong> en JavaScript es una estructura de datos que almacena
+                                información en pares <em>clave-valor</em>.<br />
+                                A diferencia de los arrays, los objetos no tienen un orden específico y permiten
+                                organizar los datos de manera estructurada.
+                            </p>
+
+                            <h3>Creación de un Objeto</h3>
+                            <p>Existen varias maneras de crear un objeto:</p>
+
+                            <pre><code>
+// Objeto literal (forma más común)
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    profesion: "Desarrollador"
+};
+
+// Usando new Object() (menos común)
+let auto = new Object();
+auto.marca = "Toyota";
+auto.modelo = "Corolla";
+auto.año = 2022;
+
+// Creación dinámica de propiedades
+let usuario = {};
+usuario.nombre = "Carlos";
+usuario.edad = 25;
+</code></pre>
+
+                            <h3>Acceder a Propiedades</h3>
+                            <p>Podemos acceder a las propiedades de dos maneras:</p>
+
+                            <pre><code>
+console.log(persona.nombre);  // "Juan" (notación de punto)
+console.log(persona["edad"]); // 30 (notación de corchetes)
+</code></pre>
+
+                            <h3>Modificar y Eliminar Propiedades</h3>
+                            <pre><code>
+persona.edad = 31;  // Modificar una propiedad
+delete persona.profesion;  // Eliminar una propiedad 
+</code></pre>
+
+                            <h3>Métodos en Objetos</h3>
+                            <p>Un objeto puede contener funciones, llamadas <strong>métodos</strong>, para realizar
+                                acciones con sus propiedades.</p>
+
+                            <pre><code>
+let usuario = {
+    nombre: "Ana",
+    saludo() {
+        return "Hola, mi nombre es " + this.nombre;
+    }
+};
+console.log(usuario.saludo());
+</code></pre>
+
+                            <h3>Métodos útiles para Objetos</h3>
+                            <ul>
+                                <li><code>Object.keys(objeto)</code>: Devuelve un array con las claves del objeto.</li>
+                                <li><code>Object.values(objeto)</code>: Devuelve un array con los valores.</li>
+                                <li><code>Object.entries(objeto)</code>: Devuelve un array de pares clave-valor.</li>
+                                <li><code>hasOwnProperty(propiedad)</code>: Verifica si una propiedad existe en el
+                                    objeto.</li>
+                            </ul>
+
+                            <h3>Ejemplo con Métodos</h3>
+                            <pre><code>
+let producto = {
+    nombre: "Laptop",
+    precio: 1200,
+    disponible: true
+};
+                    
+console.log(Object.keys(producto));
+// ["nombre", "precio", "disponible"]
+
+console.log(Object.values(producto));
+// ["Laptop", 1200, true]
+
+console.log(Object.entries(producto));
+// [["nombre", "Laptop"], ["precio", 1200], ["disponible", true]]
+</code></pre>
+
+                            <h3>Copiar y Fusionar Objetos</h3>
+                            <p>Para copiar o combinar objetos, podemos usar el operador spread (<code>...</code>).</p>
+
+                            <pre><code>
+// Copia de un objeto
+let copiaProducto = { ...producto };
+console.log(copiaProducto);
+
+// Fusionar objetos
+let detallesExtra = { marca: "Dell", peso: "1.5kg" };
+let productoCompleto = { ...producto, ...detallesExtra };
+console.log(productoCompleto);
+</code></pre>
+
+                            <h3>Convertir Objetos a JSON</h3>
+                            <p>JavaScript permite convertir objetos a <strong>JSON</strong> para enviarlos o
+                                almacenarlos.</p>
+
+                            <pre><code>
+let jsonProducto = JSON.stringify(producto);
+console.log(jsonProducto);
+
+// Convertir JSON a objeto
+let objetoProducto = JSON.parse(jsonProducto);
+console.log(objetoProducto);
+</code></pre>
+                        </article>
+                    </details>
+
+                    <details id="Json" class="my-details">
                         <summary>
                             <h3>JSON</h3>
                         </summary>
@@ -1863,7 +1715,105 @@ fetch("https://jsonplaceholder.typicode.com/users")
                         </article>
                     </details>
 
-                    <hr>
+                    <details id="EstadosCargaDOM" class="my-details">
+                        <summary>
+                            <h3>Estados de carga de una página</h3>
+                        </summary>
+                        <p>Cuando una página web se carga en el navegador, pasa por diferentes estados. Conocer estos
+                            estados es
+                            clave para saber en qué momento se puede manipular el <strong>DOM</strong> de manera segura
+                            y
+                            eficiente.</p>
+
+                        <h3>1. Estados de carga de un documento</h3>
+                        <p>El navegador sigue un flujo específico al cargar una página web, y podemos identificar estos
+                            estados
+                            con <code>document.readyState</code>:</p>
+                        <ul>
+                            <li><strong>loading:</strong> El navegador está cargando el HTML inicial. Aún no ha
+                                construido
+                                completamente el DOM.</li>
+                            <li><strong>interactive:</strong> El DOM ha sido construido, pero los recursos externos
+                                (CSS,
+                                imágenes, scripts) pueden seguir cargando.</li>
+                            <li><strong>complete:</strong> Toda la página, incluidos los recursos externos, han
+                                terminado de
+                                cargarse.</li>
+                        </ul>
+                        <pre><code>console.log(document.readyState);</code></pre>
+
+                        <h3>2. Eventos clave durante la carga de la página</h3>
+
+                        <h4><code>DOMContentLoaded</code></h4>
+                        <p>Se dispara cuando el HTML ha sido completamente cargado y el DOM ha sido construido, pero sin
+                            esperar
+                            a imágenes, CSS u otros recursos externos.</p>
+                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
+    console.log("El DOM ha sido completamente cargado");
+});</code></pre>
+
+                        <h4><code>load</code></h4>
+                        <p>Se dispara cuando la página ha terminado de cargar completamente, incluyendo imágenes, hojas
+                            de
+                            estilo y otros recursos.</p>
+                        <pre><code>window.addEventListener("load", () => {
+    console.log("Todos los recursos han terminado de cargarse.");
+});</code></pre>
+
+                        <h4><code>beforeunload</code></h4>
+                        <p>Se dispara antes de que el usuario salga de la página. Se usa para mostrar advertencias antes
+                            de
+                            cerrar o recargar.</p>
+                        <pre><code>window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    event.returnValue = "¿Seguro que quieres salir?";
+});</code></pre>
+
+                        <h3>3. Dónde comenzar a manipular el DOM</h3>
+                        <ul>
+                            <li><strong>Si solo necesitas acceder a elementos HTML y modificar el DOM:</strong> usa
+                                <code>DOMContentLoaded</code>.
+                            </li>
+                            <li><strong>Si necesitas esperar a que las imágenes y estilos estén listos:</strong> usa
+                                <code>load</code>.
+                            </li>
+                            <li><strong>Si necesitas realizar algo antes de que el usuario salga de la página:</strong>
+                                usa
+                                <code>beforeunload</code> o <code>unload</code>.
+                            </li>
+                        </ul>
+
+                        <h3>4. Ejemplo completo</h3>
+                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
+    console.log("El DOM está listo");
+    document.querySelector("h1").style.color = "blue";
+});
+
+window.addEventListener("load", () => {
+    console.log("Todos los recursos han cargado");
+    document.querySelector("img").style.border = "2px solid red";
+});
+
+window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    event.returnValue = "¿Seguro que quieres salir?";
+});</code></pre>
+
+                        <h3>Conclusión</h3>
+                        <ul>
+                            <li><strong><code>DOMContentLoaded</code></strong>: Mejor momento para empezar a manipular
+                                el
+                                DOM.
+                            </li>
+                            <li><strong><code>load</code></strong>: Útil cuando necesitas que imágenes y CSS estén
+                                completamente
+                                cargados.</li>
+                            <li><strong><code>beforeunload</code></strong>: Útil para manejar eventos de salida de la
+                                página.
+                            </li>
+                        </ul>
+                        </article>
+                    </details>
                 </section>
             </main>
 
@@ -1888,12 +1838,12 @@ fetch("https://jsonplaceholder.typicode.com/users")
                         <li><a href="#EstructurasControlSwitch">Estructura de Control: switch</a></li>
                         <li><a href="#BucleFor">Bucle for</a></li>
                         <li><a href="#BucleWhile">Bucle while</a></li>
-                        <li><a href="#EstadosCargaDOM">Estados de carga</a></li>
-                        <li><a href="#Objets">Objetos</a></li>
-                        <li><a href="#Arrays">Arrays</a></li>
-                        <li><a href="#Json">Json</a></li>
                         <li><a href="#Functions">Funciones</a></li>
                         <li><a href="#ArrowFunctions">Funciones Flecha (Arrow Functions)</a></li>
+                        <li><a href="#Arrays">Arrays</a></li>
+                        <li><a href="#Objets">Objetos</a></li>
+                        <li><a href="#Json">Json</a></li>
+                        <li><a href="#EstadosCargaDOM">Estados de carga</a></li>
                     </ul>
                 </nav>
             </aside>

@@ -1,25 +1,36 @@
 @import url("./root.css");
 
-.body_container {
-    background-color: var(--color-white);
-    color: var(--color-black);
-    min-height: 100vh;
-    transition: .3s ease;
-}
+/* ==================================================
+================ BANNER CABECERA ================
+================================================== */
 
-.body_container.dark {
-    background-color: var(--color-black);
-    color: var(--color-white);
-}
+.header_banner {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 
-hr {
-    border-color: var(--color-primary);
-    width: 100%;
-    border-width: .1em;
-}
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 
-.dark hr {
-    border-color: var(--color-secondary);
+    span {
+        background-color: rgba(0, 0, 0, .5);
+        font-size: 5rem;
+        color: var(--color-white);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+    }
 }
 
 /* ==================================================
@@ -28,6 +39,8 @@ hr {
 
 .navigation_bar {
     background-color: var(--color-light);
+    /* background-color: rgba(0, 0, 0, .5); */
+    opacity: .5;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,16 +53,18 @@ hr {
     h1 {
         font-size: 3rem;
         font-weight: bold;
+        text-transform: uppercase;
     }
 
     h1:hover {
         text-decoration: underline;
     }
 
-    >div {
+    .container_menu {
         display: flex;
         align-items: center;
         gap: 1em;
+        position: relative;
     }
 }
 
@@ -59,68 +74,58 @@ hr {
 }
 
 /* ==================================================
-================ BANNER CABECERA ================
-================================================== */
-
-.heawder_banner {
-    /* background: url("./../assets/videos/banner_video.mp4"); */
-    height: 100vh;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    position: relative;
-    overflow: hidden;
-
-    video {
-        min-width: 100%;
-        display: block;
-    }
-
-    span {
-        background-color: rgba(0, 0, 0, .5);
-        font-size: 5rem;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        text-transform: uppercase;
-    }
-}
-
-/* ==================================================
 ================ CONTENEDORES Y DIVISORES PRINCIPALES ================
 ================================================== */
-.presentation_section {
-    padding: 3em;
+
+@media (min-width: 768px) {
+    .presentation_section {
+        padding: 3em;
+    }
 }
 
 .presentation_section>header h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: var(--font-bold);
     margin-bottom: 1em;
 }
+
+/* ================================================== */
 .divider_container {
     background-color: var(--color-white);
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 3em;
-    
+    gap: 1em;
+
+    .main_content {
+        order: 1;
+    }
+
+    .side_menu {
+        order: 0;
+    }
 }
 
 .dark .divider_container {
     background-color: var(--color-black);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .divider_container {
-        display: grid;
         grid-template-columns: 1fr;
-        padding: 1em;
+    }
+}
+
+@media (min-width: 769px) {
+    .divider_container {
+        grid-template-columns: 2fr 1fr;
+
+        .main_content {
+            order: 0;
+        }
+
+        .side_menu {
+            order: 1;
+        }
     }
 }
 
@@ -138,23 +143,26 @@ hr {
         font-size: 2.5rem;
     }
 
+    article {
+        padding: 1em;
+    }
+
     >section {
         background-color: var(--color-light);
         border-radius: .5em;
         display: flex;
         flex-direction: column;
-        gap: 1em;
-        outline: 2px solid var(--color-black);
-        padding: 1em 2em;
+        outline: .2em solid var(--color-black);
+        gap: .5em;
 
         h3 {
-            font-weight: 900;
+            font-weight: var(--font-bold);
         }
-    }
 
-    code {
-        color: darkblue;
-        font-size: 1.2em;
+        code {
+            color: darkblue;
+            font-size: 1.2em;
+        }
     }
 }
 
@@ -169,6 +177,14 @@ hr {
     }
 }
 
+@media (min-width: 769px) {
+    .main_content {
+        >section {
+            padding: 1em;
+        }
+    }
+}
+
 /* ==================================================
 ================ MENU LATERAL ================
 ================================================== */
@@ -177,6 +193,7 @@ hr {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    padding: 0 1em;
 
     nav {
         background-color: var(--color-light);
@@ -187,14 +204,26 @@ hr {
         height: 50vh;
         overflow-y: scroll;
 
-        h2 {
-            text-align: center;
+        >header {
+            position: sticky;
+            top: 0;
+            background-color: var(--color-secondary);
+            padding: .5em 1em;
+
+            h2 {
+                color: var(--color-black);
+                font-size: var(--text-large);
+                font-weight: var(--font-bold);
+                text-align: center;
+                text-transform: uppercase;
+            }
         }
 
         .menu_links {
             a {
                 padding: .5em 1em;
                 display: block;
+                font-weight: var(--font-bold);
                 outline: 2px solid var(--color-black);
             }
 

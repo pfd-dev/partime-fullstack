@@ -1,26 +1,27 @@
-const btnShowMenu = document.querySelector("#BtnShowMenu");
-
-btnShowMenu.addEventListener("click", function () {
+function controlarMostrarMenu() {
     const iconShowMenu = document.querySelector("#BtnShowMenu span");
     const textShowMenu = document.querySelector("#BtnShowMenu img");
 
-    const menu = document.querySelector(".modal");
+    const menu = document.querySelector(".my-modal");
     const changeClassMenu = menu.classList.toggle('show');
 
     if (changeClassMenu) {
-        iconShowMenu.textContent = 'cerrar menú';
+        iconShowMenu.textContent = 'cerrar';
         textShowMenu.src = "./assets/icons/menu_close.svg";
     } else {
-        iconShowMenu.textContent = 'abrir menú';
+        iconShowMenu.textContent = 'menú';
         textShowMenu.src = "./assets/icons/menu_open.svg";
     }
-});
+}
+
+const btnShowMenu = document.querySelector("#BtnShowMenu");
+if (btnShowMenu) {
+    btnShowMenu.addEventListener("click", controlarMostrarMenu);
+}
 
 /* ================================================== */
 
-const btnChangeTheme = document.querySelector("#BtnBtnChangeTheme");
-
-btnChangeTheme.addEventListener("click", function () {
+function controlarModoOscuro() {
     const textThemeMode = document.querySelector("#BtnBtnChangeTheme span");
     const iconThemeMode = document.querySelector("#BtnBtnChangeTheme img");
 
@@ -34,11 +35,12 @@ btnChangeTheme.addEventListener("click", function () {
         textThemeMode.textContent = "modo claro";
         document.body.classList.add('dark');
     }
-});
+}
+
+const btnChangeTheme = document.querySelector("#BtnBtnChangeTheme");
+if (btnShowMenu) {
+    btnChangeTheme.addEventListener("click", controlarModoOscuro);
+}
+
 
 /* ================================================== */
-
-
-
-/* ================================================== */
-

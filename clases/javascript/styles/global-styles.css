@@ -1,17 +1,64 @@
 @import url("./root.css");
 
-.modal {
-    background-color: var(--color-light);
-    outline: 2px solid var(--color-dark);
-    position: absolute;
-    top: 100%;
-    right: 1em;
+/* ================================================== */
+
+.my-body-container {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    min-height: 100vh;
+    transition: .3s ease;
+}
+
+.my-body-container.dark {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* ================================================== */
+
+.my-btn {
     border-radius: .5em;
-    height: 20em;
-    width: 20em;
-    overflow-y: auto;
+    display: flex;
+    gap: .5em;
+    padding: .3em .5em;
+}
+
+.my-btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.my-btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+}
+
+/* ================================================== */
+
+.my-hr {
+    border-color: var(--color-primary);
+    width: 100%;
+    border-width: .1em;
+}
+
+.dark .my-hr {
+    border-color: var(--color-secondary);
+}
+
+/* ================================================== */
+
+.my-modal {
+    background-color: var(--color-light);
+    outline: .1em solid var(--color-dark);
+    border-radius: .5em;
+    height: 50vh;
+    width: 90vw;
     display: none;
     flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    overflow-y: auto;
 
     h2 {
         text-align: center;
@@ -24,28 +71,71 @@
     }
 }
 
-.dark .modal {
+@media (min-width: 769px) {
+    .my-modal {
+        width: 30vw;
+    }
+}
+
+.show.my-modal {
+    display: flex;
+
+}
+
+.dark .my-modal {
     background-color: var(--color-dark);
     outline: 2px solid var(--color-white);
 }
 
-.show.modal {
-    display: flex;
+/* ================================================== */
+
+.my-details {
+    outline: .1em solid var(--color-dark);
+    background-color: red;
+
+    summary {
+        padding: .5em 1em;
+    }
 }
 
-.btn {
-    border-radius: .5em;
-    display: flex;
-    gap: .5em;
-    padding: .3em .5em;
+.my-details:target,
+.my-details:hover {
+    background-color: var(--color-white);
+    outline: .2em solid var(--color-primary);
 }
 
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+.my-details[open] {
+    background-color: var(--color-white);
+    outline: .2em solid var(--color-primary);
+
+    summary {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        outline: .2em solid var(--color-primary);
+    }
 }
 
-.btn-secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-black);
+.dark {
+    .my-details {
+        outline-color: var(--color-light);
+    }
+
+    .my-details:target,
+    .my-details:hover {
+        background-color: var(--color-black);
+        outline-color: var(--color-secondary);
+    }
+
+    .my-details[open] {
+        background-color: var(--color-black);
+        outline-color: var(--color-secondary);
+
+        summary {
+            background-color: var(--color-secondary);
+            color: var(--color-black);
+            outline-color: var(--color-secondary);
+        }
+    }
 }
+
+/* ================================================== */
