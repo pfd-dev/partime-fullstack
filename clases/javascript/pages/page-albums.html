@@ -1,17 +1,73 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álbumes de Música</title>
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/root.css">
+
+    <link rel="stylesheet" href="./../styles/global-styles.css">
+    <link rel="stylesheet" href="./../styles/styles.css">
 </head>
 
-<body>
-    <h1>Lista de Álbumes</h1>
-    <section id="albums" class="album-container"></section>
+<body class="my-body-container dark">
+    <nav class="navigation_bar">
+        <a href="./index.html">
+            <header>
+                <h1>NeoLand</h1>
+                <!-- <h2>Mes 2 - Semana 1</h2> -->
+            </header>
+        </a>
 
-    <script src="./../scripts/render-album.js"></script>
+        <div class="container_menu">
+
+            <button id="BtnShowMenu" class="my-btn my-btn-secondary">
+                <span>menú</span>
+                <img src="./../assets/icons/menu_open.svg">
+            </button>
+
+            <section class="my-modal">
+                <header>
+                    <h2>opciones</h2>
+                </header>
+
+                <a href="./pages/albums.html">albumes</a>
+
+                <div>
+                    <a href="./pages/" target="_blank">ejemplos</a>
+
+                    <button id="BtnBtnChangeTheme" class="my-btn my-btn-primary">
+                        <span>modo claro</span>
+                        <img src="./assets/icons/sun.svg">
+                    </button>
+                </div>
+            </section>
+        </div>
+    </nav>
+
+    <main class="main_content">
+        <header>
+            <h2>Albumes</h2>
+        </header>
+
+        <section id="grilla-albumes" class="grid-albums">
+
+            
+        </section>
+    </main>
+
+    <form action="" style="background-color: purple;">
+
+
+        <input type="text" name="" id="" required style="background-color: white;">
+        <button class="my-btn">enviar</button>
+    </form>
+
+    <script src="./../scripts/script-albums.js"></script>
+    <script src="./../scripts/scripts.js"></script>
 </body>
 
 </html>

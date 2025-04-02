@@ -8,36 +8,59 @@
 </head>
 
 <body>
-    <h1>Ejemplo de Eventos de Carga</h1>
-    <p>Manipulación del DOM en distintos estados de carga.</p>
-    <img src="./../assets/images/Artaud.jpg" alt="Imagen de ejemplo">
+    <main>
+        <h1>Ejemplo de Eventos de Carga</h1>
+        <p>Manipulación del DOM en distintos estados de carga.</p>
+        <img src="./../assets/images/Artaud.jpg" alt="Imagen de ejemplo">
+    </main>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            console.log("El DOM está listo");
-            alert("El DOM está listo");
+        // console.log(document.readyState)
 
-            document.querySelector("img").style.border = "6px solid red";
-            document.querySelector("h1").style.color = "red";
-        });
+        // document.onreadystatechange = () => {
+        //     switch (document.readyState) {
+        //         case "loading":
+        //             console.log("Estado: loading - El navegador está cargando el HTML inicial. El DOM aún no está listo.");
+        //         break;
+        //         case "interactive":
+        //             console.log("Estado: interactive - El DOM está construido, pero los recursos externos aún están cargándose.");
+        //         break;
+        //         case "complete":
+        //             console.log("Estado: complete - Toda la página y sus recursos externos han terminado de cargarse.");
+        //         break;
+        //     }
+        // };
 
-        window.addEventListener("load", () => {
-            console.log("Todos los recursos han cargado");
-            alert("Todos los recursos han cargado");
-
-            document.querySelector("img").style.border = "10px dashed blue";
-            document.querySelector("h1").style.color = "blue";
-        });
-
-        window.addEventListener("beforeunload", (event) => {
-            event.preventDefault();
+        /* ======================================================================  */
         
-            console.log("Recargar Todos los recursos, y confirmación");
-            alert("Recargar Todos los recursos, y confirmación");
+        // window.addEventListener("load", () => alert("inicio 1"))
+        // document.addEventListener("DOMContentLoaded", () => alert("inicio 2"))
+
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     console.log("El DOM está listo");
+        //     alert("El DOM está listo");
+
+        //     document.querySelector("img").style.border = "6px solid red";
+        //     document.querySelector("h1").style.color = "red";
+        // });
+
+        // window.addEventListener("load", () => {
+        //     console.log("Todos los recursos han cargado");
+        //     alert("Todos los recursos han cargado");
+
+        //     document.querySelector("img").style.border = "10px dashed blue";
+        //     document.querySelector("h1").style.color = "blue";
+        // });
+
+        // window.addEventListener("beforeunload", (event) => {
+        //     event.preventDefault();
         
-            document.querySelector("img").style.border = "50px dashed green";
-            document.querySelector("h1").style.color = "green";
-        });
+        //     console.log("Recargar Todos los recursos, y confirmación");
+        //     alert("Recargar Todos los recursos, y confirmación");
+        
+        //     document.querySelector("img").style.border = "50px dashed green";
+        //     document.querySelector("h1").style.color = "green";
+        // });
     </script>
 </body>
 

@@ -60,14 +60,39 @@
     right: 0;
     overflow-y: auto;
 
-    h2 {
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: bold;
+    header {
+        background-color: var(--color-secondary);
+
+        h2 {
+            color: var(--color-black);
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
     }
 
-    div {
+    .my-modal-list-links {
         padding: 1em;
+
+        a {
+            padding: .5em 1em;
+            display: block;
+            font-weight: var(--font-bold);
+            outline: 2px solid var(--color-black);
+        }
+
+        a:hover {
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+    }
+
+    .my-modal-section-options {
+        div {
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
 
@@ -79,19 +104,32 @@
 
 .show.my-modal {
     display: flex;
-
+    flex-direction: column;
 }
 
 .dark .my-modal {
     background-color: var(--color-dark);
     outline: 2px solid var(--color-white);
+
+    .my-modal-list-links {
+        padding: 1em;
+
+        a {
+            outline-color: 2px solid var(--color-white);
+            color: var(--color-white);
+        }
+
+        a:hover {
+            background-color: var(--color-black);
+        }
+    }
 }
 
 /* ================================================== */
 
 .my-details {
     outline: .1em solid var(--color-dark);
-    background-color: red;
+    scroll-margin-top: 6em;
 
     summary {
         padding: .5em 1em;

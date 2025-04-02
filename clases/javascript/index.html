@@ -43,28 +43,39 @@
         </a>
 
         <div class="container_menu">
-
-
-            <button id="BtnShowMenu" class="my-btn my-btn-secondary">
+            <button id="BtnMenuModalOpciones" class="my-btn my-btn-secondary">
                 <span>menú</span>
                 <img src="./assets/icons/menu_open.svg">
             </button>
 
             <section class="my-modal">
-                <header>
-                    <h2>opciones</h2>
-                </header>
+                <nav>
+                    <header>
+                        <h2>mas paginas</h2>
+                    </header>
 
-                <a href="./pages/asincronia.html">asd</a>
 
-                <div>
-                    <a href="./pages/" target="_blank">ejemplos</a>
+                    <ul class="my-modal-list-links">
+                        <li>
+                            <a href="./pages/" target="_blank">ejemplos</a>
+                        </li>
+                    </ul>
+                </nav>
 
-                    <button id="BtnBtnChangeTheme" class="my-btn my-btn-primary">
-                        <span>modo claro</span>
-                        <img src="./assets/icons/sun.svg">
-                    </button>
-                </div>
+                <section class="my-modal-section-options">
+                    <header>
+                        <h2>opciones</h2>
+                    </header>
+
+                    <div>
+                        <span>cambiar modo</span>
+
+                        <button id="BtnModoOscuro" class="my-btn my-btn-primary">
+                            <span>modo claro</span>
+                            <img src="./assets/icons/sun.svg">
+                        </button>
+                    </div>
+                </section>
             </section>
         </div>
     </nav>
@@ -77,7 +88,7 @@
         <div class="divider_container">
             <!-- Contenido principal: sección donde se muestra la información más importante de la página -->
             <main class="main_content">
-                <section>
+                <section class="grid-clases">
                     <article>
                         <p>
                             JavaScript es un lenguaje de programación que permite agregar interactividad y dinamismo a
@@ -804,7 +815,7 @@
                         </article>
                     </details>
 
-                    <details id="EstructurasControlIf" open class="my-details">
+                    <details id="EstructurasControlIf" class="my-details">
                         <summary>
                             <h3>Estructuras de Control: `if`, `if else` y `else`</h3>
                         </summary>
@@ -1614,6 +1625,246 @@ console.log(objetoProducto);
                         </article>
                     </details>
 
+                    <details id="EstadosCargaDOM" class="my-details">
+                        <summary>
+                            <h3>Estados de carga de una página</h3>
+                        </summary>
+                        <article>
+                            <p>Cuando una página web se carga en el navegador, pasa por diferentes estados. Conocer
+                                estos
+                                estados es
+                                clave para saber en qué momento se puede manipular el <strong>DOM</strong> de manera
+                                segura
+                                y
+                                eficiente.</p>
+
+                            <h3>1. Estados de carga de un documento</h3>
+                            <p>El navegador sigue un flujo específico al cargar una página web, y podemos identificar
+                                estos
+                                estados
+                                con <code>document.readyState</code>:</p>
+                            <ul>
+                                <li><strong>loading:</strong> El navegador está cargando el HTML inicial. Aún no ha
+                                    construido
+                                    completamente el DOM.</li>
+                                <li><strong>interactive:</strong> El DOM ha sido construido, pero los recursos externos
+                                    (CSS,
+                                    imágenes, scripts) pueden seguir cargando.</li>
+                                <li><strong>complete:</strong> Toda la página, incluidos los recursos externos, han
+                                    terminado de
+                                    cargarse.</li>
+                            </ul>
+                            <pre><code>console.log(document.readyState);</code></pre>
+
+                            <h3>2. Eventos clave durante la carga de la página</h3>
+
+                            <h4><code>DOMContentLoaded</code></h4>
+                            <p>Se dispara cuando el HTML ha sido completamente cargado y el DOM ha sido construido, pero
+                                sin
+                                esperar
+                                a imágenes, CSS u otros recursos externos.</p>
+                            <pre><code>document.addEventListener("DOMContentLoaded", () => {
+    console.log("El DOM ha sido completamente cargado");
+});</code></pre>
+
+                            <h4><code>load</code></h4>
+                            <p>Se dispara cuando la página ha terminado de cargar completamente, incluyendo imágenes,
+                                hojas
+                                de
+                                estilo y otros recursos.</p>
+                            <pre><code>window.addEventListener("load", () => {
+    console.log("Todos los recursos han terminado de cargarse.");
+});</code></pre>
+
+                            <h4><code>beforeunload</code></h4>
+                            <p>Se dispara antes de que el usuario salga de la página. Se usa para mostrar advertencias
+                                antes
+                                de
+                                cerrar o recargar.</p>
+                            <pre><code>window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    event.returnValue = "¿Seguro que quieres salir?";
+});</code></pre>
+
+                            <h3>3. Dónde comenzar a manipular el DOM</h3>
+                            <ul>
+                                <li><strong>Si solo necesitas acceder a elementos HTML y modificar el DOM:</strong> usa
+                                    <code>DOMContentLoaded</code>.
+                                </li>
+                                <li><strong>Si necesitas esperar a que las imágenes y estilos estén listos:</strong> usa
+                                    <code>load</code>.
+                                </li>
+                                <li><strong>Si necesitas realizar algo antes de que el usuario salga de la
+                                        página:</strong>
+                                    usa
+                                    <code>beforeunload</code> o <code>unload</code>.
+                                </li>
+                            </ul>
+
+                            <h3>4. Ejemplo completo</h3>
+                            <pre><code>document.addEventListener("DOMContentLoaded", () => {
+    console.log("El DOM está listo");
+    document.querySelector("h1").style.color = "blue";
+});
+
+window.addEventListener("load", () => {
+    console.log("Todos los recursos han cargado");
+    document.querySelector("img").style.border = "2px solid red";
+});
+
+window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    event.returnValue = "¿Seguro que quieres salir?";
+});</code></pre>
+
+                            <h3>Conclusión</h3>
+                            <ul>
+                                <li><strong><code>DOMContentLoaded</code></strong>: Mejor momento para empezar a
+                                    manipular
+                                    el
+                                    DOM.
+                                </li>
+                                <li><strong><code>load</code></strong>: Útil cuando necesitas que imágenes y CSS estén
+                                    completamente
+                                    cargados.</li>
+                                <li><strong><code>beforeunload</code></strong>: Útil para manejar eventos de salida de
+                                    la
+                                    página.
+                                </li>
+                            </ul>
+                        </article>
+                    </details>
+
+                    <details id="WindowDocument" class="my-details">
+                        <summary>
+                            <h3>El objeto window document en JavaScript</h3>
+                        </summary>
+                        <article>
+                            <h3>1. ¿Qué es el objeto <code>window</code>?</h3>
+                            <p>
+                                <code>window</code> es el objeto global en los navegadores web que representa la ventana
+                                del navegador.
+                                Todos los objetos, funciones y variables globales de JavaScript en un entorno de
+                                navegador pertenecen a <code>window</code>.
+                            </p>
+                            <h4>Características principales:</h4>
+                            <ul>
+                                <li>Contiene métodos y propiedades para controlar la ventana, como <code>alert()</code>,
+                                    <code>confirm()</code>, <code>setTimeout()</code>, etc.
+                                </li>
+                                <li>Es el contenedor principal de <code>document</code>.</li>
+                                <li>Se puede acceder a elementos globales sin escribir explícitamente
+                                    <code>window</code> (por ejemplo, <code>alert()</code> es lo mismo que
+                                    <code>window.alert()</code>).
+                                </li>
+                            </ul>
+                            <h4>Ejemplo:</h4>
+                            <pre><code>console.log(window.innerWidth); // Ancho de la ventana en píxeles</code></pre>
+
+                            <h3>2. ¿Qué es el objeto <code>document</code>?</h3>
+                            <p>
+                                <code>document</code> es un objeto dentro de <code>window</code> que representa la
+                                página web cargada.
+                                Permite acceder y modificar el contenido del DOM.
+                            </p>
+                            <h4>Características principales:</h4>
+                            <ul>
+                                <li>Representa la estructura del documento HTML.</li>
+                                <li>Permite manipular elementos mediante métodos como <code>getElementById()</code> o
+                                    <code>querySelector()</code>.
+                                </li>
+                                <li>Es clave para modificar dinámicamente el contenido de la página.</li>
+                            </ul>
+                            <h4>Ejemplo:</h4>
+                            <pre><code>console.log(document.title); // Muestra el título de la página</code></pre>
+
+                            <h3>3. Relación entre <code>window</code> y <code>document</code></h3>
+                            <ul>
+                                <li><code>window</code> es el objeto global que contiene <code>document</code>.</li>
+                                <li>Para acceder al contenido de la página usamos <code>document</code>, pero los
+                                    métodos de <code>window</code> pueden afectar la visualización (como
+                                    <code>window.open()</code>).
+                                </li>
+                            </ul>
+                            <h4>Ejemplo combinado:</h4>
+                            <pre><code>console.log(window.document.body); // Accede al cuerpo del documento</code></pre>
+
+                            <h3>4. Métodos y propiedades útiles</h3>
+                            <h4>Desde <code>window</code>:</h4>
+                            <ul>
+                                <li><code>window.alert("Hola mundo");</code> - Muestra una alerta.</li>
+                                <li><code>window.location.href</code> - Obtiene o cambia la URL actual.</li>
+                                <li><code>window.history.back();</code> - Regresa a la página anterior.</li>
+                            </ul>
+
+                            <h4>Desde <code>document</code>:</h4>
+                            <ul>
+                                <li><code>document.getElementById("miElemento");</code> - Selecciona un elemento por su
+                                    ID.</li>
+                                <li><code>document.createElement("div");</code> - Crea un nuevo elemento en el DOM.</li>
+                                <li><code>document.body.appendChild(nuevoElemento);</code> - Agrega un elemento al
+                                    cuerpo.</li>
+                            </ul>
+
+                            <h3>Conclusión</h3>
+                            <p>
+                                El objeto <code>window</code> proporciona un marco global para interactuar con el
+                                navegador, mientras que <code>document</code>
+                                se centra en la estructura y contenido de la página web. Conocer la relación entre ambos
+                                es clave para desarrollar en JavaScript.
+                            </p>
+                        </article>
+                    </details>
+
+                    <details id="Formularios" class="my-details">
+                        <summary>
+                            <h3>Manipulación de Formularios</h3>
+                        </summary>
+                        <article>
+                            <p>Los formularios permiten a los usuarios ingresar datos en una página web. JavaScript nos
+                                permite acceder y manipular estos datos de forma dinámica.</p>
+
+                            <h4>1. Acceder a un Formulario y sus Elementos</h4>
+                            <p>Podemos acceder a un formulario y sus elementos mediante <code>getElementById</code>.</p>
+                            <pre><code>
+// Acceder al formulario por su ID
+document.getElementById("miFormulario");
+</code></pre>
+
+                            <h4>2. Capturar Datos del Formulario</h4>
+                            <p>Para obtener los valores ingresados por el usuario, usamos <code>value</code>.</p>
+                            <pre><code>
+document.getElementById("miBoton").addEventListener("click", function() {
+    let nombre = document.getElementById("nombre").value;
+    console.log("Nombre ingresado: ", nombre);
+});
+</code></pre>
+                            <h4>3. Validación de Formularios</h4>
+                            <p>Podemos validar los datos antes de enviarlos.</p>
+                            <pre><code>
+document.getElementById("miFormulario").addEventListener("submit", function(event) {
+    let email = document.getElementById("email").value;
+    
+    if (!email.includes("@")) {
+        alert("Por favor, ingresa un email válido.");
+        event.preventDefault(); // Evita el envío
+    }
+});
+</code></pre>
+
+                            <h4>4. Manipular Formularios con JavaScript</h4>
+                            <ul>
+                                <li><code>reset()</code>: Reinicia el formulario.</li>
+                                <li><code>submit()</code>: Envía el formulario manualmente.</li>
+                            </ul>
+                            <pre><code>
+document.getElementById("resetear").addEventListener("click", function() {
+    document.getElementById("miFormulario").reset();
+});
+</code></pre>
+                        </article>
+                    </details>
+
                     <details id="Json" class="my-details">
                         <summary>
                             <h3>JSON</h3>
@@ -1714,106 +1965,6 @@ fetch("https://jsonplaceholder.typicode.com/users")
 </code></pre>
                         </article>
                     </details>
-
-                    <details id="EstadosCargaDOM" class="my-details">
-                        <summary>
-                            <h3>Estados de carga de una página</h3>
-                        </summary>
-                        <p>Cuando una página web se carga en el navegador, pasa por diferentes estados. Conocer estos
-                            estados es
-                            clave para saber en qué momento se puede manipular el <strong>DOM</strong> de manera segura
-                            y
-                            eficiente.</p>
-
-                        <h3>1. Estados de carga de un documento</h3>
-                        <p>El navegador sigue un flujo específico al cargar una página web, y podemos identificar estos
-                            estados
-                            con <code>document.readyState</code>:</p>
-                        <ul>
-                            <li><strong>loading:</strong> El navegador está cargando el HTML inicial. Aún no ha
-                                construido
-                                completamente el DOM.</li>
-                            <li><strong>interactive:</strong> El DOM ha sido construido, pero los recursos externos
-                                (CSS,
-                                imágenes, scripts) pueden seguir cargando.</li>
-                            <li><strong>complete:</strong> Toda la página, incluidos los recursos externos, han
-                                terminado de
-                                cargarse.</li>
-                        </ul>
-                        <pre><code>console.log(document.readyState);</code></pre>
-
-                        <h3>2. Eventos clave durante la carga de la página</h3>
-
-                        <h4><code>DOMContentLoaded</code></h4>
-                        <p>Se dispara cuando el HTML ha sido completamente cargado y el DOM ha sido construido, pero sin
-                            esperar
-                            a imágenes, CSS u otros recursos externos.</p>
-                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
-    console.log("El DOM ha sido completamente cargado");
-});</code></pre>
-
-                        <h4><code>load</code></h4>
-                        <p>Se dispara cuando la página ha terminado de cargar completamente, incluyendo imágenes, hojas
-                            de
-                            estilo y otros recursos.</p>
-                        <pre><code>window.addEventListener("load", () => {
-    console.log("Todos los recursos han terminado de cargarse.");
-});</code></pre>
-
-                        <h4><code>beforeunload</code></h4>
-                        <p>Se dispara antes de que el usuario salga de la página. Se usa para mostrar advertencias antes
-                            de
-                            cerrar o recargar.</p>
-                        <pre><code>window.addEventListener("beforeunload", (event) => {
-    event.preventDefault();
-    event.returnValue = "¿Seguro que quieres salir?";
-});</code></pre>
-
-                        <h3>3. Dónde comenzar a manipular el DOM</h3>
-                        <ul>
-                            <li><strong>Si solo necesitas acceder a elementos HTML y modificar el DOM:</strong> usa
-                                <code>DOMContentLoaded</code>.
-                            </li>
-                            <li><strong>Si necesitas esperar a que las imágenes y estilos estén listos:</strong> usa
-                                <code>load</code>.
-                            </li>
-                            <li><strong>Si necesitas realizar algo antes de que el usuario salga de la página:</strong>
-                                usa
-                                <code>beforeunload</code> o <code>unload</code>.
-                            </li>
-                        </ul>
-
-                        <h3>4. Ejemplo completo</h3>
-                        <pre><code>document.addEventListener("DOMContentLoaded", () => {
-    console.log("El DOM está listo");
-    document.querySelector("h1").style.color = "blue";
-});
-
-window.addEventListener("load", () => {
-    console.log("Todos los recursos han cargado");
-    document.querySelector("img").style.border = "2px solid red";
-});
-
-window.addEventListener("beforeunload", (event) => {
-    event.preventDefault();
-    event.returnValue = "¿Seguro que quieres salir?";
-});</code></pre>
-
-                        <h3>Conclusión</h3>
-                        <ul>
-                            <li><strong><code>DOMContentLoaded</code></strong>: Mejor momento para empezar a manipular
-                                el
-                                DOM.
-                            </li>
-                            <li><strong><code>load</code></strong>: Útil cuando necesitas que imágenes y CSS estén
-                                completamente
-                                cargados.</li>
-                            <li><strong><code>beforeunload</code></strong>: Útil para manejar eventos de salida de la
-                                página.
-                            </li>
-                        </ul>
-                        </article>
-                    </details>
                 </section>
             </main>
 
@@ -1842,8 +1993,10 @@ window.addEventListener("beforeunload", (event) => {
                         <li><a href="#ArrowFunctions">Funciones Flecha (Arrow Functions)</a></li>
                         <li><a href="#Arrays">Arrays</a></li>
                         <li><a href="#Objets">Objetos</a></li>
+                        <li><a href="#EstadosCargaDOM">Estados Carga DOM</a></li>
+                        <li><a href="#WindowDocument">Window y Document</a></li>
+                        <li><a href="#Formularios">Formularios</a></li>
                         <li><a href="#Json">Json</a></li>
-                        <li><a href="#EstadosCargaDOM">Estados de carga</a></li>
                     </ul>
                 </nav>
             </aside>

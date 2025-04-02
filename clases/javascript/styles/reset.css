@@ -146,7 +146,7 @@ td {
 - Elimina el contorno en enfoque.
 */
 input {
-    background: none;
+    background-color: white;
     border: none;
     font-family: inherit;
     font-size: inherit;
@@ -163,7 +163,7 @@ input {
 */
 textarea {
     resize: vertical;
-    background: none;
+    background-color: white;
     border: none;
     font-family: inherit;
     font-size: inherit;

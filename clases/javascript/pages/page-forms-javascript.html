@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Formularios</title>
+</head>
+
+<body>
+    <h2>Formulario de Ejemplo</h2>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <br><br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+
+        <label for="opciones">Selecciona una opción:</label>
+        <select id="opciones" name="opciones">
+            <option value="op1">Opción 1</option>
+            <option value="op2">Opción 2</option>
+            <option value="op3">Opción 3</option>
+        </select>
+        <br><br>
+
+        <label>
+            <input type="checkbox" id="aceptar" name="aceptar"> Acepto los términos
+        </label>
+        <br><br>
+
+        <label for="archivo">Subir archivo:</label>
+        <input type="file" id="archivo" name="archivo">
+        <br><br>
+
+        <label for="fecha">Selecciona una fecha:</label>
+        <input type="date" id="fecha" name="fecha">
+        <br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>Datos capturados:</h3>
+    <pre id="resultado"></pre>
+
+    <script>
+        document.getElementById('miFormulario').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const password = document.getElementById('password').value;
+            const opcion = document.getElementById('opciones').value;
+            const aceptar = document.getElementById('aceptar').checked ? 'Sí' : 'No';
+            const archivo = document.getElementById('archivo').files[0] ? document.getElementById('archivo').files[0].name : 'No se seleccionó archivo';
+            const fecha = document.getElementById('fecha').value;
+
+            document.getElementById('resultado').textContent = `
+                Nombre: ${nombre}
+                Contraseña: ${'*'.repeat(password.length)}
+                Opción seleccionada: ${opcion}
+                Aceptó términos: ${aceptar}
+                Archivo subido: ${archivo}
+                Fecha seleccionada: ${fecha}
+            `;
+        });
+    </script>
+</body>
+
+</html>

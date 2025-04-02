@@ -1,3 +1,5 @@
+// ===================== BASE DE DATOS ==========================
+
 const usuariosDiscoteca = [
     {
         genero: String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1)) + 97),
@@ -41,6 +43,8 @@ const usuariosDiscoteca = [
     }
 ];
 
+// ====================== TU FUNCIONALIDAD =========================
+
 function controlGenero(genero = "h") {
     return (genero === "h" || genero === "m" || genero === "o")
 }
@@ -65,13 +69,33 @@ function controlaMenoresEdad(genero = "h", edad = 1, dinero = 0) {
 
 function mensajeGuardia(permiso = false) {
     if (permiso) {
-        console.log("puede pasar")
+        return "puede pasar";
     } else {
-        console.log("no puede pasar")
+        return "no puede pasar";
     }
 }
 
-function main(genero = "h", edad = 1, dinero = 0) {
+function imprimirRespuestas() {
+    const contenedorLista = document.getElementById("lista-permisos")
+
+    for (let index = 0; index < usuariosDiscoteca.length; index++) {
+        const itemLista = document.createElement("li");
+
+        itemLista.innerHTML = `
+            genero: ${usuariosDiscoteca[index].genero}
+            edad: ${usuariosDiscoteca[index].edad}
+            dinero: ${usuariosDiscoteca[index].dinero}
+        `
+
+        contenedorLista.appendChild(itemLista);
+    }
+}
+
+imprimirRespuestas();
+
+// ====================== SE EJECUTA EL PROGRAMA =========================
+
+function main(genero = "x", edad = 1, dinero = 0) {
     let permiso = false;
 
     if (controlGenero(genero)) {
@@ -83,23 +107,9 @@ function main(genero = "h", edad = 1, dinero = 0) {
     }
 
     mensajeGuardia(permiso)
-}
 
-for (let index = 0; index < usuariosDiscoteca.length; index++) {
-    console.log
-    (
-        usuariosDiscoteca[index].genero,
-        usuariosDiscoteca[index].edad,
-        usuariosDiscoteca[index].dinero
-    )
-    main(
-        usuariosDiscoteca[index].genero,
-        usuariosDiscoteca[index].edad,
-        usuariosDiscoteca[index].dinero
-    );
+
 }
 
 
 
-const caracterAleatorio = String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1)) + 97);
-console.log(caracterAleatorio);

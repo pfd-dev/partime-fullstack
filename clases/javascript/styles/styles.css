@@ -39,8 +39,6 @@
 
 .navigation_bar {
     background-color: var(--color-light);
-    /* background-color: rgba(0, 0, 0, .5); */
-    opacity: .5;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -133,6 +131,12 @@
 ================ CONTENIDO PRINCIPAL ================
 ================================================== */
 
+.grid-albums {
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .main_content {
     display: flex;
     flex-direction: column;
@@ -147,7 +151,7 @@
         padding: 1em;
     }
 
-    >section {
+    .grid-clases {
         background-color: var(--color-light);
         border-radius: .5em;
         display: flex;
@@ -167,7 +171,7 @@
 }
 
 .dark .main_content {
-    >section {
+    .grid-clases {
         background-color: var(--color-dark);
         outline-color: var(--color-light);
     }
@@ -208,7 +212,6 @@
             position: sticky;
             top: 0;
             background-color: var(--color-secondary);
-            padding: .5em 1em;
 
             h2 {
                 color: var(--color-black);
