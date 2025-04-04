@@ -1,5 +1,5 @@
 /*  ==================================================
-=============== DATOS (locales, base de datos) =================
+=== DECLARACION DE DATOS (locales, base de datos) ===
 ================================================== */
 
 const datosClases = [
@@ -55,15 +55,16 @@ const datosClases = [
 ]
 
 /*  ==================================================
-=============== CONSTANTES CONFIGURACION =================
+====== DECLARACION DE CONSTANTES CONFIGURACION ======
 ================================================== */
 
 const rutaAssets = './assets/icons/';
 
-
 /*  ==================================================
-========= FUNCIONES DE INTERFAZ DE USUARIO ===========
+============== DECLARACION DE FUNCIONES ==============
 ================================================== */
+
+/* ===== FUNCIONES DE INTERFAZ DE USUARIO ===== */
 
 function controlarMenuModalOpciones() {
     if (document.querySelector('.my-modal').classList.toggle('show')) {
@@ -73,10 +74,6 @@ function controlarMenuModalOpciones() {
         document.querySelector('#BtnMenuModalOpciones span').textContent = `menú`;
         document.querySelector('#BtnMenuModalOpciones img').src = `${rutaAssets}menu_open.svg`;
     }
-}
-
-if (document.querySelector('#BtnMenuModalOpciones')) {
-    document.querySelector('#BtnMenuModalOpciones').addEventListener('click', controlarMenuModalOpciones);
 }
 
 function controlarModoOscuro() {
@@ -93,13 +90,7 @@ function controlarModoOscuro() {
     }
 }
 
-if (document.querySelector('#BtnModoOscuro')) {
-    document.querySelector('#BtnModoOscuro').addEventListener('click', controlarModoOscuro);
-}
-
-/*  ==================================================
-======= FUNCIONES PAGINA INICIO (index.html) =========
-================================================== */
+/*  ===== FUNCIONES PAGINA INICIO (index.html) ===== */
 
 function controlarGrillaClases() {
     function crearItemLista(lista = []) {
@@ -154,13 +145,7 @@ function controlarGrillaClases() {
     }
 }
 
-if (document.querySelector(".grid-clases2")) {
-    controlarGrillaClases();
-}
-
-/*  ==================================================
-======= FUNCIONES PAGINA EJEMPLO CRUD (page-crud.html) =========
-================================================== */
+/* ===== FUNCIONES PAGINA EJEMPLO CRUD (page-crud.html) ===== */
 function mainFunctionCrudPage() {
     let items = [];
     let idEditando = null;
@@ -255,6 +240,24 @@ function mainFunctionCrudPage() {
     render();
 }
 
-if (document.querySelector("#page-crud")) {
-    mainFunctionCrudPage();
+/* ===== FUNCIONES CARGAR ELEMENTOS DE DOM ===== */
+
+function mainDOMContentLoaded() {
+    if (document.querySelector('#BtnMenuModalOpciones')) {
+        document.querySelector('#BtnMenuModalOpciones').addEventListener('click', controlarMenuModalOpciones);
+    }
+
+    if (document.querySelector('#BtnModoOscuro')) {
+        document.querySelector('#BtnModoOscuro').addEventListener('click', controlarModoOscuro);
+    }
+
+    if (document.querySelector(".grid-clases2")) {
+        controlarGrillaClases();
+    }
+
+    if (document.querySelector("#page-crud")) {
+        mainFunctionCrudPage();
+    }
 }
+
+document.addEventListener('DOMContentLoaded', mainDOMContentLoaded);

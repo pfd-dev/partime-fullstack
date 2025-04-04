@@ -56,7 +56,7 @@
             const archivo = document.getElementById('archivo').files[0] ? document.getElementById('archivo').files[0].name : 'No se seleccionó archivo';
             const fecha = document.getElementById('fecha').value;
 
-            document.getElementById('resultado').textContent = `
+            document.getElementById('resultado').innerHTML = `
                 Nombre: ${nombre}
                 Contraseña: ${'*'.repeat(password.length)}
                 Opción seleccionada: ${opcion}
