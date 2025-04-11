@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Formularios</title>
+
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/global-styles.css">
+
+    <style>
+        main {
+            display: flex;
+            flex-wrap: wrap;
+
+            >header {
+                width: 100%;
+
+                h2 {
+                    font-size: 3rem;
+                    text-align: center;
+                }
+            }
+
+            #SeccionFormulario,
+            #SeccionResultado {
+                border: 1px solid black;
+                padding: 1em;
+                width: 50%;
+            }
+
+            .mensajes-errores {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+
+                span {
+                    background-color: red;
+                    color: white;
+                    padding: 1em;
+                    border: 1px solid grey;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h2>Control Formulario</h2>
+        </header>
+
+        <form id="SeccionFormulario" class="my-form">
+            <div class="container-input">
+                <label for="Nombre">Nombre:</label>
+                <input type="text" id="Nombre" name="NOMBRE">
+                <div class="mensajes-errores">
+                    <span style="display: none;">Error: caracteres minimos 4</span>
+                    <span style="display: none;">Error: caracteres maximos 10</span>
+                    <span style="display: none;">Error: Nombre sin numeros</span>
+                </div>
+            </div>
+
+            <div class="container-buttons">
+                <button type="submit" class="my-btn my-btn-primary">Enviar</button>
+                <button type="reset" class="my-btn">Limpiar</button>
+            </div>
+        </form>
+
+        <section id="SeccionResultado">
+            <h3>Datos capturados:</h3>
+            <pre id="resultado"></pre>
+        </section>
+    </main>
+
+    <script>
+        function datosEnviadosFormulario() {
+            alert("datos enviados")
+        }
+
+        function mainDOMLoaded() {
+            let AuxInputNombreValue = null
+
+            const formulario = document.querySelector('#SeccionFormulario');
+            formulario.addEventListener('submit', function (event) {
+                event.preventDefault();
+                datosEnviadosFormulario();
+            });
+
+            const inputNombre = document.querySelector("[name='NOMBRE']");
+            inputNombre.addEventListener('input', function (event) {
+                const contenedorMensajeErrores = document.querySelectorAll(".mensajes-errores span")
+
+                AuxInputNombreValue = event.target.value;
+
+                if (AuxInputNombreValue.length < 4) {
+                    contenedorMensajeErrores[0].style = "display: block;"
+                } else {
+                    contenedorMensajeErrores[0].style = "display: none;"
+                }
+
+                if (AuxInputNombreValue.length > 10) {
+                    contenedorMensajeErrores[1].style = "display: block;"
+                } else {
+                    contenedorMensajeErrores[1].style = "display: none;"
+                }
+
+                for (let index = 0; index < AuxInputNombreValue.length; index++) {
+                    if (parseInt(AuxInputNombreValue[index])) {
+                        contenedorMensajeErrores[2].style = "display: block;"
+                        return
+                    } else {
+                        contenedorMensajeErrores[2].style = "display: none;"
+                    }
+                }
+            })
+        }
+
+        document.addEventListener("DOMContentLoaded", mainDOMLoaded)
+    </script>
+</body>
+
+</html>

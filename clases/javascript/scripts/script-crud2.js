@@ -10,28 +10,30 @@ let idEliminar = null;
 
 /* ==== FUNCIONES ==== */
 
-function crearElementoListaUsuario(usuario) {
+function crearElementoListaUsuario(usuario, indice) {
     const li = document.createElement("li");
 
     li.innerHTML = `
+        <span><strong>Indice:</strong> ${indice}</span>
+        <span><strong>Id:</strong> ${usuario.id}</span>
         <span><strong>Nombre:</strong> ${usuario.nombre}</span>
         <span><strong>Edad:</strong> ${usuario.edad}</span>
-        <button class="btn-editar my-btn">Editar</button>
-        <button class="btn-eliminar my-btn">Eliminar</button>
+        <button class="btn-editar my-btn">Editar ${usuario.id}</button>
+        <button class="btn-eliminar my-btn">Eliminar ${usuario.id}</button>
     `;
 
     return li;
 }
 
 function mostrarListaUsuarios() {
-    console.log("funcion mostrar Lista Usuarios");
-    console.log(usuariosBBDD);
+    // console.log("funcion mostrar Lista Usuarios");
+    // console.log(usuariosBBDD);
 
     const contenedorLista = document.querySelector(".seccion-usuarios-lista ul");
     contenedorLista.innerHTML = "";
 
     for (let i = 0; i < usuariosBBDD.length; i++) {
-        const usuario = crearElementoListaUsuario(usuariosBBDD[i]);
+        const usuario = crearElementoListaUsuario(usuariosBBDD[i], i);
         contenedorLista.appendChild(usuario);
     }
 
@@ -40,6 +42,7 @@ function mostrarListaUsuarios() {
 
 function activarEventosBotonesUsuario() {
     const botonesEditar = document.querySelectorAll(".seccion-usuarios-lista .btn-editar");
+
     const botonesEliminar = document.querySelectorAll(".seccion-usuarios-lista .btn-eliminar");
 
     for (let i = 0; i < botonesEditar.length; i++) {
@@ -71,6 +74,7 @@ function activarModoActualizacion(id) {
     idEditar = id;
 
     const usuarioEncontrado = usuariosBBDD.find(function (usuario) {
+        console.log("buscando" + usuario.id)
         return usuario.id === id;
     });
 
@@ -149,7 +153,6 @@ function activarEventosIniciales() {
 
 function mainDOMLoaded() {
     activarEventosIniciales();
-
     mostrarListaUsuarios();
 }
 
