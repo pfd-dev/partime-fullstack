@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRUD</title>
+
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/global-styles.css">
+
+    <style>
+        main {
+            display: flex;
+            flex-wrap: wrap;
+
+            >header {
+                width: 100%;
+
+                h2 {
+                    font-size: 3rem;
+                    text-align: center;
+                }
+            }
+
+            #SeccionFormulario {
+                border: 1px solid black;
+                padding: 1em;
+                width: 50%;
+                margin: 0 auto;
+            }
+
+            #titulo-resultado {
+                font-size: 2.5em;
+                text-decoration: underline;
+                text-align: center;
+            }
+
+            #texto-resultado {
+                font-size: 2em;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h2>
+                CRUD un solo elemento <br>
+                (Create, Read, Update, Delete) | (Crear, Leer, Actualizar, Eliminar)
+            </h2>
+        </header>
+
+        <form id="SeccionFormulario" class="my-form">
+            <h3 id="titulo-resultado"></h3>
+            <p id="texto-resultado">No hay elemento creado aún.</p>
+
+            <div class="container-input">
+                <input type="text" name="input-elemento" placeholder="Escribe algo">
+            </div>
+
+            <section class="container-buttons">
+                <button type="submit" id="btn-guardar" class="my-btn">Crear</button>
+                <button type="button" id="btn-editar" style="display: none;"
+                    class="my-btn my-btn-primary">Editar</button>
+                <button type="button" id="btn-eliminar" style="display: none;"
+                    class="my-btn my-btn-secondary">Eliminar</button>
+            </section>
+        </form>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", iniciarCRUD);
+
+        function iniciarCRUD() {
+            const tituloResultado = document.querySelector('#titulo-resultado');
+            const textoResultado = document.querySelector('#texto-resultado');
+            const form = document.querySelector('#SeccionFormulario');
+            const input = document.querySelector('[name="input-elemento"]');
+            const btnGuardar = document.querySelector('#btn-guardar');
+            const btnEditar = document.querySelector('#btn-editar');
+            const btnEliminar = document.querySelector('#btn-eliminar');
+
+            let elementoGuardado = null;
+
+            form.addEventListener('submit', crearElemento);
+            btnEditar.addEventListener('click', editarElemento);
+            btnEliminar.addEventListener('click', eliminarElemento);
+
+            function crearElemento(event) {
+                event.preventDefault();
+
+                if (!input.value.trim()) {
+                    alert('El campo está vacío');
+                    return;
+                }
+
+                elementoGuardado = input.value.trim();
+
+                textoResultado.innerHTML = elementoGuardado;
+
+                if (btnGuardar.textContent === "Actualizar") {
+                    tituloResultado.textContent = 'Elemento Actualizado';
+                    btnGuardar.textContent = 'Crear'
+                } else {
+                    tituloResultado.textContent = 'Elemento creado';
+                    btnEditar.style = "display: block;";
+                    btnEliminar.style = "display: block;";
+                }
+
+                input.value = '';
+            }
+
+            function editarElemento() {
+                input.value = elementoGuardado;
+
+                tituloResultado.textContent = 'Modo edición';
+                btnGuardar.textContent = 'Actualizar';
+            }
+
+            function eliminarElemento() {
+                if (confirm('¿Seguro que quieres eliminar el elemento?')) {
+                    elementoGuardado = null;
+
+                    tituloResultado.textContent = 'Elemento eliminado';
+                    textoResultado.innerHTML = 'No hay elemento creado aún.';
+                    btnGuardar.textContent = 'Crear';
+                    btnEditar.style = "display: none;";
+                    btnEliminar.style = "display: none;";
+                    input.value = '';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

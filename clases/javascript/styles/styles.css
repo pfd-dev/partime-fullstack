@@ -1,5 +1,18 @@
 @import url("./root.css");
 
+#page-forms-javascript {
+    main {
+        .contenedor_divisor {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            form {
+                width: 100%;
+            }
+        }
+    }
+}
+
 /* ==================================================
 ================ BANNER CABECERA ================
 ================================================== */

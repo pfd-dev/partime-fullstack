@@ -17,6 +17,8 @@
 /* ================================================== */
 
 .my-btn {
+    background-color: lightgray;
+    outline: 1px solid black;
     border-radius: .5em;
     display: flex;
     gap: .5em;
@@ -28,9 +30,16 @@
     color: var(--color-white);
 }
 
+.my-btn-primary:hover {
+    background-color: var(--color-info);
+}
+
 .my-btn-secondary {
     background-color: var(--color-secondary);
     color: var(--color-black);
+}
+.my-btn-secondary:hover {
+    background-color: var(--color-success);
 }
 
 /* ================================================== */
@@ -49,7 +58,7 @@
 
 .my-modal {
     background-color: var(--color-light);
-    outline: .1em solid var(--color-dark);
+    outline: .2em solid var(--color-dark);
     border-radius: .5em;
     height: 50vh;
     width: 90vw;
@@ -72,8 +81,6 @@
     }
 
     .my-modal-list-links {
-        padding: 1em;
-
         a {
             padding: .5em 1em;
             display: block;
@@ -109,11 +116,9 @@
 
 .dark .my-modal {
     background-color: var(--color-dark);
-    outline: 2px solid var(--color-white);
+    outline-color: var(--color-white);
 
     .my-modal-list-links {
-        padding: 1em;
-
         a {
             outline-color: 2px solid var(--color-white);
             color: var(--color-white);
@@ -173,6 +178,64 @@
             color: var(--color-black);
             outline-color: var(--color-secondary);
         }
+    }
+}
+
+/* ================================================== */
+
+.my-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin: 0 auto;
+
+    .container-input {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: var(--text-medium);
+            font-weight: var(--font-semibold);
+        }
+
+        input,
+        select {
+            border: 1px solid var(--color-dark);
+            padding: .5em 1em;
+            border-radius: .5em;
+        }
+    }
+
+    .container-buttons {
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+
+        button {
+            font-size: 1.3em;
+            padding-right: 1em;
+            padding-left: 1em;
+        }
+    }
+}
+
+.dark {
+    .my-form {
+        .container-input {
+
+            input,
+            select {
+                background-color: var(--color-dark);
+                color: var(--color-white);
+                border-color: var(--color-light);
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .my-form {
+        /* max-width: 50vw; */
     }
 }
 

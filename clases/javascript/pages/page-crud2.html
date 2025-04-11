@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Usuarios</title>
+
+    <link rel="stylesheet" href="./../styles/reset.css">
+    <link rel="stylesheet" href="./../styles/global-styles.css">
+
+    <style>
+        main {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            h2 {
+                background-color: rgba(0, 0, 0, .2);
+            }
+        }
+
+        .seccion-usuarios-lista,
+        .seccion-form-crear,
+        .seccion-editar-usuario,
+        .seccion-eliminar-usuario {
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            outline: 1px solid black;
+        }
+
+        .seccion-usuarios-lista {
+            background-color: lightblue;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                li {
+                    display: flex;
+                    gap: 1em;
+                    align-items: center;
+                }
+            }
+        }
+
+        .seccion-form-crear {
+            background-color: lightcoral;
+        }
+
+        .seccion-editar-usuario {
+            background-color: lightcyan;
+            display: none;
+        }
+
+        .seccion-eliminar-usuario {
+            background-color: lightgreen;
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="seccion-usuarios-lista">
+            <h2>Lista de Usuarios</h2>
+            <ul></ul>
+        </section>
+
+        <section class="seccion-form-crear">
+            <h2>Registrar Usuario</h2>
+            <form class="my-form">
+                <div class="container-input">
+                    <label for="crear-nombre">Nombre:</label>
+                    <input type="text" id="crear-nombre" name="nombre">
+                </div>
+                <div class="container-input">
+                    <label for="crear-edad">Edad:</label>
+                    <input type="number" id="crear-edad" name="edad">
+                </div>
+
+                <div class="container-buttons">
+                    <button id="btn-guardar-usuario" class="my-btn" type="submit">Guardar</button>
+                    <button type="reset" class="my-btn">Limpiar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="seccion-editar-usuario">
+            <h2>Editar Usuario</h2>
+            <form class="my-form">
+                <div class="container-input">
+                    <label for="editar-nombre">Nombre:</label>
+                    <input type="text" id="editar-nombre" name="nombre">
+                </div>
+
+                <div class="container-input">
+                    <label for="editar-edad">Edad:</label>
+                    <input type="number" id="editar-edad" name="edad">
+                </div>
+
+                <div class="container-buttons">
+                    <button type="submit" id="btn-guardar-edicion" class="my-btn">Actualizar</button>
+                    <button type="button" id="btn-cerrar-seccion-editar" class="my-btn">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="seccion-eliminar-usuario">
+            <h2>Eliminar Usuario</h2>
+            <form class="my-form">
+                <p>¿Estás seguro que deseas eliminar este usuario?</p>
+                <div class="container-buttons">
+                    <button type="button" class="my-btn" id="btn-confirmar-eliminar">Eliminar</button>
+                    <button type="button" class="my-btn" id="btn-cerrar-seccion-eliminar">Cancelar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <script src="./../scripts/script-crud2.js"></script>
+</body>
+
+</html>
